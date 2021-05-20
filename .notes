@@ -51,3 +51,7 @@ git pull origin master from Github
 checkout into branch, finish feature before merging. 
 
 
+Questions: 
+Proxy placement in F/E package.json
+Line spacing in settings/json
+
