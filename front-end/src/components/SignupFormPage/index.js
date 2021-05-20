@@ -63,7 +63,7 @@ function SignupFormPage() {
         />
       </label>
       <label>
-        Name
+        Birthday
         <input
           type="date"
           value={birthday}
