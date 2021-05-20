@@ -1,10 +1,16 @@
-const express = require('express')
+const express = require('express');
+const asyncHandler = require('express-async-handler');
+
+const { setTokenCookie, restoreUser } = require('../../utils/auth');
+const { User } = require('../../db/models');
+
 const router = express.Router();
 
 // Log in
 router.post(
     '/',
     asyncHandler(async (req, res, next) => {
+        console.log('something ridiculous++++++++++++++')
         const { credential, password } = req.body;
         
         const user = await User.login({ credential, password });
@@ -32,8 +38,5 @@ router.post(
       return res.json({ message: 'success' });
     }
   );
-
-
-
 
 module.exports = router;
