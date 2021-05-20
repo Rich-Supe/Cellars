@@ -40,9 +40,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false,
       isDate: true,
-      validate: {
-        len: [10, 10]
-      },
+    //   validate: {
+    //     len: [10, 10]
+    //   },
     },
     hashedPassword: {
       type: DataTypes.STRING.BINARY,
