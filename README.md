@@ -9,6 +9,13 @@ Model Scopes
 
 
 
-
-
 TO DO: update scopes
+  
+#Technologies Used
+
+| Back-end    | Front-end |
+| ---      | ---       |
+| Javascript ES6 | JavascriptES6  |
+| PostgreSQL     | React |
+| bcrypt   |   Redux     |
+|        |        |
