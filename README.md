@@ -18,14 +18,27 @@ TO DO: update scopes
 | bcrypt   |   Redux     |
 |        |        |
 
+## React:
+*
+*
+
+
+## Redux:
+* Logger
+* Thunk
+
+```
+
+```
+
 
 # Authentication measures:
 | Back-end    | Front-end |
 | ---      | ---       |
 | bcryptjs |  |
 | cors |  |
-| csurf |    |
-| helmet |   |
+| csurf | csurf |
+| helmet | proxy |
 | cookies |   |
 | hashed passwords |   |
 | Model scoping |   |
