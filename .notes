@@ -52,6 +52,23 @@ checkout into branch, finish feature before merging.
 
 
 Questions: 
+Adding birthday to pass Test Signup Action
+  :store/session.js and database confliciton causing err500?
 Proxy placement in F/E package.json
 Line spacing in settings/json
+
+
+Login credentials
+window.store.dispatch(window.sessionActions.login({
+  credential: 'Demo-lition',
+  password: 'password'
+}));
+
+window.store.dispatch(window.sessionActions.signup({
+  username: 'NewUser',
+  email: 'new@user.io',
+  password: 'password111',
+  birthday: '01/01/2011',
+  name: 'john'
+}));
 
