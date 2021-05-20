@@ -8,9 +8,12 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
+
 module.exports = router;
 
-
+// router.post('/test', function(req, res) {
+//     res.json({ requestBody: req.body });
+//   });
 
 // const express = require('express');
 // const asyncHandler = require('express-async-handler');
@@ -21,29 +24,6 @@ module.exports = router;
 // const router = express.Router();
 
 
-// Log in
-// router.post(
-// '/',
-// asyncHandler(async (req, res, next) => {
-//     const { credential, password } = req.body;
-
-//     const user = await User.login({ credential, password });
-
-//     if (!user) {
-//     const err = new Error('Login failed');
-//     err.status = 401;
-//     err.title = 'Login failed';
-//     err.errors = ['The provided credentials were invalid.'];
-//     return next(err);
-//     }
-
-//     await setTokenCookie(res, user);
-
-//     return res.json({
-//     user,
-//     });
-// }),
-// );
 
 
 
