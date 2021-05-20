@@ -9,6 +9,8 @@
     "db:seed:undo:all": "dotenv sequelize-cli db:seed:undo:all"
   },
 
+  Better Version:
+
 "scripts": {
     "db:create": "dotenv sequelize-cli db:create",
     "db:drop": "dotenv sequelize-cli db:drop",
@@ -25,3 +27,39 @@
     "start:production": "dotenv ./bin/www"
   },
 
+
+  CSURF errors: backend/routes/index.js line 12, 
+  because of this I can't test a login for the demo user.
+
+
+  Github pushing and merging
+
+  Birthdays in migrations/model
+
+  faker
+
+
+ @ http://localhost:5000/hello/world
+  CSURF test login with this code, passing in the XSRF:
+
+  fetch('/api/session', {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `<value of XSRF-TOKEN cookie>`
+  },
+  body: JSON.stringify({ credential: 'Demo-lition', password: 'password' })
+}).then(res => res.json()).then(data => console.log(data));
+
+Then try changing the password and seeing if it fails. 
+And logging out: 
+
+Try to logout the session user.
+
+fetch('/api/session', {
+  method: 'DELETE',
+  headers: {
+    "Content-Type": "application/json",
+    "XSRF-TOKEN": `<value of XSRF-TOKEN cookie>`
+  }
+}).then(res => res.json()).then(data => console.log(data))
