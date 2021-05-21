@@ -5,6 +5,7 @@
    Deploy to Heroku
 
 Questions: 
+Allow null constraints on Wine migrations
 HEROKU: npm --prefix backend install backend && 
 npm --prefix frontend install frontend
 
