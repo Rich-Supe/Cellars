@@ -1,3 +1,9 @@
+   
+   TODO
+   Rename the component from LoginFormPage to just LoginForm
+   The code for redirecting the user if there is no session user in the Redux store can be removed.
+  
+  
   "scripts": {
     "start": "per-env",
     "start:development": "nodemon --delay 2.5 -r dotenv/config ./bin/www",
