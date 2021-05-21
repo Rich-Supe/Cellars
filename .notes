@@ -56,7 +56,7 @@ After pushing a branch, open a pull request on Github
 (deal with merge conflicts and double-check code)
 Accept pull request & merge
 
-checkout into master form the local repo
+checkout into master from the local repo
 
 git pull origin master from Github
 
