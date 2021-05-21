@@ -3,6 +3,16 @@
    Rename the component from LoginFormPage to just LoginForm
    The code for redirecting the user if there is no session user in the Redux store can be removed.
   
+
+Questions: 
+HEROKU: npm --prefix backend install backend && 
+npm --prefix frontend install frontend
+
+Adding birthday to pass Test Signup Action
+  :store/session.js and database confliciton causing err500?
+Proxy placement in F/E package.json
+Line spacing in settings/json
+
   
   "scripts": {
     "start": "per-env",
@@ -57,11 +67,6 @@ git pull origin master from Github
 checkout into branch, finish feature before merging. 
 
 
-Questions: 
-Adding birthday to pass Test Signup Action
-  :store/session.js and database confliciton causing err500?
-Proxy placement in F/E package.json
-Line spacing in settings/json
 
 
 Login credentials
