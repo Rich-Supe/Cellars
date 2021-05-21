@@ -1,9 +1,8 @@
    
    TODO
-   Send info to ryan and miah, add them to repo
-   Rename the component from LoginFormPage to just LoginForm
-   The code for redirecting the user if there is no session user in the Redux store can be removed.
+   Navbar
    Deploy to Heroku
+   Sign-up forms: add font icons to sign-up
 
 
 Questions: 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import styles from '../LoginFormModal/LoginForm.module.css';
 import './SignupForm.css';
 
 
@@ -33,65 +34,62 @@ function SignupForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-        <div>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
-            <label>
-                Email
-                <input
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                />
-            </label>
-            <label>
-                Username
-                <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-                />
-            </label>
-            <label>
-                Name
-                <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                />
-            </label>
-            <label>
-                Birthday
-                <input
-                type="date"
-                value={birthday}
-                onChange={(e) => setBirthday(e.target.value)}
-                required
-                />
-            </label>
-            <label>
-                Password
-                <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                />
-            </label>
-            <label>
-                Confirm Password
-                <input
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-                />
-            </label>
-            <button type="submit">Sign Up</button>
+
+        <div className={styles.loginBox2}>
+        <h1 className={styles.loginHeader}>Signup</h1>
+        <div className={styles.textBox2}>
+            {/* <i class="far fa-envelope"></i> */}
+            <input
+            type="text"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            />
+        </div>
+        <div className={styles.textBox2}>
+            <input
+            type="text"
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            />
+        </div>
+        <div className={styles.textBox2}>
+            <input
+            type="text"
+            placeholder="Name"
+            onChange={(e) => setName(e.target.value)}
+            required
+            />
+        </div>
+        <div className={styles.textBox2}>
+            <input
+            type="date"
+            placeholder='Birthday'
+            onChange={(e) => setBirthday(e.target.value)}
+            required
+            />
+        </div>
+        <div className={styles.textBox2}>
+            <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            />
+        </div>
+        <div className={styles.textBox2}>
+            <input
+            type="password"
+            placeholder="Confirm Password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+            />
+        </div>
+            <button className={styles.submitBtn} type="submit">Sign Up</button>
         </div>
     </form>
   );
