@@ -18,7 +18,7 @@ TO DO: update scopes
 | Javascript ES6 | JavascriptES6  |
 | PostgreSQL     | React |
 | bcrypt   |   Redux     |
-|        |        |
+|        | HTML/CSS 3 |
 
 ## React:
 *
