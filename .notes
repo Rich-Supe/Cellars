@@ -1,17 +1,12 @@
    
    TODO
+   Send info to ryan and miah, add them to repo
    Rename the component from LoginFormPage to just LoginForm
    The code for redirecting the user if there is no session user in the Redux store can be removed.
    Deploy to Heroku
 
-Questions: 
-Allow null constraints on Wine migrations
-HEROKU: npm --prefix backend install backend && 
-npm --prefix frontend install frontend
 
-Adding birthday to pass Test Signup Action
-  :store/session.js and database confliciton causing err500?
-Proxy placement in F/E package.json
+Questions: 
 Line spacing in settings/json
 
   
