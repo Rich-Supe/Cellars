@@ -1,0 +1,21 @@
+
+https://globalwinescore.docs.apiary.io/#introduction/rate-limiting
+https://www.globalwinescore.com/account/api/
+
+The API uses token-based authentication. In order to authenticate your requests,
+you need to include a specific header in each of 
+your requests:Authorization: Token {YOUR-API-TOKEN}
+6dd249b79ab080023144cb11cfec25f212a69f93
+
+
+Search for a wine by name. The API return 1 
+unique score for that specific wine.
+
+FORMAT
+The entire API uses *JSON* encoded as *UTF-8*. 
+The body of responses is always a JSON object, 
+and their content type is always `application/json; charset=UTF-8`.
+
+
+For API requests, the rate limit allows 
+for up to 10 requests per minute.

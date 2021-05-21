@@ -2,7 +2,7 @@
    TODO
    Rename the component from LoginFormPage to just LoginForm
    The code for redirecting the user if there is no session user in the Redux store can be removed.
-  
+   Deploy to Heroku
 
 Questions: 
 HEROKU: npm --prefix backend install backend && 
