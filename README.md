@@ -34,7 +34,7 @@ TO DO: update scopes
 * Logger
 * Thunk
   
- #Functionalities and Code snippets:
+ # Functionalities and Code snippets:
 
 ```
 
