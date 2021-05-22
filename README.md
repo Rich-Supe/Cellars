@@ -33,6 +33,8 @@ TO DO: update scopes
 ## Redux:
 * Logger
 * Thunk
+  
+ #Functionalities and Code snippets:
 
 ```
 
