@@ -3,7 +3,7 @@
 <Insert Picture Here>
 
 
-#### Cellars follows Rest Api conventions with many of the features including CRUD functionality.
+#### Cellars is made with a PERN stack and follows RESTful Api conventions with many of the features including CRUD functionality.
   
 ## For a deeper dive, check out these:
   * MVP - https://github.com/Rich-Supe/Cellars/wiki/MVP-List
