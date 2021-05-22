@@ -84,9 +84,9 @@ window.store.dispatch(window.sessionActions.signup({
 
 
 
-
-
-
+AWS3
+Tutorial video: https://vimeo.com/553727630/7588706742
+Tutorial Repo https://github.com/jdrichardsappacad/aws-s3-pern-demo
 cellars
 AKIAS3HX6B575EARYNED
 RVf+ES7IcNTNBPZlQcdISmn++hbsKz9k32yXQcxK
