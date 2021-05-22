@@ -3,9 +3,14 @@
 <Insert Picture Here>
 
 
+#### Cellars follows Rest Api conventions with many of the features including CRUD functionality.
+  
+## For a deeper dive, check out these:
+
+ 
+
 Database Schema: https://dbdiagram.io/d/60a59bd7b29a09603d15aa81
 
-* prevent certain fields from being sent in a query
 
 
 
@@ -17,8 +22,10 @@ TO DO: update scopes
 | ---      | ---       |
 | Javascript ES6 | JavascriptES6  |
 | PostgreSQL     | React |
-| bcrypt   |   Redux     |
-|        | HTML/CSS 3 |
+| Node.Js |   Redux    |
+| Express | HTML/CSS 3 |
+| Sequelize |  |
+| AWS S3 |    |
 
 ## React:
 *
