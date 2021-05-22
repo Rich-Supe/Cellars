@@ -12,7 +12,7 @@
   * Database Schema - https://dbdiagram.io/d/60a59bd7b29a09603d15aa81
   
   
-TO DO: update scopes
+TO DO: update scopes.
   
 # Technologies Used
 
