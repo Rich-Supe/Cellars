@@ -8,15 +8,10 @@
 ## For a deeper dive, check out these:
   * MVP - https://github.com/Rich-Supe/Cellars/wiki/MVP-List
   * Backend Routes - https://github.com/Rich-Supe/Cellars/wiki/Backend-Routes
-
- 
-
-Database Schema: https://dbdiagram.io/d/60a59bd7b29a09603d15aa81
+  * Frontend Routes - https://github.com/Rich-Supe/Cellars/wiki/Frontend-Routes
+  * Database Schema - https://dbdiagram.io/d/60a59bd7b29a09603d15aa81
   
-
-
-
-
+  
 TO DO: update scopes
   
 # Technologies Used
@@ -31,8 +26,8 @@ TO DO: update scopes
 | AWS S3 |    |
 
 ## React:
-*
-*
+* Modals
+* CSS Modules
 
 
 ## Redux:
