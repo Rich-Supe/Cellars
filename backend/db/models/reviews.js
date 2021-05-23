@@ -1,6 +1,6 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const Reviews = sequelize.define('Reviews', {
+module.exports = async (sequelize, DataTypes) => {
+  const Reviews = await sequelize.define('Reviews', {
     review: DataTypes.STRING,
     rating: DataTypes.INTEGER,
     wineId: DataTypes.INTEGER,
@@ -8,6 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Reviews.associate = function(models) {
     // associations can be defined here
+    Review.belongsTo(models.User, {foreignKey: 'userId'});
+    Review.belongsTo(models.Wine, {foreignKey: 'wineId'});
   };
   return Reviews;
 };

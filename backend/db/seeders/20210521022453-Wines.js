@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: async (queryInterface, Sequelize) => {
    
-      return queryInterface.bulkInsert('Wines', [
+      return await queryInterface.bulkInsert('Wines', [
         {name:'Caymus Napa Valley Cabernet Sauvignon 2019', grape:'Cabernet Sauvignon', color:'Red', year: 2019, country:'USA', region:'Napa Valley', rating:93, price: 89.99, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/yhe9xk4nuajlosehcmf3.jpg'},
         {name:'Screaming Eagle Cabernet Sauvignon 2018', grape:'Cabernet Sauvignon', color:'Red', year: 2018, country:'USA', region:'Napa Valley', rating:100, price: 2799.97, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/rt7zhbxwsep1qq9c9tom.jpg'},
         {name:'Stags Leap Winery Napa Valley Cabernet Sauvignon 2017', grape:'Cabernet Sauvignon', color:'Red', year: 2017, country:'USA', region:'Napa Valley', rating:92, price: 49.99, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/on0hb73jdqwjmna499yh.jpg'},
