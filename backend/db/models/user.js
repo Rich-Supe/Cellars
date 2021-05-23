@@ -75,7 +75,7 @@ module.exports = async (sequelize, DataTypes) => {
         otherKey: "wineId"
     }
 
-    User.belongsToMany( models.Wine, columnMapping);
+    User.belongsToMany(models.Wine, columnMapping);
     User.hasMany(models.Review, { foreignKey: "userId"})
   };
 

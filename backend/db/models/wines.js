@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Wines = sequelize.define('Wines', {
+  const Wine = sequelize.define('Wine', {
     name: DataTypes.STRING,
     grape: DataTypes.STRING,
     color: DataTypes.STRING,
@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.INTEGER,
     labelUrl: DataTypes.STRING
   }, {});
-  Wines.associate = function(models) {
+  Wine.associate = function(models) {
     // associations can be defined here
-    const columnMapping = {
-        through: 'Reviews',
-        foreignKey: 'wineId',
-        otherKey: 'userId'
-      }
+    // const columnMapping = {
+    //     through: 'Reviews',
+    //     foreignKey: 'wineId',
+    //     otherKey: 'userId'
+    //   }
   
       const columnMapping2 = {
         through: 'Cellars',
@@ -25,9 +25,9 @@ module.exports = (sequelize, DataTypes) => {
         otherKey: 'shelfId'
       }
 
-    Wine.belongsToMany( models.User, columnMapping);
-    Wine.belongsToMany( models.Cellar, columnMapping2);
+    Wine.belongsToMany(models.User, columnMapping2);
+    // Wine.belongsToMany( models.Cellar, columnMapping2);
     Wine.hasMany(models.Review, { foreignKey: "wineId" });
   };
-  return Wines;
+  return Wine;
 };
