@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       }
 
     Wine.belongsToMany(models.User, columnMapping2);
-    // Wine.belongsToMany( models.Cellar, columnMapping2);
+    // Wine.belongsToMany(models.Cellar, columnMapping2);
     Wine.hasMany(models.Review, { foreignKey: "wineId" });
   };
   return Wine;
