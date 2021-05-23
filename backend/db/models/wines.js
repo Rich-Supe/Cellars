@@ -12,22 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     labelUrl: DataTypes.STRING
   }, {});
   Wine.associate = function(models) {
-    // associations can be defined here
-    // const columnMapping = {
-    //     through: 'Reviews',
+    //   const columnMapping = {
+    //     through: 'Cellars',
     //     foreignKey: 'wineId',
-    //     otherKey: 'userId'
+    //     otherKey: 'shelfId'
     //   }
-  
-      const columnMapping2 = {
-        through: 'Cellars',
-        foreignKey: 'wineId',
-        otherKey: 'shelfId'
-      }
 
-    Wine.belongsToMany(models.User, columnMapping2);
-    // Wine.belongsToMany(models.Cellar, columnMapping2);
-    Wine.hasMany(models.Review, { foreignKey: "wineId" });
+    // Wine.belongsToMany(models.User, columnMapping);
+    // Wine.hasMany(models.Review, { foreignKey: "wineId" });
   };
   return Wine;
 };

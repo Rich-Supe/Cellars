@@ -3,8 +3,8 @@ module.exports = {
 
 
 
-  up: async (queryInterface, Sequelize) => {
-    return await queryInterface.createTable('Reviews', {
+  up:  (queryInterface, Sequelize) => {
+    return  queryInterface.createTable('Reviews', {
       id: {
         allowNull: false,
         autoIncrement: true,
