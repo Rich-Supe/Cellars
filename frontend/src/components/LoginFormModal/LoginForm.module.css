@@ -1,6 +1,17 @@
 /* Navbar */
 .loginBtn {
-    color:green
+    width: 25%;
+    background: none;
+    border: 2px solid gold;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+}
+.loginBtn:hover {
+    color:rgb(141, 12, 37);
+    border: 2px solid rgb(177, 107, 121);
 }
 
 /* Forms */
@@ -93,6 +104,11 @@ input {
     font-size: 18px;
     cursor: pointer;
     margin: 12px 0;
+}
+
+.submitBtn:hover {
+    /* color:rgb(177, 107, 121) */
+    border: 2px solid rgb(177, 107, 121);
 }
 
 i {

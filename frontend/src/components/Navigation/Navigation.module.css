@@ -1,22 +1,60 @@
-/* body {
-    display: flex;
-    justify-content: space-around
-} */
 
-/* .navbar {
+.navlinks {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; 
+    /* align-items: flex-start;  */
 }
 
-.navbarUl {
+.sessionLinks {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-} */
+    justify-content: flex-end;
+    /* align-items: center;  */
+}
 
-/* #root {
-    display: flex;
-    justify-content: space-around
-} */
+.homeLink {
+    width: 25%;
+    background: none;
+    /* border: 2px solid gold; */
+    color: black;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.homeLink:hover{
+    color:rgb(141, 12, 37);
+}
+
+.profileBtn {
+    width: 25%;
+    background: none;
+    border: 2px solid gold;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.profileBtn:hover {
+    color:rgb(141, 12, 37);
+    border: 2px solid rgb(177, 107, 121);
+}
+
+.dropdownBtn {
+    background: none;
+    border: 2px solid gold;
+    color: black;
+    cursor: pointer;
+}
+
+.dropdownBtn:hover {
+    color:rgb(141, 12, 37);
+    border: 2px solid rgb(177, 107, 121);
+}
+
+
+
