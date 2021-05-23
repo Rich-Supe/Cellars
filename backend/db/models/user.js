@@ -2,8 +2,8 @@
 const { Validator } = require('sequelize');
 const bcrypt = require('bcryptjs');
 
-module.exports = async (sequelize, DataTypes) => {
-  const User = await sequelize.define('User', {
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -69,14 +69,14 @@ module.exports = async (sequelize, DataTypes) => {
     },});
   User.associate = function(models) {
     // associations can be defined here
-    const columnMapping = {
-        through: 'Cellars',
-        foreignKey: 'userId',
-        otherKey: "wineId"
-    }
+    // const columnMapping = {
+    //     through: 'Cellars',
+    //     foreignKey: 'userId',
+    //     otherKey: "wineId"
+    // }
 
-    User.belongsToMany(models.Wine, columnMapping);
-    User.hasMany(models.Review, { foreignKey: "userId"})
+    // User.belongsToMany(models.Wine, columnMapping);
+    // User.hasMany(models.Review, { foreignKey: "userId"})
   };
 
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function

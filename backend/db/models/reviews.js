@@ -1,6 +1,6 @@
 'use strict';
-module.exports = async (sequelize, DataTypes) => {
-  const Review = await sequelize.define('Review', {
+module.exports =  (sequelize, DataTypes) => {
+  const Review =  sequelize.define('Review', {
     review: DataTypes.STRING,
     rating: DataTypes.INTEGER,
     wineId: DataTypes.INTEGER,
