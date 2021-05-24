@@ -8,7 +8,7 @@ module.exports = {
       {
         email: 'demo@user.io',
         name: faker.name.firstName() + faker.name.lastName(),
-        username: 'Demo-lition',
+        username: 'Demo',
         birthday: faker.date.past(),
         hashedPassword: bcrypt.hashSync('password'),
       },
