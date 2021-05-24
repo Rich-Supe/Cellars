@@ -1,13 +1,23 @@
-   
-   TODO
-   Navbar 
+   Guide: https://github.com/Lazytangent/DataFlow/blob/main/WALKTHROUGH.md
+    Video: https://vimeo.com/553160281/8cb7c635aa
+
+   TODO:
+
+   Important!:
+   Finish Wines, on Phase 4
    Deploy to Heroku
-   Sign-up forms: add font icons to sign-up and change font.
+   Navbar 
+
+    Styling:
+    Fonts
+    Sign-up forms: add font icons to sign-up and change font.
+
 
 
 
 Questions: 
 Database: can I use cellars as a joins table if I want crud?
+How to access the current user's Id without params? req.session.auth.userId?
 How TF do  I space out the navbar?
 AWS3
 Line spacing in settings/json
