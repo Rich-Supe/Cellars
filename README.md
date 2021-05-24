@@ -27,7 +27,7 @@ TO DO:
 | PostgreSQL     | React |
 | Node.Js |   Redux    |
 | Express | HTML/CSS 3 |
-| Sequelize |  |
+| Sequelize | SwiperJs |
 | AWS S3 |    |
 
 ## React:
