@@ -18,39 +18,8 @@
 Questions: 
 Database: can I use cellars as a joins table if I want crud?
 How to access the current user's Id without params? req.session.auth.userId?
-How TF do  I space out the navbar?
 AWS3
 Line spacing in settings/json
-
-  
-  "scripts": {
-    "start": "per-env",
-    "start:development": "nodemon --delay 2.5 -r dotenv/config ./bin/www",
-    "start:production": "node ./bin/www",
-    "db:migrate": "dotenv sequelize-cli db:migrate",
-    "db:migrate:undo:all": "dotenv sequelize-cli db:migrate:undo:all",
-    "db:redo": "npm run db:seed:undo:all && npm run db:migrate:undo:all && npm run db:migrate && npm run db:seed:all",
-    "db:seed:all": "dotenv sequelize-cli db:seed:all",
-    "db:seed:undo:all": "dotenv sequelize-cli db:seed:undo:all"
-  },
-
-  Better Version:
-
-"scripts": {
-    "db:create": "dotenv sequelize-cli db:create",
-    "db:drop": "dotenv sequelize-cli db:drop",
-    "db:migrate": "dotenv sequelize-cli db:migrate",
-    "db:migrate:undo:all": "dotenv sequelize-cli db:migrate:undo:all",
-    "db:redo": "npm run db:seed:undo:all && npm run db:migrate:undo:all && npm run db:migrate && npm run db:seed:all",
-    "db:seed:all": "dotenv sequelize-cli db:seed:all",
-    "db:seed:undo:all": "dotenv sequelize-cli db:seed:undo:all",
-    "migration:generate": "sequelize-cli migration:generate",
-    "model:generate": "sequelize-cli model:generate",
-    "seed:generate": "sequelize-cli seed:generate",
-    "start": "per-env",
-    "start:development": "dotenv nodemon ./bin/www",
-    "start:production": "dotenv ./bin/www"
-  },
 
 
 
@@ -74,24 +43,6 @@ checkout into master from the local repo
 git pull origin master from Github
 
 checkout into branch, finish feature before merging. 
-
-
-
-
-Login credentials
-window.store.dispatch(window.sessionActions.login({
-  credential: 'Demo-lition',
-  password: 'password'
-}));
-
-window.store.dispatch(window.sessionActions.signup({
-  username: 'NewUser',
-  email: 'new@user.io',
-  password: 'password111',
-  birthday: '01/01/2011',
-  name: 'john'
-}));
-
 
 
 AWS3

@@ -6,8 +6,8 @@ module.exports =  (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER
   }, {});
   Cellar.associate = function(models) {
-    // associations can be defined here
-    // Cellar.hasMany( models.Wine, foreignKey: 'wineId')
+    //   Not sure if needed!
+    // Cellar.hasMany( models.Wine, {foreignKey: 'wineId'})
     // Cellar.belongsTo(models.User, { foreignKey: 'userId', onDelete: 'CASCADE', hooks: true})
   };
   return Cellar;
