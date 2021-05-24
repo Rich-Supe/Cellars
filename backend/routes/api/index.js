@@ -28,17 +28,12 @@ module.exports = router;
 
 
 
-
-
-
-module.exports = router;
-
 //CODE FOR TESTING AUTH MIDDLEWARE ROUTES
 
 // router.get('/set-token-cookie', asyncHandler(async (req, res) => {
 //   const user = await User.findOne({
 //       where: {
-//         username: 'Demo-lition'
+//         username: 'Demo'
 //       },
 //     })
 //   setTokenCookie(res, user);
