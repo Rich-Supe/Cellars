@@ -1,1 +1,14 @@
 /* TODO Add site wide styles */
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    background-color: blueviolet;
+}
+
+.mainDiv {
+    height: 90%;
+    /* background-image: url(./assets/images/wine\ cellar\ image\ 2.png);
+    background-repeat: no-repeat; */
+}

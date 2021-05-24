@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import styles from './components/Navigation/Navigation.module.css';
+import WinesContainer from './components/WinesContainer'
 
 function App() {
   const dispatch = useDispatch();
@@ -14,16 +15,21 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className={styles.navbar}>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path="/signup">
-            {/* <SignupFormPage /> */}
-          </Route>
-        </Switch>
-      )}
-    </div>
+      <>
+        <div className={styles.navbar}>
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded && (
+            <Switch>
+            <Route path="/wines">
+            <WinesContainer />
+            </Route>
+            </Switch>
+        )}
+        </div>
+        <div className={styles.display}>
+        </div>
+    </>
+
   );
 }
 
