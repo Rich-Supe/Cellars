@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../store/session';
+// import React, { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 import styles from './Navigation.module.css';
-import WinesContainer from '../winesContainer'
+
 
 function NavButtons({wines}) {
+    const history = useHistory()
 
     return (
         <div className={styles.navButtons}>
-            <button className={styles.profileBtn} onClick={WinesContainer}>Wines</button>
+            <button className={styles.profileBtn} onClick={()=> history.push('/wines')}>Wines</button>
         </div>
     );
 }

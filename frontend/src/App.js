@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import styles from './components/Navigation/Navigation.module.css';
+import WinesContainer from './components/WinesContainer'
 
 function App() {
   const dispatch = useDispatch();
@@ -19,8 +20,9 @@ function App() {
         <Navigation isLoaded={isLoaded} />
         {isLoaded && (
             <Switch>
-            {/* <Route path="/api/wines">
-            </Route> */}
+            <Route path="/wines">
+            <WinesContainer />
+            </Route>
             </Switch>
         )}
         </div>
