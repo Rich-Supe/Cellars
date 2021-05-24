@@ -7,10 +7,14 @@
 }
 
 .sessionLinks {
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: flex-end;
     /* align-items: center;  */
+}
+
+.navButtons {
+    width: 100%;
 }
 
 .homeLink {

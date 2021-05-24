@@ -14,16 +14,20 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className={styles.navbar}>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path="/signup">
-            {/* <SignupFormPage /> */}
-          </Route>
-        </Switch>
-      )}
-    </div>
+      <>
+        <div className={styles.navbar}>
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded && (
+            <Switch>
+            {/* <Route path="/api/wines">
+            </Route> */}
+            </Switch>
+        )}
+        </div>
+        <div className={styles.display}>
+        </div>
+    </>
+
   );
 }
 
