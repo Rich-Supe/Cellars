@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Wine, Cellar } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
@@ -43,6 +43,54 @@ router.post(
       });
     }),
   );
+
+
+// Cellars routes
+
+router.get(
+    '/user/:id(\\d+)',
+    requireAuth,
+    asyncHandler(async (req, res) => {
+        const id = parseIne(req.params.id, 10);
+        const userCellar = await Cellar.findAll({where:{userId: id, include: Wine}})
+        res.render({userCellar})
+    })
+);
+
+router.post(
+    '/user/:id(\\d+)',
+    requireAuth,
+    asyncHandler(async (req, res) => {
+        //if getting wine id by adding the id to the button
+        const {wineButtonId} = req.body;
+        const usersId = parseInt(req.params.id, 10)
+        await Cellar.create({
+            userId: usersId,
+            //if getting wine id by adding the id to the button
+            wineId: wineButtonId
+        })
+        res.json({"key" : "wine added"});
+    })
+)
+
+router.delete(
+    '/user/:id(\\d+)',
+    requireAuth,
+    asyncHandler(async (req, res) => {
+        //if getting wine id by adding the id to the button
+        const {wineButtonId} = req.body;
+        const usersId = parseInt(req.params.id, 10)
+        await Cellar.destroy({
+            where: {
+                userId: usersId,
+                //if getting wine id by adding the id to the button
+                wineId: wineButtonId
+        }
+        })
+        res.json({"key" : "wine removed"})
+    })
+)
+
 
 
 
