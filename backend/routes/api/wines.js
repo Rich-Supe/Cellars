@@ -13,7 +13,7 @@ const router = express.Router();
 
 // Grab all wines
 router.get(
-    '/',
+    '',
     // requireAuth,
     asyncHandler(async(req, res) => {
         const wines = await Wine.findAll();
@@ -26,6 +26,7 @@ router.get(
         // });
         // res.render("wines", {wines, crate})
         res.render("wines", {wines})
+        // res.json(wines)
     })
 
 )
@@ -61,7 +62,7 @@ router.get(
 
 //Individual Wine route, including Reviews on the wine. 
 router.get(
-    '/:id(\\d+)',
+    '/wines/:id(\\d+)',
     asyncHandler(async(req, res) => {
         const wineId = parseInt(req.params.id, 10);
         const wine = await Wine.findByPk(wineId);
@@ -78,7 +79,7 @@ router.get(
     })
 )
 
-// More Review routes
+// More Review routes, require auth for these!
 
 
 // Create reviews
@@ -88,6 +89,8 @@ router.get(
 
 
 // Delete reviews
+
+
 
 
 
