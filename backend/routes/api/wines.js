@@ -13,7 +13,7 @@ const router = express.Router();
 
 // Grab all wines
 router.get(
-    '',
+    '/',
     // requireAuth,
     asyncHandler(async(req, res) => {
         const wines = await Wine.findAll();
@@ -24,9 +24,7 @@ router.get(
         // winesInCrate.forEach(wine => {
         //     crate[wine.id]=wine.dataValues
         // });
-        // res.render("wines", {wines, crate})
-        res.render("wines", {wines})
-        // res.json(wines)
+        return res.json(wines)
     })
 
 )
@@ -62,11 +60,13 @@ router.get(
 
 //Individual Wine route, including Reviews on the wine. 
 router.get(
-    '/wines/:id(\\d+)',
+    // '/fud',
+    '/:id(\\d+)',
     asyncHandler(async(req, res) => {
         const wineId = parseInt(req.params.id, 10);
-        const wine = await Wine.findByPk(wineId);
         const reviews = await Review.findAll( {where:{ wineId }})
+        const wine = await Wine.findByPk(wineId);
+        console.log(reviews)
         //After implementing Crates, to access those wines Crates may need another path
         // let currUser = req.session.auth.userId;
         // const winesInCrate = await Crate.findAll({where:{userId:currUser}});
@@ -74,8 +74,7 @@ router.get(
         // winesInCrate.forEach(wine => {
         //     crate[wine.id]=wine.dataValues
         // });
-        // res.render("wines", {wines, reviews, crate})
-        res.render("wines", {wine, reviews})
+        return res.json({wine, reviews})
     })
 )
 

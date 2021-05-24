@@ -3,10 +3,13 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const winesRouter = require('./wines.js');
 
 router.use('/session', sessionRouter);
-
+router.use('/wines', winesRouter), 
 router.use('/users', usersRouter);
+
+
 
 
 module.exports = router;

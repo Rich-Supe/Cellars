@@ -48,17 +48,17 @@ router.post(
 // Cellars routes
 
 router.get(
-    '/user/:id(\\d+)',
+    '/:id(\\d+)',
     requireAuth,
     asyncHandler(async (req, res) => {
-        const id = parseIne(req.params.id, 10);
+        const id = parseInt(req.params.id, 10);
         const userCellar = await Cellar.findAll({where:{userId: id, include: Wine}})
         res.render({userCellar})
     })
 );
 
 router.post(
-    '/user/:id(\\d+)',
+    '/:id(\\d+)',
     requireAuth,
     asyncHandler(async (req, res) => {
         //if getting wine id by adding the id to the button
@@ -74,7 +74,7 @@ router.post(
 )
 
 router.delete(
-    '/user/:id(\\d+)',
+    '/:id(\\d+)',
     requireAuth,
     asyncHandler(async (req, res) => {
         //if getting wine id by adding the id to the button
