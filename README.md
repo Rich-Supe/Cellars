@@ -5,14 +5,19 @@
 
 #### Cellars is made with a PERN stack and follows RESTful Api conventions with many of the features including CRUD functionality.
   
-## For a deeper dive, check out these:
+## For a deeper dive, check the following:
   * MVP - https://github.com/Rich-Supe/Cellars/wiki/MVP-List
   * Backend Routes - https://github.com/Rich-Supe/Cellars/wiki/Backend-Routes
   * Frontend Routes - https://github.com/Rich-Supe/Cellars/wiki/Frontend-Routes
   * Database Schema - https://dbdiagram.io/d/60a59bd7b29a09603d15aa81
   
   
-TO DO: update scopes.
+TO DO:
+  - Splash Page
+  - AWS3
+  - Styling
+  - Features
+  - Add more seeders
   
 # Technologies Used
 
@@ -42,12 +47,11 @@ TO DO: update scopes.
 
 
 # Authentication measures:
-| Back-end    | Front-end |
-| ---      | ---       |
-| bcryptjs |  |
-| cors |  |
-| csurf | csurf |
-| helmet | proxy |
-| cookies |   |
-| hashed passwords |   |
-| Model scoping |   |
+1. bcryptjs
+2. cors
+3. csurf
+4. helmet
+5. cookies (XML etc.)
+6. hashed passwords
+7. Model scoping
+8. Proxy
