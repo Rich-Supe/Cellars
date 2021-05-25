@@ -60,13 +60,12 @@ router.get(
 
 //Individual Wine route, including Reviews on the wine. 
 router.get(
-    // '/fud',
     '/:id(\\d+)',
     asyncHandler(async(req, res) => {
         const wineId = parseInt(req.params.id, 10);
         const reviews = await Review.findAll( {where:{ wineId }})
         const wine = await Wine.findByPk(wineId);
-        console.log(reviews)
+        // console.log(reviews)
         //After implementing Crates, to access those wines Crates may need another path
         // let currUser = req.session.auth.userId;
         // const winesInCrate = await Crate.findAll({where:{userId:currUser}});

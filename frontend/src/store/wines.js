@@ -4,11 +4,17 @@
 
 // Create an action type constant
 const SET_WINES = 'wines/SET_WINES'
+const SET_ONE_WINE = 'wines/SET_ONE_WINE'
 
 // Create an action creator that returns an action (just a POJO)
 const setWines = (wines) => ({
     type: SET_WINES,
     wines
+})
+
+const setOneWine = (wine) => ({
+    type: SET_ONE_WINE,
+    wine
 })
 
 
@@ -21,18 +27,30 @@ export const getWines = () => async (dispatch) => {
     dispatch(setWines(wines))
 }
 
+export const getOneWine = () => async(dispatch) => {
+    // const res = await fetch('/api/wines/:id(\\d+)');
+    const res = await fetch('/api/wines/1');
+    const wine = await res.json();
+    console.log(wine)
+    // dispatch(setOneWine(wine))
+}
+
 //Define initial state
 const initialState = {};
 
 // Create a reducer and add it to the store
 const winesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_WINES:
-            const newState = { ...state };
-            action.wines.forEach((wine) => {
-                newState[wine.id] = wine
-            });
-            return newState;
+        // case SET_WINES:
+        //     const newState = { ...state };
+        //     action.wines.forEach((wine) => {
+        //         newState[wine.id] = wine
+        //     });
+        //     return newState;
+        // case SET_ONE_WINE:
+        //     const newerState = { ...state };
+        //     // newState[wine.id] = wine
+        //     return newerState;
         default:
             return state;
     }
