@@ -1,8 +1,22 @@
 .wineCard {
-    width: 100%;
+    width: 98%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: column;
+    padding: 10px;
+    /* background-color: khaki; */
 }
 
 .wineImg {
-    height: 70%;
-    width: auto;
+    height: 75%;
+    width: 55%;
+    flex-grow: 4;
+}
+
+.name {
+    color:coral;
+    width: 55%;
+    padding-top: 5px;
 }
