@@ -30,9 +30,10 @@ export const getWines = () => async (dispatch) => {
 export const getOneWine = (id) => async(dispatch) => {
     const res = await fetch(`/api/wines/${id}`);
     // const res = await fetch('/api/wines/1');
-    const wine = await res.json();
-    wine.wine.reviews = wine.reviews
-    dispatch(setOneWine(wine.wine, wine.reviews))
+    const wineData = await res.json();
+    wineData.wine.reviews = wineData.reviews
+    console.log("WINE REviews", wineData.reviews)
+    dispatch(setOneWine(wineData.wine))
 }
 
 //Define initial state
