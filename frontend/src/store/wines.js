@@ -28,11 +28,11 @@ export const getWines = () => async (dispatch) => {
 }
 
 export const getOneWine = () => async(dispatch) => {
-    // const res = await fetch('/api/wines/:id(\\d+)');
-    const res = await fetch('/api/wines/1');
+    const res = await fetch('/api/wines/:id(\\d+)');
+    // const res = await fetch('/api/wines/1');
     const wine = await res.json();
-    console.log(wine)
-    // dispatch(setOneWine(wine))
+    // console.log(wine)
+    dispatch(setOneWine(wine))
 }
 
 //Define initial state
