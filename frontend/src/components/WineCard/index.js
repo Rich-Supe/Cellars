@@ -7,10 +7,7 @@ import WineModal from '../WineModal'
 
 const WinesCard = ({wine}) => {
     const [showModal, setShowModal] = useState(false);
-    console.log(wine.id)
-    console.log(`SHOWMODAL`, showModal)
     const handleClose = () => {
-        // console.log(e.target)
         setShowModal(false);
     }
     return (

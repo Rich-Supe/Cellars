@@ -1,8 +1,54 @@
 .wineModal {
-    background-color: white;
-    z-index: 1;
-    position: relative;
+    position: fixed;
+    background-color:whitesmoke;
+    /* border-style: dotted; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 675px;
+    max-width: 100%;
+    height: 500px;
+    max-height: 100%;
+
 }
+
+.header {
+    height: 15%;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: outset;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(146, 42, 106);
+    background-color: transparent;
+}
+
+.wineDiv {
+    display: flex;
+    justify-content: flex-start;
+    height: 35%;
+    /* align-self: ; */
+    padding-top: 5px;
+    overflow: scroll;
+}
+
+.wineImgDiv {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 55%;
+}
+
+.reviews {
+    margin: 10px;
+}
+
+
+
+
 
 /* .wineCard {
 

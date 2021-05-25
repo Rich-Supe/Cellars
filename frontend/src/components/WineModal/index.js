@@ -26,24 +26,32 @@ const WineModal = ({props}) => {
     
     return (
         <div className={styles.wineModal}>
-            <div className={styles.wineImgDiv}>
-            <img id={wine.id} src={wine.labelUrl} className={styles.wineImg}></img>
-            </div>
-            <div className={styles.name}>
+            <header className={styles.header}>
                 <p>{wine.name}</p>
+            </header>
+            <div className={styles.wineDiv}>
+                <div className={styles.wineImgDiv}>
+                    <img id={wine.id} src={wine.labelUrl} className={styles.wineImg}></img>
+                </div>
+                <div className={styles.wineInfo}>
+                    <ul>
+                        <p>Rating: {wine.rating}</p>
+                        <p>Country: {wine.country}</p>
+                        <p>Region: {wine.region}</p>
+                        <p>Year: {wine.year}</p>
+                        <p>Color: {wine.color}</p>
+                        <p>Grape: {wine.grape}</p>
+                        <p>Price: ${wine.price}.00</p>
+                    </ul>
+                </div>
             </div>
-            <div className={styles.wineInfo}>
-                <ul>
-                    <p>Rating: {wine.rating}</p>
-                    <p>Country: {wine.country}</p>
-                    <p>Region: {wine.region}</p>
-                    <p>Year: {wine.year}</p>
-                    <p>Color: {wine.color}</p>
-                    <p>Grape: {wine.grape}</p>
-                    <p>Price: {wine.price}</p>
-                </ul>
+            <div className={styles.reviews}>
+                Lorem Ipsum Lorem Ipsum
+                Lorem IpsumLorem Ipsum
+                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
+                Lorem IpsumLorem IpsumLorem Ipsum
             </div>
-            {/* <button onClick={props.handleClose}>Close</button> */}
         </div>
     )
 
