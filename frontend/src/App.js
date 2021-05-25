@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import styles from './components/Navigation/Navigation.module.css';
 import WinesContainer from './components/WinesContainer'
+import WineModal from './components/WineModal'
 
 function App() {
   const dispatch = useDispatch();
@@ -23,11 +24,14 @@ function App() {
             <Route path="/wines">
             <WinesContainer />
             </Route>
+            <Route path="/wine/:id">
+            <WineModal />
+            </Route>
             </Switch>
         )}
         </div>
-        <div className={styles.display}>
-        </div>
+        {/* <div className={styles.display}>
+        </div> */}
     </>
 
   );
