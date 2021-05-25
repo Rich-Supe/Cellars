@@ -7,13 +7,18 @@ import WineModal from '../WineModal'
 
 const WinesCard = ({wine}) => {
     const [showModal, setShowModal] = useState(false);
-    
+    console.log(wine.id)
+    console.log(`SHOWMODAL`, showModal)
+    const handleClose = () => {
+        // console.log(e.target)
+        setShowModal(false);
+    }
     return (
         //On clicking the card, should open wine modal
-        <div id={wine.id} className={styles.wineCard} onClick={()=> setShowModal(true)}>
+        <div id={wine.id} className={styles.wineCard} onClick={()=> setShowModal(!showModal)}>
         {showModal && (
-            <Modal onClose={() => setShowModal(false)}>
-                <WineModal wineId={wine.id}/>
+            <Modal onClose={() => handleClose()}>
+                <WineModal props={{wineId:wine.id, handleClose}}/>
             </Modal>
             )}
             <img id={wine.id} src={wine.labelUrl} className={styles.wineImg}></img>

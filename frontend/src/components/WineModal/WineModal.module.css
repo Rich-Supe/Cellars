@@ -1,8 +1,10 @@
-/* .wineModal {
-    
+.wineModal {
+    background-color: white;
+    z-index: 1;
+    position: relative;
 }
 
-.wineCard {
+/* .wineCard {
 
 } */
 

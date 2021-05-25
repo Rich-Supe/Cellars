@@ -7,10 +7,10 @@ import {getOneWine} from '../../store/wines'
 // import winesReducer, {getOneWine} from '../../store/wines'
 import styles from './WineModal.module.css'
 
-const WineModal = ({wineId}) => {
+const WineModal = ({props}) => {
     const dispatch = useDispatch()
     // const { id } = useParams();
-    const id = wineId
+    const id = props.wineId
     console.log('_____-------', id)
     const wines = useSelector((state) => state.wines)
     
@@ -20,6 +20,7 @@ const WineModal = ({wineId}) => {
     
     const wine = wines[id];
     if (!wine) return null;
+
 
     console.log(wine)
     
@@ -42,7 +43,7 @@ const WineModal = ({wineId}) => {
                     <p>Price: {wine.price}</p>
                 </ul>
             </div>
-        
+            {/* <button onClick={props.handleClose}>Close</button> */}
         </div>
     )
 
