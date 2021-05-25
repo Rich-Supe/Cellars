@@ -9,6 +9,10 @@
     /* background-color: khaki; */
 }
 
+.wineCard:hover {
+    cursor: pointer;
+}
+
 .wineImg {
     height: 75%;
     width: 55%;
