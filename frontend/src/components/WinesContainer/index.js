@@ -16,9 +16,9 @@ const WinesContainer = ({wine}) => {
     }, [dispatch]);
 
     return (
-        <div className={styles.winesContainer}>
+        <div className={styles.WinesContainer}>
             {wines?.map(wine=>{
-                return <div id={wine.id} key={wine.id} className={styles.wineCard}>
+                return <div id={wine.id} key={wine.id} className={styles.WineCard}>
                     <WineCard wine={wine}/>
                 </div>
             })}
