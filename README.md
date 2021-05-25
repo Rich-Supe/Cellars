@@ -13,6 +13,9 @@
   
   
 TO DO:
+  - Individual wine routes
+  - Searchbar
+  - Demo Btn
   - Splash Page
   - AWS3
   - Styling
