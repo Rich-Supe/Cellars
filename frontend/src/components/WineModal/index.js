@@ -1,17 +1,17 @@
-import React, {useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-// import WineCard from '../WineCard'
-import { Modal } from '../../context/Modal';
-import {useParams} from 'react-router-dom'
 
-import winesReducer, {getOneWine} from '../../store/wines'
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react'
+import {useParams} from 'react-router-dom'
+import {getOneWine} from '../../store/wines'
+
+// import winesReducer, {getOneWine} from '../../store/wines'
 import styles from './WineModal.module.css'
 
-
-
-const WineModal = () => {
+const WineModal = ({wineId}) => {
     const dispatch = useDispatch()
-    const { id } = useParams();
+    // const { id } = useParams();
+    const id = wineId
+    console.log('_____-------', id)
     const wines = useSelector((state) => state.wines)
     
     useEffect(() => {
@@ -50,3 +50,42 @@ const WineModal = () => {
 
 
 export default WineModal;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Modal } from '../../context/Modal';
+
+// import WineModalComponent from './WineModel'
+
+// function WineModal() {
+//     const [showModal, setShowModal] = useState(false);
+
+//     return (
+//         <>
+//             {/* click event here, onClick={() => setShowModal(true)} */}
+//             {showModal && (
+//             <Modal onClose={() => setShowModal(false)}>
+//                 <WineModalComponent />
+//             </Modal>
+//             )}
+//         </>
+//     )
+// }
+
+// export default WineModal;
