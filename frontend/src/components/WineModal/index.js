@@ -1,6 +1,6 @@
 
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import {getOneWine} from '../../store/wines'
 import ReviewsBox from '../ReviewsBox'
@@ -9,8 +9,9 @@ import ReviewsBox from '../ReviewsBox'
 import styles from './WineModal.module.css'
 
 const WineModal = ({props}) => {
+    const [currentCard, setCurrentCard] = useState();
+
     const dispatch = useDispatch()
-    // const { id } = useParams();
     const id = props.wineId
     const reviews = props.reviews
     const wines = useSelector((state) => state.wines)
@@ -50,13 +51,14 @@ const WineModal = ({props}) => {
                     </ul>
                 </div>
             </div>
-            <div className={styles.reviews}>
+                <div className={styles.headerDiv}>
+                {/* <button>Hi</button> */}
                 <header className={styles.reviewHeader}>Reviews</header>
+                {/* <button>Hi</button> */}
+                </div>
+            <div className={styles.reviews}>
                 <div className={styles.reviewBox}>
                 {reviews?.map((review) => <ReviewsBox key={review.id} props={{review}}/>)}
-                </div>
-                <div className={styles.footer}>
-                    <button className={styles.submitBtn}>Leave a review</button>
                 </div>
             </div>
         </div>

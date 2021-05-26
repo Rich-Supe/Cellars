@@ -5,9 +5,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 675px;
+    width: 700px;
     max-width: 100%;
-    height: 500px;
+    height: 600px;
     max-height: 100%;
 
 }
@@ -31,7 +31,7 @@
     height: 35%;
     /* align-self: ; */
     padding-top: 5px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .wineImgDiv {
@@ -44,12 +44,21 @@
 
 .reviews {
     margin: 10px;
-    height: 45%;
+    height: 38%;
+    overflow-x: scroll;
 }
+
+/* .headerDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
 
 .reviewHeader {
     display: flex;
     justify-content: center;
+    margin: 5px;
+    /* position: static; */
     font-size: 1.75em;
     font-weight: 300;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
@@ -57,9 +66,11 @@
 
 .reviewBox {
     height: 60%;
+    width: 1000%;
     display: flex;
     flex-direction: row;
-    overflow-x: auto;
+    /* overflow-x: auto !important; */
+    overflow: hidden;
     align-items: center;
 }
 
@@ -70,8 +81,14 @@
     /* margin-bottom: 10px; */
 }
 
-.submitBtn {
-    width: 10%;
+.nextBtn {
+    border: 2px solid gold;
+    background: none;
+    cursor: pointer;
+}
+
+.nextBtn:hover {
+    color:rgb(141, 12, 37);
 }
 
 
