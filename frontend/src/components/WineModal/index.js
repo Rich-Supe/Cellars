@@ -22,8 +22,11 @@ const WineModal = ({props}) => {
     const wine = wines[id];
     if (!wine) return null;
 
-    console.log(`wines:`, wines)
-    console.log("wine:", wine)
+//needed to avoid object error
+    // const compProps = {
+    //     Review: reviews
+    // }
+
     console.log(`Reviews from wineModal:`, reviews)
     
     return (
@@ -47,16 +50,15 @@ const WineModal = ({props}) => {
                     </ul>
                 </div>
             </div>
-            <ReviewsBox props={{wine, reviews}}/>
-            {/* <div className={styles.reviews}>
+            <div className={styles.reviews}>
                 <header className={styles.reviewHeader}>Reviews</header>
                 <div className={styles.reviewBox}>
-                {reviews?.map((review) => <p>{review.review}</p>)}
+                {reviews?.map((review) => <ReviewsBox key={review.id} props={{review}}/>)}
                 </div>
                 <div className={styles.footer}>
                     <button className={styles.submitBtn}>Leave a review</button>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 
