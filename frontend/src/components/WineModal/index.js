@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import {getOneWine} from '../../store/wines'
+import ReviewsBox from '../ReviewsBox'
 
 // import winesReducer, {getOneWine} from '../../store/wines'
 import styles from './WineModal.module.css'
@@ -11,7 +12,7 @@ const WineModal = ({props}) => {
     const dispatch = useDispatch()
     // const { id } = useParams();
     const id = props.wineId
-    console.log('_____-------', id)
+    const reviews = props.reviews
     const wines = useSelector((state) => state.wines)
     
     useEffect(() => {
@@ -21,8 +22,9 @@ const WineModal = ({props}) => {
     const wine = wines[id];
     if (!wine) return null;
 
-
-    console.log(wine)
+    console.log(`wines:`, wines)
+    console.log("wine:", wine)
+    console.log(`Reviews:`, reviews)
     
     return (
         <div className={styles.wineModal}>
@@ -45,19 +47,16 @@ const WineModal = ({props}) => {
                     </ul>
                 </div>
             </div>
-            <div className={styles.reviews}>
+            <Reviews props={{wine, reviews}}}/>
+            {/* <div className={styles.reviews}>
                 <header className={styles.reviewHeader}>Reviews</header>
                 <div className={styles.reviewBox}>
-                Lorem Ipsum Lorem Ipsum
-                Lorem IpsumLorem Ipsum
-                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
-                Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
-                Lorem IpsumLorem IpsumLorem Ipsum
+                {reviews?.map((review) => <p>{review.review}</p>)}
                 </div>
                 <div className={styles.footer}>
                     <button className={styles.submitBtn}>Leave a review</button>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 

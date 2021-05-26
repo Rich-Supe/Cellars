@@ -32,7 +32,6 @@ export const getOneWine = (id) => async(dispatch) => {
     // const res = await fetch('/api/wines/1');
     const wineData = await res.json();
     wineData.wine.reviews = wineData.reviews
-    console.log("WINE REviews", wineData.reviews)
     dispatch(setOneWine(wineData.wine))
 }
 

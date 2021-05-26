@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 
-const { requireAuth } = require('../../utils/auth');
+const { requireAuth, restoreUser } = require('../../utils/auth');
 const { User, Wine, Cellar, Review } = require('../../db/models');
 // const { Crate } = require('../../db/models');
 
@@ -82,31 +82,34 @@ router.get(
 
 // Create reviews
 //Can comment out app.use csurf in app.js to test
-// router.post(
-//     '/:id(\\d+)',
-//     // requireAuth,
-//     asyncHandler(async(req, res)=> {
-//         const review = req.body;
-//         // const review = "ASDASDFASDFASDFASDFASDF"
-//         const rating = req.body;
-//         // const rating = 22
-//         const wineId = parseInt(req.params.id, 10)
-//         const userId = req.session.user.id
-//         console.log(userId)
-//         // need to figure out how to get the user's id
-//         await Review.create({ review, rating, wineId, userId })
-//         return res.json({ message: 'success' });
-//     })
-// )
+router.post(
+    '/:id(\\d+)',
+    restoreUser,
+    // requireAuth,
+    asyncHandler(async(req, res)=> {
+        const {review} = req.body;
+        // const review = "ASDASDFASDFASDFASDFASDF"
+        const {rating} = req.body;
+        // const rating = 22
+        console.log(`asdfadsf`, req.user)
+        const wineId = parseInt(req.params.id, 10)
+        const userId = req.user.id
+        console.log(userId)
+        // need to figure out how to get the user's id
+        await Review.create({ review, rating, wineId, userId })
+        return res.json({ message: 'success' });
+    })
+)
 
 // Edit reviews
 // router.patch(
 //     '/:id(\\d+)',
 //     requireAuth,
 //     asyncHandler(async(req, res) => {
+//         const current
 //         const currentReview = findByPk()
-//         const review = req.body;
-//         const rating = req.body;
+//         const {review} = req.body;
+//         const {rating} = req.body;
 //         const wineId = parseInt(req.params.id, 10)
 //         const userId = req.session.user.id
 //         console.log(userId)

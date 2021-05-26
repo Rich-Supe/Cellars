@@ -15,7 +15,7 @@ const WinesCard = ({wine}) => {
         <div id={wine.id} className={styles.wineCard} onClick={()=> setShowModal(!showModal)}>
         {showModal && (
             <Modal onClose={() => handleClose()}>
-                <WineModal props={{wineId:wine.id, handleClose}}/>
+                <WineModal props={{wineId:wine.id, handleClose, reviews:wine.reviews}}/>
             </Modal>
             )}
             <img id={wine.id} src={wine.labelUrl} className={styles.wineImg}></img>
