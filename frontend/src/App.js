@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import styles from './components/Navigation/Navigation.module.css';
 import WinesContainer from './components/WinesContainer'
 import WineModal from './components/WineModal'
+import Splash from './components/Splash'
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,9 @@ function App() {
         <Navigation isLoaded={isLoaded} />
         {isLoaded && (
             <Switch>
+            <Route path='/' exact>
+            <Splash />
+            </Route>
             <Route path="/wines">
             <WinesContainer />
             </Route>

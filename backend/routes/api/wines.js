@@ -81,9 +81,40 @@ router.get(
 
 
 // Create reviews
-
+//Can comment out app.use csurf in app.js to test
+// router.post(
+//     '/:id(\\d+)',
+//     // requireAuth,
+//     asyncHandler(async(req, res)=> {
+//         const review = req.body;
+//         // const review = "ASDASDFASDFASDFASDFASDF"
+//         const rating = req.body;
+//         // const rating = 22
+//         const wineId = parseInt(req.params.id, 10)
+//         const userId = req.session.user.id
+//         console.log(userId)
+//         // need to figure out how to get the user's id
+//         await Review.create({ review, rating, wineId, userId })
+//         return res.json({ message: 'success' });
+//     })
+// )
 
 // Edit reviews
+// router.patch(
+//     '/:id(\\d+)',
+//     requireAuth,
+//     asyncHandler(async(req, res) => {
+//         const currentReview = findByPk()
+//         const review = req.body;
+//         const rating = req.body;
+//         const wineId = parseInt(req.params.id, 10)
+//         const userId = req.session.user.id
+//         console.log(userId)
+//         // need to figure out how to get the user's id
+//         await Review.update({ reviewId, review, rating, wineId, userId })
+//         return res.json({ message: 'success' });
+//     })
+// )
 
 
 // Delete reviews

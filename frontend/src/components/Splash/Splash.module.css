@@ -1,0 +1,36 @@
+.splashImg {
+    height: 25%;
+    width: 100%
+}
+
+.footerList {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style:  none;
+    font-size: 2.5em;
+    cursor: pointer;
+}   
+
+.liLink {
+    color: rgb(52, 172, 252);
+}
+
+.liGit {
+    color: black;
+}
+
+.liTwit {
+    color: rgb(41, 105, 179);
+}
+
+/* .liPort {
+    color: black;
+} */
+
+.liInsta {
+    color:rgb(240, 27, 240)
+}
