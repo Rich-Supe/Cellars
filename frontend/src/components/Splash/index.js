@@ -1,10 +1,10 @@
 
 
-import splash from '../../assets/images/winecellar3.jpg'
+import splash from '../../assets/images/Cellar3.jpg'
 import styles from './Splash.module.css'
 
 const Splash = () => {
-
+    
     return (
         <>
             <div>
@@ -29,13 +29,11 @@ const Splash = () => {
                     </li> */}
                     <li className={styles.liInsta}>
                         <i className="fab fa-instagram"></i>
-                     
                     </li>
                 </ul>
             </footer>
         </>
     )
 }
-
 
 export default Splash
