@@ -57,7 +57,10 @@
 
 .reviewBox {
     height: 60%;
-    padding: 10px
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    align-items: center;
 }
 
 .footer {

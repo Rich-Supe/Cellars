@@ -1,0 +1,7 @@
+.reviewCard {
+    height: 98%;
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+}
