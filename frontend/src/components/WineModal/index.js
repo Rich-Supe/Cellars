@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import {getOneWine} from '../../store/wines'
+import ReviewsBox from '../ReviewsBox'
 
 // import winesReducer, {getOneWine} from '../../store/wines'
 import styles from './WineModal.module.css'
@@ -46,7 +47,8 @@ const WineModal = ({props}) => {
                     </ul>
                 </div>
             </div>
-            <div className={styles.reviews}>
+            <Reviews props={{wine, reviews}}}/>
+            {/* <div className={styles.reviews}>
                 <header className={styles.reviewHeader}>Reviews</header>
                 <div className={styles.reviewBox}>
                 {reviews?.map((review) => <p>{review.review}</p>)}
@@ -54,7 +56,7 @@ const WineModal = ({props}) => {
                 <div className={styles.footer}>
                     <button className={styles.submitBtn}>Leave a review</button>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 
