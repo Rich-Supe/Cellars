@@ -24,7 +24,7 @@ const WineModal = ({props}) => {
 
     console.log(`wines:`, wines)
     console.log("wine:", wine)
-    console.log(`Reviews:`, reviews)
+    console.log(`Reviews from wineModal:`, reviews)
     
     return (
         <div className={styles.wineModal}>
@@ -47,7 +47,7 @@ const WineModal = ({props}) => {
                     </ul>
                 </div>
             </div>
-            <Reviews props={{wine, reviews}}}/>
+            <ReviewsBox props={{wine, reviews}}/>
             {/* <div className={styles.reviews}>
                 <header className={styles.reviewHeader}>Reviews</header>
                 <div className={styles.reviewBox}>
