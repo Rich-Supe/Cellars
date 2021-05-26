@@ -33,7 +33,7 @@ function Navigation({ isLoaded }){
   return (
     // <nav>
     <div className={styles.navlinks} id="nav-home-link">
-      <NavLink className={styles.homeLink} exact to="/">Home</NavLink>
+      <NavLink className={styles.homeLink} exact to="/">CELLARS</NavLink>
        {isLoaded && sessionLinks}
     </div>
 //  </nav>

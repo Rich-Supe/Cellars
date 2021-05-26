@@ -23,13 +23,18 @@
     /* border: 2px solid gold; */
     color: black;
     padding: 5px;
-    font-size: 20px;
+    font-size: 23px;
     cursor: pointer;
     margin: 12px 0;
+    font-family: ProximaNova,Helvetica,sans-serif;;
+    font-weight: 600;
+    text-decoration: none;
+
 }
 
 .homeLink:hover{
     color:rgb(141, 12, 37);
+    font-size: 24px;
 }
 
 .profileBtn {

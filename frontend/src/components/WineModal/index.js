@@ -46,11 +46,17 @@ const WineModal = ({props}) => {
                 </div>
             </div>
             <div className={styles.reviews}>
+                <header className={styles.reviewHeader}>Reviews</header>
+                <div className={styles.reviewBox}>
                 Lorem Ipsum Lorem Ipsum
                 Lorem IpsumLorem Ipsum
                 Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
                 Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
                 Lorem IpsumLorem IpsumLorem Ipsum
+                </div>
+                <div className={styles.footer}>
+                    <button className={styles.submitBtn}>Leave a review</button>
+                </div>
             </div>
         </div>
     )
