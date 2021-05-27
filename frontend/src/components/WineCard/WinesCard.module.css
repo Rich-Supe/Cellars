@@ -18,6 +18,7 @@
     height: 75%;
     width: 55%;
     flex-grow: 4;
+    border-radius: 10%;
 }
 
 .name {

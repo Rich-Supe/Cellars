@@ -53,7 +53,7 @@ const WineModal = ({props}) => {
             </div>
                 <div className={styles.headerDiv}>
                 {/* <button>Hi</button> */}
-                <header className={styles.reviewHeader}>Reviews</header>
+                <header className={styles.reviewHeader}>What others are saying:</header>
                 {/* <button>Hi</button> */}
                 </div>
             <div className={styles.reviews}>

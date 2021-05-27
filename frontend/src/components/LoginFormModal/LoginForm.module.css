@@ -3,6 +3,7 @@
     width: 25%;
     background: none;
     border: 2px solid gold;
+    border-radius: 20%;
     color: black;
     padding: 5px;
     font-size: 18px;
@@ -99,6 +100,7 @@ input {
     width: 100%;
     background: none;
     border: 2px solid gold;
+    border-radius: 20%;
     color: white;
     padding: 5px;
     font-size: 18px;

@@ -39,12 +39,12 @@
 }
 
 .liLink {
-    color: rgb(52, 172, 252);
+    color: rgb(52, 172, 252) !important;
 }
 
 .liLink:visited {
-    text-decoration: none;
-    color: rgb(52, 172, 252);
+    text-decoration: none !important;
+    color: rgb(52, 172, 252) !important;
 }
 
 .liGit {
