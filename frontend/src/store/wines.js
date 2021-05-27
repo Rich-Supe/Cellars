@@ -41,16 +41,16 @@ export const getOneWine = (id) => async(dispatch) => {
     dispatch(setOneWine(wineData.wine))
 }
 
-// export const createReview = (review, id) => async(dispatch) => {
-//     const res = await csrfFetch(`/api/wines/${id}`, {
-//         method: 'POST',
-//         body: JSON.stringify(review)
-//     });
-//     const reviewData = await res.json();
-//     console.log(reviewData)
-//     reviewData.reviews = reviewData.reviews
-//     dispatch(setReview(reviewData.review))
-// }
+export const createReview = (review, id) => async(dispatch) => {
+    const res = await csrfFetch(`/api/wines/${id}`, {
+        method: 'POST',
+        body: JSON.stringify(review)
+    });
+    const reviewData = await res.json();
+    console.log(reviewData)
+    reviewData.reviews = reviewData.reviews
+    dispatch(setReview(reviewData.review))
+}
 
 
 //Define initial state
@@ -72,7 +72,8 @@ const winesReducer = (state = initialState, action) => {
             return newerState;
          case CREATE_REVIEW:
             const newererState = { ...state };
-            
+            newererState[action.review.id] = action.review
+            return newererState
         default:
             return state;
     }
