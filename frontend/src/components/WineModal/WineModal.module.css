@@ -95,17 +95,22 @@ ul {
     /* margin-bottom: 10px; */
 }
 
-.footerP {
+/* .footerP {
     margin-right: 10px;
     font-size: 15px;
     font-weight: 500;
     font-family:cursive;
-    text-decoration: aqua;
+    border: 2px solid maroon;
+    background: none;
 }
 
-.addReviewBtn {
+.footerP:hover {
+    border: 2px solid gold;
+} */
+
+/* .addReviewBtn {
     height: 70%;
-}
+} */
 
 
 

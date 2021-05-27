@@ -1,15 +1,18 @@
 
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+// import { Modal } from '../../context/Modal';
 import {getOneWine} from '../../store/wines'
 import ReviewsBox from '../ReviewsBox'
+// import WriteReview from '../WriteReview'
+import WriteReviewModal from '../WriteReviewModal';
 
 // import winesReducer, {getOneWine} from '../../store/wines'
 import styles from './WineModal.module.css'
 
 const WineModal = ({props}) => {
-    const [currentCard, setCurrentCard] = useState();
+    // const [currentCard, setCurrentCard] = useState();
+    // const [showModal, setShowModal] = useState(false);
 
     const dispatch = useDispatch()
     const id = props.wineId
@@ -23,12 +26,18 @@ const WineModal = ({props}) => {
     const wine = wines[id];
     if (!wine) return null;
 
+    // const handleClose = () => {
+    //     setShowModal(false);
+    // }
+
+    // console.log('Is the Review Modal showing?', showModal)
+
 //needed to avoid object error
     // const compProps = {
     //     Review: reviews
     // }
 
-    console.log(`Reviews from wineModal:`, reviews)
+    // console.log(`Reviews from wineModal:`, reviews)
     
     return (
         <div className={styles.wineModal}>
@@ -52,9 +61,7 @@ const WineModal = ({props}) => {
                 </div>
             </div>
                 <div className={styles.headerDiv}>
-                {/* <button>Hi</button> */}
                 <header className={styles.reviewHeader}>What others are saying:</header>
-                {/* <button>Hi</button> */}
                 </div>
             <div className={styles.reviews}>
                 <div className={styles.reviewBox}>
@@ -62,7 +69,14 @@ const WineModal = ({props}) => {
                 </div>
             </div>
             <footer className={styles.footer}>
-                <Link className={styles.footerP} to="/">Tell others how you feel! Click here to write your own review.</Link>
+                <WriteReviewModal props={wines}/>
+                {/* <button className={styles.footerP} onClick={()=> setShowModal(true)}>Tell others how you feel! Click here to write your own review.
+                </button>
+                {showModal && (
+                    <Modal onClose={() => handleClose()}>
+                        <WriteReview props={wine}/>
+                    </Modal>
+                )} */}
                 {/* <button className={styles.addReviewBtn}>Add a Review</button> */}
             </footer>
         </div>
