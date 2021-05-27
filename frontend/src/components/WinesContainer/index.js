@@ -5,7 +5,7 @@ import WineCard from '../WineCard'
 
 import {getWines} from '../../store/wines'
 import styles from './WinesContainer.module.css'
-import background from '../../assets/images/vineyard2.jpg'
+// import background from '../../assets/images/vineyard2.jpg'
 
 const WinesContainer = ({wine}) => {
     const dispatch = useDispatch()
