@@ -1,7 +1,7 @@
 
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react'
-import {useParams} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {getOneWine} from '../../store/wines'
 import ReviewsBox from '../ReviewsBox'
 
@@ -61,6 +61,10 @@ const WineModal = ({props}) => {
                 {reviews?.map((review) => <ReviewsBox key={review.id} props={{review}}/>)}
                 </div>
             </div>
+            <footer className={styles.footer}>
+                <Link className={styles.footerP} to="/">Tell others how you feel! Click here to write your own review.</Link>
+                {/* <button className={styles.addReviewBtn}>Add a Review</button> */}
+            </footer>
         </div>
     )
 

@@ -7,7 +7,7 @@
     transform: translate(-50%, -50%);
     width: 700px;
     max-width: 100%;
-    height: 600px;
+    height: 650px;
     max-height: 100%;
 
 }
@@ -23,6 +23,11 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: rgb(146, 42, 106);
     background-color: transparent;
+}
+
+ul {
+    font-family: cursive;
+    font-weight: 500;
 }
 
 .wineDiv {
@@ -44,7 +49,7 @@
 
 .reviews {
     margin: 10px;
-    height: 38%;
+    height: 32%;
     overflow-x: scroll;
 }
 
@@ -60,7 +65,7 @@
     margin: 5px;
     /* position: static; */
     font-size: 1.75em;
-    font-weight: 300;
+    font-weight: 400;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
@@ -72,24 +77,28 @@
     /* overflow-x: auto !important; */
     overflow: hidden;
     align-items: center;
+    font-family: monospace;
 }
 
 .footer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-content: flex-end;
+    align-content: flex-start;
     /* margin-bottom: 10px; */
 }
 
-.nextBtn {
-    border: 2px solid gold;
-    background: none;
-    cursor: pointer;
+.footerP {
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family:cursive;
 }
 
-.nextBtn:hover {
-    color:rgb(141, 12, 37);
+.addReviewBtn {
+    height: 70%;
 }
+
 
 
 
