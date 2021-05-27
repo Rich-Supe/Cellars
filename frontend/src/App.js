@@ -18,7 +18,7 @@ function App() {
 
   return (
       <>
-        <div className={styles.navbar}>
+        <div className={styles.webPage}>
         <Navigation isLoaded={isLoaded} />
         {isLoaded && (
             <Switch>
