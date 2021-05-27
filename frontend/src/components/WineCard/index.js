@@ -4,21 +4,25 @@ import styles from './WinesCard.module.css'
 // import { useHistory } from 'react-router-dom';
 import WineModal from '../WineModal'
 
-
 const WinesCard = ({wine}) => {
     const [showModal, setShowModal] = useState(false);
-    const handleClose = () => {
-        setShowModal(false);
+    const handleOpenClose = (e) => {
+        if (e.target.getAttribute('id') === 'modal-background') {
+            setShowModal(!showModal);
+        } else if (e.target.getAttribute('data') === 'anything') {
+            setShowModal(!showModal);
+        } 
+
     }
     return (
         //On clicking the card, should open wine modal
-        <div id={wine.id} className={styles.wineCard} onClick={()=> setShowModal(!showModal)}>
+        <div id={wine.id} className={styles.wineCard} onClick={(e)=> handleOpenClose(e)} data='anything'>
         {showModal && (
-            <Modal onClose={() => handleClose()}>
-                <WineModal props={{wineId:wine.id, handleClose, reviews:wine.reviews}}/>
+            <Modal onClose={(e) => handleOpenClose(e)}>
+                <WineModal props={{wineId:wine.id, handleClose: handleOpenClose, reviews:wine.reviews}}/>
             </Modal>
             )}
-            <img id={wine.id} src={wine.labelUrl} className={styles.wineImg}></img>
+            <img id={wine.id} src={wine.labelUrl} className={styles.wineImg} data="anything"></img>
             <div className={styles.name}>
                 <p>{wine.name}</p>
             </div>
