@@ -87,37 +87,28 @@ router.post(
     restoreUser,
     // requireAuth,
     asyncHandler(async(req, res)=> {
-        const {review} = req.body;
-        // const review = "ASDASDFASDFASDFASDFASDF"
-        const {rating} = req.body;
-        // const rating = 22
-        console.log(`asdfadsf`, req.user)
-        const wineId = parseInt(req.params.id, 10)
-        const userId = req.user.id
-        console.log(userId)
         // need to figure out how to get the user's id
-        await Review.create({ review, rating, wineId, userId })
-        return res.json({ message: 'success' });
+        const newReview= await Review.create(req.body)
+        return res.json(newReview);
     })
 )
 
 // Edit reviews
-// router.patch(
-//     '/:id(\\d+)',
-//     requireAuth,
-//     asyncHandler(async(req, res) => {
-//         const current
-//         const currentReview = findByPk()
-//         const {review} = req.body;
-//         const {rating} = req.body;
-//         const wineId = parseInt(req.params.id, 10)
-//         const userId = req.session.user.id
-//         console.log(userId)
-//         // need to figure out how to get the user's id
-//         await Review.update({ reviewId, review, rating, wineId, userId })
-//         return res.json({ message: 'success' });
-//     })
-// )
+router.patch(
+    '/:id(\\d+)',
+    requireAuth,
+    asyncHandler(async(req, res) => {
+        const {review} = req.body;
+        const {rating} = req.body;
+        const wineId = parseInt(req.params.id, 10)
+        const userId = req.session.user.id
+        console.log(userId)
+        // need to figure out how to get the user's id
+        await Review.update({ review, rating }, {where: {wineId}})
+        const currentWine = await Review.findByPk(wineId)
+        return res.json(currentWine);
+    })
+)
 
 
 // Delete reviews

@@ -18,9 +18,10 @@ const setOneWine = (wine) => ({
     wine
 })
 
-const setReview = (review) => ({
+const setReview = (review, wineId) => ({
     type: CREATE_REVIEW,
-    review
+    review,
+    wineId
 })
 
 
@@ -41,16 +42,17 @@ export const getOneWine = (id) => async(dispatch) => {
     dispatch(setOneWine(wineData.wine))
 }
 
-export const createReview = (review, id) => async(dispatch) => {
-    const res = await csrfFetch(`/api/wines/${id}`, {
+export const createReview = (data) => async(dispatch) => {
+    const res = await csrfFetch(`/api/wines/${data.wineId}`, {
         method: 'POST',
-        body: JSON.stringify(review)
+        body: JSON.stringify(data)
     });
     const reviewData = await res.json();
     console.log(reviewData)
-    reviewData.reviews = reviewData.reviews
-    dispatch(setReview(reviewData.review))
+    dispatch(setReview(reviewData, data.wineId))
 }
+
+//Edit Reviews
 
 
 //Define initial state
@@ -59,21 +61,25 @@ const initialState = {};
 // Create a reducer and add it to the store
 const winesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_WINES:
+        case SET_WINES:{
             const newState = { ...state };
             action.wines.forEach((wine) => {
                 newState[wine.id] = wine
             });
             return newState;
-        case SET_ONE_WINE:
-            // console.log(action.wine)
-            const newerState = { ...state };
-            newerState[action.wine.id] = action.wine
-            return newerState;
-         case CREATE_REVIEW:
-            const newererState = { ...state };
-            newererState[action.review.id] = action.review
-            return newererState
+        }
+        case SET_ONE_WINE:{
+            const newState = { ...state };
+            newState[action.wine.id] = action.wine
+            return newState;
+        }
+         case CREATE_REVIEW:{
+             const newState = { ...state };
+             newState[action.wineId] = { ...newState[action.wineId]};
+             newState[action.wineId].reviews = [...newState[action.wineId].reviews]
+             newState[action.wineId].reviews.push(action.review)
+             return newState
+        }
         default:
             return state;
     }

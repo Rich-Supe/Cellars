@@ -1,36 +1,40 @@
 import React, {useState, useEffect} from 'react';
-import {useHistory} from 'react-router-dom';
-import {useDispatch} from 'react-redux';
+// import {useHistory} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 import {createReview} from '../../store/wines'
 
 
 import styles from './WriteReview.module.css'
 
-const WriteReview = (wine) => {
-    const history = useHistory();
+const WriteReview = ({props}) => {
+
+    const {wine, setShowReview} = props;
+    // const history = useHistory();
     const dispatch = useDispatch();
     const [reviewInput, setReviewInput] = useState('');
-
-    useEffect(() => {
-        dispatch(createReview)
-    }, [dispatch])
+    const user = useSelector(state => state.session.user)
+    if (!user) return null
     
-
-    console.log('HELLO. Review MODAL IS WORKING')
-    
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        history.push("/wines")
+        await dispatch(createReview({review: reviewInput, wineId: wine.id, userId:user.id}))
+        setShowReview(false)
     }
 
     return (
         <>
-            <label>
-                Leave your review
-            </label>
-            <textarea
-             onChange={(e) => setReviewInput(e.target.value)}
-             ></textarea>
+            <div className={styles.headerDiv}>
+                        <header className={styles.reviewHeader}>Enter Your Review Here:</header>
+                    </div>
+            <form className={styles.reviewForm}>
+                <textarea
+                className={styles.reviewCard}
+                onChange={(e) => setReviewInput(e.target.value)}
+                ></textarea>
+                <footer className={styles.footer}>
+                <button className={styles.footerP} onClick={handleSubmit}>Submit</button>
+                </footer>
+            </form>
         </>
     )
 }
