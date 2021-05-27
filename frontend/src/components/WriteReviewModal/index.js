@@ -6,23 +6,22 @@ import styles from './WriteReviewModal.module.css'
 
 
 const WriteReviewModal = (wine) => {
-    const [showModal, setShowModal] = useState(false);
+    const [showReviewModal, setShowReviewModal] = useState(false);
 
     const handleClose = () => {
-        setShowModal(false);
+        setShowReviewModal(false);
     }
 
-    console.log(`IS THE MODAL OPEN?`, showModal)
+    console.log(`IS THE MODAL OPEN?`, showReviewModal)
 
     return (
         <>
-            <button className={styles.footerP} onClick={(e) => setShowModal(true)}>Tell others how you feel! Click here to write your own review.
-                </button>
-                {showModal && (
-                    <Modal onClose={() => handleClose()}>
-                        <WriteReview props={wine}/>
-                    </Modal>
-                )}
+            <button className={styles.footerP} onClick={() => setShowReviewModal(true), console.log('This was pressed')}>Tell others how you feel! Click here to write your own review.</button>
+            {showReviewModal && (
+                <Modal onClose={() => handleClose()}>
+                    <WriteReview props={wine}/>
+                </Modal>
+            )}
         </>
     )
 }
