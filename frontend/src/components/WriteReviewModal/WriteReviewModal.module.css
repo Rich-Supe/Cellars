@@ -1,0 +1,14 @@
+.footerP {
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family:cursive;
+    /* text-decoration: aqua; */
+    border: 2px solid maroon;
+    background: none;
+}
+
+.footerP:hover {
+    /* color:maroon; */
+    border: 2px solid gold;
+}

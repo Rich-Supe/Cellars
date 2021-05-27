@@ -7,17 +7,19 @@
     align-items: center;
     margin: 20px;
     overflow: hidden;
+    /* border: 1px solid gold */
 }
 
 .wineCard:hover {
     cursor: pointer;
-    border-bottom: 1px solid gold;
+    border-bottom: 1px solid maroon;
 }
 
 .wineImg {
     height: 75%;
     width: 55%;
     flex-grow: 4;
+    border-radius: 10%;
 }
 
 .name {

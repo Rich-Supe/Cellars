@@ -14,30 +14,28 @@ const Splash = () => {
                 <footer className={styles.footer}>
                     <ul className={styles.footerList}>
                         <li className={styles.liLink}>
-                            {/* <button onClick={reRoute} className={styles.fakeBtn}> */}
-                                    <a className={styles.a} href="https://linkedin.com/in/richard-supe">
-                                        <i className="fab fa-linkedin"/>
-                                    </a>
-                            {/* </button> */}
+                            {/* <a className={styles.a} href="https://linkedin.com/in/richard-supe"> */}
+                                <i className="fab fa-linkedin"/>
+                            {/* </a> */}
                         </li>
                         <li className={styles.liGit}>
-                            <a href="https://github.com/Rich-Supe">
+                            {/* <a href="https://github.com/Rich-Supe"> */}
                             <i className="fab fa-github-square" ></i>
-                            </a>
+                            {/* </a> */}
                         </li>
                         <li className={styles.liTwit}>
-                            <a href="https://twitter.com/supe_richard">
+                            {/* <a href="https://twitter.com/supe_richard"> */}
                             <i className="fab fa-twitter-square"></i>
-                            </a>
+                            {/* </a> */}
                         </li>
                         {/* <li className={styles.liPort}>
                             <i className="fas fa-grin-beam-sweat"></i>
                             Portfolio
                         </li> */}
                         <li className={styles.liInsta}>
-                            <a href="https://www.instagram.com/richardsupe/">
+                            {/* <a href="https://www.instagram.com/richardsupe/"> */}
                             <i className="fab fa-instagram"></i>
-                            </a>
+                            {/* </a> */}
                         </li>
                     </ul>
                 </footer>
