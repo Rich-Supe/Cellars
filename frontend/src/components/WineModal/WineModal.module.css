@@ -10,7 +10,6 @@
     max-width: 100%;
     height: 650px;
     max-height: 100%;
-
 }
 
 .header {
@@ -95,7 +94,7 @@ ul {
     /* margin-bottom: 10px; */
 }
 
-/* .footerP {
+.footerP {
     margin-right: 10px;
     font-size: 15px;
     font-weight: 500;
@@ -106,7 +105,7 @@ ul {
 
 .footerP:hover {
     border: 2px solid gold;
-} */
+}
 
 /* .addReviewBtn {
     height: 70%;

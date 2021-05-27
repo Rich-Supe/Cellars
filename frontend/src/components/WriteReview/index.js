@@ -15,22 +15,27 @@ const WriteReview = (wine) => {
         dispatch(createReview)
     }, [dispatch])
     
-
-    console.log('HELLO. Review MODAL IS WORKING')
     
     const handleSubmit = (e) => {
         e.preventDefault();
         history.push("/wines")
+        alert('Submitted!')
     }
 
     return (
         <>
-            <label>
-                Leave your review
-            </label>
-            <textarea
-             onChange={(e) => setReviewInput(e.target.value)}
-             ></textarea>
+            <div className={styles.headerDiv}>
+                        <header className={styles.reviewHeader}>Your Review Here:</header>
+                    </div>
+            <form>
+                <textarea
+                className={styles.reviewCard}
+                onChange={(e) => setReviewInput(e.target.value)}
+                ></textarea>
+                <footer className={styles.footer}>
+                <button className={styles.footerP} onClick={handleSubmit}>Submit</button>
+                </footer>
+            </form>
         </>
     )
 }
