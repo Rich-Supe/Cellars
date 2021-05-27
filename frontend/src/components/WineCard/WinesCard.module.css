@@ -1,16 +1,17 @@
 .wineCard {
-    width: 98%;
-    height: 80%;
+    width: 18rem;
+    height: 22rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: column;
-    padding: 10px;
-    /* background-color: khaki; */
+    align-items: center;
+    margin: 20px;
+    overflow: hidden;
 }
 
 .wineCard:hover {
     cursor: pointer;
+    border-bottom: 1px solid gold;
 }
 
 .wineImg {
@@ -20,8 +21,9 @@
 }
 
 .name {
-    color:coral;
+    color:black;
     width: 55%;
-    font-size: medium;
+    font-size: 18px;
     padding-top: 5px;
+    font-family:cursive;
 }

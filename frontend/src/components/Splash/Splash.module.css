@@ -1,12 +1,17 @@
 .background {
-    height: 600px;
-    width: 1100;
+    height: 68%;
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* max-width: 900px; */
 
 }
 
 .splashImg {
-    height: 98%;
-    width: 98%
+    height: 70%;
+    width: 98%;
+    max-width: 1000px;
 }
 
 .footerList {
@@ -25,6 +30,10 @@
     z-index: 2;
 }   
 
+.a {
+    text-decoration: none;
+}
+
 .footerDiv {
     position: relative;
 }
@@ -33,12 +42,27 @@
     color: rgb(52, 172, 252);
 }
 
+.liLink:visited {
+    text-decoration: none;
+    color: rgb(52, 172, 252);
+}
+
 .liGit {
     color: black;
 }
 
+.liGit:visited {
+    text-decoration: none;
+    color: black;
+}
+
 .liTwit {
-    color: rgb(41, 105, 179);
+    color: rgb(66, 173, 235);
+}
+
+.liTwit:visited {
+    text-decoration: none;
+    color: rgb(98, 187, 238);
 }
 
 /* .liPort {
@@ -46,5 +70,11 @@
 } */
 
 .liInsta {
+    text-decoration: none;
+    color:rgb(240, 27, 240)
+}
+
+.liInsta:visited {
+    text-decoration: none;
     color:rgb(240, 27, 240)
 }

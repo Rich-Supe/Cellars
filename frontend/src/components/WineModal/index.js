@@ -1,7 +1,7 @@
 
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react'
-import {useParams} from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 import {getOneWine} from '../../store/wines'
 import ReviewsBox from '../ReviewsBox'
 
@@ -9,8 +9,9 @@ import ReviewsBox from '../ReviewsBox'
 import styles from './WineModal.module.css'
 
 const WineModal = ({props}) => {
+    const [currentCard, setCurrentCard] = useState();
+
     const dispatch = useDispatch()
-    // const { id } = useParams();
     const id = props.wineId
     const reviews = props.reviews
     const wines = useSelector((state) => state.wines)
@@ -22,8 +23,11 @@ const WineModal = ({props}) => {
     const wine = wines[id];
     if (!wine) return null;
 
-    console.log(`wines:`, wines)
-    console.log("wine:", wine)
+//needed to avoid object error
+    // const compProps = {
+    //     Review: reviews
+    // }
+
     console.log(`Reviews from wineModal:`, reviews)
     
     return (
@@ -47,16 +51,20 @@ const WineModal = ({props}) => {
                     </ul>
                 </div>
             </div>
-            <ReviewsBox props={{wine, reviews}}/>
-            {/* <div className={styles.reviews}>
+                <div className={styles.headerDiv}>
+                {/* <button>Hi</button> */}
                 <header className={styles.reviewHeader}>Reviews</header>
+                {/* <button>Hi</button> */}
+                </div>
+            <div className={styles.reviews}>
                 <div className={styles.reviewBox}>
-                {reviews?.map((review) => <p>{review.review}</p>)}
+                {reviews?.map((review) => <ReviewsBox key={review.id} props={{review}}/>)}
                 </div>
-                <div className={styles.footer}>
-                    <button className={styles.submitBtn}>Leave a review</button>
-                </div>
-            </div> */}
+            </div>
+            <footer className={styles.footer}>
+                <Link className={styles.footerP} to="/">Tell others how you feel! Click here to write your own review.</Link>
+                {/* <button className={styles.addReviewBtn}>Add a Review</button> */}
+            </footer>
         </div>
     )
 

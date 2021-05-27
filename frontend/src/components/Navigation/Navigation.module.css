@@ -1,6 +1,13 @@
+.navContainer {
+    width: 100%;
+    display:inline-flex; 
+    justify-content: center;
+    align-content: center; 
+}
 
 .navlinks {
     width: 100%;
+    max-width: 1000px;
     display: flex;
     justify-content: space-between;
     /* align-items: flex-start;  */

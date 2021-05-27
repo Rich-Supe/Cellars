@@ -1,25 +1,14 @@
-
+import {useEffect} from 'react'
 import styles from './ReviewsBox.module.css'
 
-const ReviewsBox = (props) => {
-    const reviews = props.reviews
-    const wine = props.wine
-    console.log(`Reviews prop on Reviews Component`, reviews)
+const ReviewsBox = ({props}) => {
 
-    const createReview = (e) => {
-        e.preventDefault();
-    }
+    const review = props.review.review
 
     return (
-        <div className={styles.reviews}>
-            <header className={styles.reviewHeader}>Reviews</header>
-            <div className={styles.reviewBox}>
-                {reviews?.map((review) => <p>{review.review}</p>)}
-            </div>
-            <div className={styles.footer}>
-                <button className={styles.submitBtn} onClick={createReview}>Leave a review</button>
-            </div>
-        </div>
+        <>
+        <div className={styles.reviewCard}>{review}</div>
+        </>
     )
 }
 
