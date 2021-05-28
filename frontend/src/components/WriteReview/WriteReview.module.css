@@ -12,6 +12,7 @@
 
 .reviewForm {
     height: 9rem;
+    padding-left: 7px;
 }
 
 .reviewCard {
@@ -25,9 +26,25 @@
 }
 
 .footer {
+    height: 5rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-content: flex-start;
+    align-content: center;
     /* margin-bottom: 10px; */
+
+}
+
+.footerP {
+    height: 45%;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: cursive;
+    border: 2px solid maroon;
+    background: none;
+}
+
+.footerP:hover {
+    border: 2px solid gold;
+    cursor: pointer;
 }
