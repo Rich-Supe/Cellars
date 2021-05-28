@@ -13,13 +13,13 @@
   
   
 TO DO:
-  - Individual wine routes
+  - Review edits
   - Searchbar
   - Demo Btn
-  - Splash Page
+  - Profile features
   - AWS3
   - Styling
-  - Features
+  - Wine CRUD
   - Add more seeders
   
 # Technologies Used
