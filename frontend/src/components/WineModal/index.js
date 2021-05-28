@@ -20,15 +20,6 @@ const WineModal = ({props}) => {
     const reviews = props.reviews
     const wines = useSelector((state) => state.wines)
 
-    console.log(`current State`, showReview)
-
-    const formSubmit = (e) => {
-        e.preventDefault();
-        console.log(`Before`, showReview);
-        setShowReview(true);
-        console.log(`After`, showReview);
-    }
-    
     useEffect(() => {
         dispatch(getOneWine(id));
     }, [dispatch]);
@@ -93,9 +84,7 @@ const WineModal = ({props}) => {
             <button className={styles.footerP}
                 type="button" 
                 onClick={()=> 
-                {setShowReview(!showReview) 
-                console.log('You have clicked the create review button')
-                console.log(`current State`, showReview)}}
+                {setShowReview(!showReview)}}
                 >Tell others how you feel! Click here to write your own review.</button>
             {/* </form> */}
         </footer>
