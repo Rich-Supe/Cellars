@@ -30,51 +30,60 @@
     z-index: 2;
 }   
 
-.a {
-    text-decoration: none;
-}
 
 .footerDiv {
     position: relative;
 }
 
-.liLink {
-    color: rgb(52, 172, 252) !important;
+a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
-.liLink:visited {
-    text-decoration: none !important;
+/* p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+} */
+
+.liLink {
+    color: rgb(52, 172, 252) !important;
+    display: flex;
+    flex-direction: row;
+}
+
+.fab.fa-linkedin {
+    font-size: 2.5rem;
+}
+
+.aLink:visited {
+    text-decoration: none;
     color: rgb(52, 172, 252) !important;
 }
 
 .liGit {
     color: black;
+    display: flex;
+    flex-direction: row;
 }
 
-.liGit:visited {
+.aGit:visited {
     text-decoration: none;
     color: black;
 }
 
-.liTwit {
+.aTwit {
     color: rgb(66, 173, 235);
+    display: flex;
+    flex-direction: row;
 }
 
-.liTwit:visited {
+.aTwit:visited {
     text-decoration: none;
     color: rgb(98, 187, 238);
 }
 
-/* .liPort {
-    color: black;
-} */
-
-.liInsta {
-    text-decoration: none;
-    color:rgb(240, 27, 240)
-}
-
-.liInsta:visited {
-    text-decoration: none;
-    color:rgb(240, 27, 240)
-}

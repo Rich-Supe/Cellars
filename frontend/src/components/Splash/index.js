@@ -14,29 +14,27 @@ const Splash = () => {
                 <footer className={styles.footer}>
                     <ul className={styles.footerList}>
                         <li className={styles.liLink}>
-                            {/* <a className={styles.a} href="https://linkedin.com/in/richard-supe"> */}
+                            <a className={styles.aLink} href="https://linkedin.com/in/richard-supe">
                                 <i className="fab fa-linkedin"/>
-                            {/* </a> */}
+                                {/* <p>Linked-in</p> */}
+                            </a>
                         </li>
                         <li className={styles.liGit}>
-                            {/* <a href="https://github.com/Rich-Supe"> */}
-                            <i className="fab fa-github-square" ></i>
-                            {/* </a> */}
+                            <a className={styles.aGit} href="https://github.com/Rich-Supe">
+                            <i className="fab fa-github-square"></i>
+                            {/* Github */}
+                            </a>
                         </li>
                         <li className={styles.liTwit}>
-                            {/* <a href="https://twitter.com/supe_richard"> */}
+                            <a className={styles.aTwit} href="https://twitter.com/supe_richard">
                             <i className="fab fa-twitter-square"></i>
-                            {/* </a> */}
+                            {/* Twitter */}
+                            </a>
                         </li>
                         {/* <li className={styles.liPort}>
                             <i className="fas fa-grin-beam-sweat"></i>
                             Portfolio
                         </li> */}
-                        <li className={styles.liInsta}>
-                            {/* <a href="https://www.instagram.com/richardsupe/"> */}
-                            <i className="fab fa-instagram"></i>
-                            {/* </a> */}
-                        </li>
                     </ul>
                 </footer>
         </div>
