@@ -13,7 +13,6 @@
   
   
 TO DO:
-  - Anchor tags on Splash
   - Review edits
   - Searchbar
   - Demo Btn
