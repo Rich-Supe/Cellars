@@ -5,7 +5,7 @@
 
 #### Cellars is made with a PERN stack and follows RESTful Api conventions with many of the features including CRUD functionality.
   
-  ## Cellars is currently down on Heroku :( currently working on a fix.
+  ## Cellars is currently down on Heroku :( please allow time while working on a fix.
   
 ## For a deeper dive, check the following:
   * MVP - https://github.com/Rich-Supe/Cellars/wiki/MVP-List
