@@ -1,4 +1,4 @@
-# Welcome to Cellars, An Untapped clone that is home to wine sommeliers, connoisseurs, and enthusiasts alike!
+# Welcome to Cellars, Home to wine sommeliers, connoisseurs, and enthusiasts alike!
 
 <Insert Picture Here>
 
