@@ -67,7 +67,7 @@ function SignupForm() {
         </div>
         <div className={styles.textBox2}>
             <input
-            // type="date"
+            type="date"
             placeholder='birthday'
             onChange={(e) => setBirthday(e.target.value)}
             required
