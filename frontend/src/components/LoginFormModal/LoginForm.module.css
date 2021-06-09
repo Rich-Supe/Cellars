@@ -46,10 +46,30 @@
     flex-direction: column;
     
 }
+/* For Demo */
+.loginBox3 {
+    width: 280px;
+    height: 520px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.loginBox h1, .loginBox2 h1{
+/* .loginBox3 h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.loginBox h1, .loginBox2 h1 {
     float: left;
-    font-size: 40px;
+    font-size: 35px;
     border-bottom: 6px solid gold;
     margin-bottom: 35px;
     padding-bottom: 5px;
