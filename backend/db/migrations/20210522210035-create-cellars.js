@@ -8,10 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      wineId: {
-        type: Sequelize.INTEGER,
-        references: { model: 'Wines'}
-      },
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,

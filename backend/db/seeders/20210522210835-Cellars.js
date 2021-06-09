@@ -13,10 +13,7 @@ module.exports = {
       }], {});
     */
       return queryInterface.bulkInsert('Cellars', [
-          {wineId: 1, userId: 1},
-          {wineId: 2, userId: 1},
-          {wineId: 3, userId: 1},
-          {wineId: 4, userId: 1},
+          {userId: 1},
       ], {});
   },
 
