@@ -6,6 +6,7 @@ import ProfileButton from './ProfileButton';
 import NavButtons from './NavButtons'
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import DemoLoginModal from '../DemoModal'
 import styles from './Navigation.module.css';
 
 function Navigation({ isLoaded }){
@@ -24,6 +25,7 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <div className={styles.sessionLinks}>
+        <DemoLoginModal />
         <LoginFormModal />
         <SignupFormModal />
       </div>
