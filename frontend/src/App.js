@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import styles from './components/Navigation/Navigation.module.css';
 import WinesContainer from './components/WinesContainer'
 import WineModal from './components/WineModal'
+import Profile from './components/Profile'
 import Splash from './components/Splash'
 
 function App() {
@@ -23,14 +24,17 @@ function App() {
         {isLoaded && (
             <Switch>
             <Route path='/' exact>
-            <Splash />
+                <Splash />
             </Route>
             <Route path="/wines">
-            <WinesContainer />
+                <WinesContainer />
             </Route>
-            <Route path="/wine/:id">
+            <Route path='/users/:id'>
+                <Profile />
+            </Route>
+            {/* <Route path="/wine/:id">
             <WineModal />
-            </Route>
+            </Route> */}
             </Switch>
         )}
         </div>

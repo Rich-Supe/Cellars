@@ -52,8 +52,9 @@ router.get(
     requireAuth,
     asyncHandler(async (req, res) => {
         const id = parseInt(req.params.id, 10);
-        const userCellar = await Cellar.findAll({where:{userId: id, include: Wine}})
-        res.render({userCellar})
+        const userCellar = await Cellar.findAll({where:{userId: id}, include: Wine})
+        // res.json({userCellar})
+        res.json({userCellar})
     })
 );
 

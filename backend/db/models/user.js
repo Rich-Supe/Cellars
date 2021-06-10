@@ -68,13 +68,8 @@ module.exports = (sequelize, DataTypes) => {
       },
     },});
   User.associate = function(models) {
-    const columnMapping = {
-        through: 'Cellars',
-        foreignKey: 'userId',
-        otherKey: "wineId"
-    }
 
-    User.belongsToMany(models.Wine, columnMapping);
+    User.hasOne(models.Cellar, { foreignKey: 'userId'});
     User.hasMany(models.Review, { foreignKey: "userId"})
   };
 

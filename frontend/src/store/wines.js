@@ -42,6 +42,8 @@ export const getOneWine = (id) => async(dispatch) => {
     dispatch(setOneWine(wineData.wine))
 }
 
+//Reviews on Wines
+
 export const createReview = (data) => async(dispatch) => {
     const res = await csrfFetch(`/api/wines/${data.wineId}`, {
         method: 'POST',
