@@ -12,18 +12,19 @@ const Cellar = ({id}) => {
         dispatch(getCellar(id));
     }, [dispatch])
     
-    const wines = useSelector((state) => Object.values(state))
+    const wines = useSelector((state) => Object.values(state.users))
     console.log('Should be crate of wines:::', wines)
+
     return (
         <div className={styles.cellar}>
             <p>CELLAR</p>
-            {/* <div className={styles.wineCardDiv}>
+            <div className={styles.wineCardDiv}>
                 {wines?.map(wine => {
                     return <div id={wine.id} key={wine.id} className={styles.WineCard}>
                         <WineCard wine={wine} />
                     </div>
                 })}
-            </div> */}
+            </div>
         </div>
     )
 }
