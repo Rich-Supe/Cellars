@@ -26,8 +26,8 @@ const setCellar = (crate) => ({
 export const getCellar = (id) => async(dispatch) => {
     const res = await fetch(`/api/users/${id}`);
     const cratesData = await res.json();
-    console.log("CRATESDATA-------", cratesData)
-    console.log("Newer______", cratesData.userCellar[0].Wines)
+    // console.log("CRATESDATA-------", cratesData)
+    // console.log("Newer______", cratesData.userCellar[0].Wines)
     // set to wines in crate
     cratesData.wines = cratesData.userCellar[0].Wines
     dispatch(setCellar(cratesData.wines))
