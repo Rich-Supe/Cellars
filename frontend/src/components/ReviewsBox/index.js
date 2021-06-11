@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+
 import styles from './ReviewsBox.module.css'
 
 const ReviewsBox = ({props}) => {

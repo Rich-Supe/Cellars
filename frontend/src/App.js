@@ -6,7 +6,6 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import styles from './components/Navigation/Navigation.module.css';
 import WinesContainer from './components/WinesContainer'
-import WineModal from './components/WineModal'
 import Profile from './components/Profile'
 import Splash from './components/Splash'
 
@@ -32,9 +31,6 @@ function App() {
             <Route path='/users/:id'>
                 <Profile />
             </Route>
-            {/* <Route path="/wine/:id">
-            <WineModal />
-            </Route> */}
             </Switch>
         )}
         </div>
