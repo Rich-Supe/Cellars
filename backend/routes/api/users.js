@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User, Wine, Cellar } = require('../../db/models');
+const { User, Wine, Cellar, Review } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
@@ -53,7 +53,12 @@ router.get(
     asyncHandler(async (req, res) => {
         const id = parseInt(req.params.id, 10);
         const userCellar = await Cellar.findAll({where:{userId: id}, include: Wine})
-        // res.json({userCellar})
+        // const wineIds = userCellar[0].dataValues.Wines.forEach(wine => {
+        //     return wine.id
+        // })
+        // const reviews = await Review.findAll({where:{wineIds}})
+        // console.log('333333333333333333333333333', userCellar)
+        // console.log('RRREEEEEVIEWWWSSSS', reviews)
         res.json({userCellar})
     })
 );
@@ -81,9 +86,9 @@ router.delete(
         //if getting wine id by adding the id to the button
         const {wineButtonId} = req.body;
         const usersId = parseInt(req.params.id, 10)
-        await Cellar.destroy({
+        await Crate.destroy({
             where: {
-                userId: usersId,
+                cellarId: usersId,
                 //if getting wine id by adding the id to the button
                 wineId: wineButtonId
         }

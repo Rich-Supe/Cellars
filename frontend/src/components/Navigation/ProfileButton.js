@@ -32,10 +32,6 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
     };
 
-    const profilePage = (e) => {
-        e.preventDefault();
-    }
-
     return (
         <>
             <button className={styles.profileBtn} onClick={openMenu}>

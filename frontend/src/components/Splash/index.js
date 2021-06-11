@@ -8,7 +8,7 @@ const Splash = () => {
     return (
         <>
             <div className={styles.background}>
-                <img src={splash} alt='Cellar Image' className={styles.splashImg}></img>
+                <img src={splash} alt='Cellar' className={styles.splashImg}></img>
             </div>
             <div className={styles.footerDiv}>
                 <footer className={styles.footer}>

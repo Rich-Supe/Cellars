@@ -22,7 +22,7 @@ const WinesCard = ({wine}) => {
                 <WineModal props={{wineId:wine.id, handleClose: handleOpenClose, reviews:wine.reviews}}/>
             </Modal>
             )}
-            <img id={wine.id} src={wine.labelUrl} className={styles.wineImg} data="anything"></img>
+            <img id={wine.id} src={wine.labelUrl} className={styles.wineImg} data="anything" alt="wine label"></img>
             <div className={styles.name}>
                 <p>{wine.name}</p>
             </div>

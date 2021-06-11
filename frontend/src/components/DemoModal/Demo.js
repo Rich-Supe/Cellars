@@ -10,13 +10,7 @@ const password = "password"
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    return dispatch(sessionActions.login({ credential, password})).catch(
-        //May not need this function moving forward
-        async(res) => {
-            const data = await res.json();
-            // if (data && data.errors) setErrors(data.errors)
-        }
-    );
+    return dispatch(sessionActions.login({ credential, password}))
 };
 
     return (

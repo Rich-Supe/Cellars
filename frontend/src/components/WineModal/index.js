@@ -34,7 +34,7 @@ const WineModal = ({props}) => {
         </header>
         <div className={styles.wineDiv}>
             <div className={styles.wineImgDiv}>
-                <img id={wine.id} src={wine.labelUrl} className={styles.wineImg}></img>
+                <img id={wine.id} src={wine.labelUrl} className={styles.wineImg} alt="wine label"></img>
             </div>
             <div className={styles.wineInfo}>
                 <ul>
@@ -59,7 +59,7 @@ const WineModal = ({props}) => {
             </header>
             <div className={styles.wineDiv}>
                 <div className={styles.wineImgDiv}>
-                    <img id={wine.id} src={wine.labelUrl} className={styles.wineImg}></img>
+                    <img id={wine.id} src={wine.labelUrl} className={styles.wineImg} alt="wine label"></img>
                 </div>
                 <div className={styles.wineInfo}>
                     <ul>
