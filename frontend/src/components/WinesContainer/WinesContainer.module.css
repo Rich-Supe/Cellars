@@ -16,7 +16,7 @@
     padding: 0px;
 }
 
-.dropdowns {
+.dropdown {
     display: flex;
     width: 80%;
     justify-content: space-around;
