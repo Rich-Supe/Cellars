@@ -10,6 +10,14 @@ import WriteReview from '../WriteReview';
 // import winesReducer, {getOneWine} from '../../store/wines'
 import styles from './WineModal.module.css'
 
+//Carousel imports
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, {Navigation, Pagination} from 'swiper';
+import 'swiper/swiper-bundle.css'
+
+SwiperCore.use([Navigation, Pagination])
+
 const WineModal = ({props}) => {
     // const [currentCard, setCurrentCard] = useState();
     // const [showModal, setShowModal] = useState(false);
@@ -19,6 +27,7 @@ const WineModal = ({props}) => {
     const id = props.wineId
     const reviews = props.reviews
     const wines = useSelector((state) => state.wines)
+    console.log(`REVIEWS..????????`, reviews)
 
     useEffect(() => {
         dispatch(getOneWine(id));
@@ -26,6 +35,20 @@ const WineModal = ({props}) => {
     
     const wine = wines[id];
     if (!wine) return null;
+
+    //Reviews Carousel:
+    const slides = [];
+    let i = 0
+    if(reviews){
+        reviews.forEach((review) => {
+            slides.push(
+                <SwiperSlide key={`slide-${i}`}>
+                    <ReviewsBox key={review.id} props={{review}}/>
+                </SwiperSlide>
+            )
+            i++
+        })
+    }
 
         if (showReview) {return (
         <div className={styles.wineModal}>
@@ -76,7 +99,20 @@ const WineModal = ({props}) => {
                 <header className={styles.reviewHeader}>What others are saying:</header>
                     <div className={styles.reviews}>
                         <div className={styles.reviewBox}>
-                        {reviews?.map((review) => <ReviewsBox key={review.id} props={{review}}/>)}
+                        {/* {reviews?.map((review) => <ReviewsBox key={review.id} props={{review}}/>)} */}
+                        <Swiper id="main" 
+                            tag="section" 
+                            wrapperTag="ul" 
+                            navigation 
+                            pagination 
+                            spaceBetween={0} 
+                            slidesPerView={1}
+                            onInit={(swiper) => console.log('Swiper initialized', swiper)}
+                            onSlideChange={(swiper) => {
+                                console.log('Swiper slide: ', swiper)
+                            }}
+                            onReachEnd={() => console.log("Swiper end")}
+                        >{slides}</Swiper>
                         </div>
                     </div>
         <footer className={styles.footer}>

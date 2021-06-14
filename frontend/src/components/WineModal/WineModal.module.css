@@ -78,12 +78,11 @@ ul {
 
 .reviewBox {
     height: 98%;
-    width: 1000%;
+    /* width: 1000%;
     display: flex;
     flex-direction: row;
-    /* overflow-x: auto !important; */
     overflow: hidden;
-    align-items: center;
+    align-items: center; */
     font-family:cursive;
 }
 
@@ -108,18 +107,12 @@ ul {
     border: 2px solid gold;
 }
 
-/* .addReviewBtn {
-    height: 70%;
-} */
+/* Section is the slide on the carousel */
+section {
+    height: 98%;
+}
 
 
 
-
-
-
-
-/* .wineCard {
-
-} */
 
 
