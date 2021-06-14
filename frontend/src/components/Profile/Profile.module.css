@@ -1,6 +1,9 @@
 .profile {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .cellarHeader {
@@ -12,11 +15,13 @@
     margin-top: 1em;
 }
 
-.bkg {
-    /* background-color: bisque;
-    background-image: url(../../assets/images/vineyard2.jpg); */
+
+
+/* .bkg {
+    background-color: bisque;
+    background-image: url(../../assets/images/vineyard2.jpg);
     height: 100%;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
-}
+} */

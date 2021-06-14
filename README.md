@@ -29,7 +29,7 @@ TO DO:
 | ---      | ---       |
 | Javascript ES6 | JavascriptES6  |
 | PostgreSQL     | React |
-| Node.Js |   Redux    |
+| Node.Js |   Redux(Flux)    |
 | Express | HTML/CSS 3 |
 | Sequelize | SwiperJs |
 | AWS S3 |    |

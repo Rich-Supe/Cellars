@@ -34,14 +34,12 @@ function ProfileButton({ user }) {
     };
 
     return (
-        <>
+        <div className={styles.profile}>
             <button className={styles.profileBtn} onClick={openMenu}>
                 {user.username}
             </button>
             {showMenu && (
-            <ul className="profile-dropdown">
-                {/* <li>{user.username}</li>
-                <li>{user.email}</li> */}
+            <ul className={styles.profile__dropdown}>
                 <li>
                     <button className={styles.dropdownBtn} onClick={()=> history.push(`/users/${id}`)}>Your Profile</button>
                 </li>
@@ -50,7 +48,7 @@ function ProfileButton({ user }) {
                 </li>
             </ul>
             )}
-        </>
+        </div>
     );
 }
 
