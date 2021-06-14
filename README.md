@@ -32,11 +32,12 @@ TO DO:
 | Node.Js |   Redux(Flux)    |
 | Express | HTML/CSS 3 |
 | Sequelize | SwiperJs |
-| AWS S3 |    |
+| AWS S3 |  Heroku(deployment)  |
 
 ## React:
 * Modals
 * CSS Modules
+* SwiperJs
 
 
 ## Redux:
