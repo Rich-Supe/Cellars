@@ -23,7 +23,7 @@ TO DO:
   - Wine CRUD
   - Add more seeders
   
-# Technologies Used
+## Technologies Used
 
 | Back-end    | Front-end |
 | ---      | ---       |
@@ -34,7 +34,7 @@ TO DO:
 | Sequelize | SwiperJs |
 | AWS S3 |  Heroku(deployment)  |
 
-## React:
+<!-- ## React:
 * Modals
 * CSS Modules
 * SwiperJs
@@ -42,12 +42,28 @@ TO DO:
 
 ## Redux:
 * Logger
-* Thunk
+* Thunk -->
   
- # Functionalities and Code snippets:
- Organization:
-    CSS: I use react modules that follow a BEM convention to keep code readable and re-usable
+  
+## Authentication measures:
+1. bcryptjs
+2. cors
+3. csurf
+4. helmet
+5. cookies (XML etc.)
+6. hashed passwords
+7. Model scoping
+8. Proxy
+ 
+## Flux architecture:
+Using a Flux architecture in combination with React/Redux allows for unidirectional data-flow. In cellars, I use this flow with Redux to efficiently store the state of my app and make it available throughout the rest of the app. I use a reducer to change the state(without mutating the original state), and React as my view layer.
+<!-- ![image](https://user-images.githubusercontent.com/70147547/121962653-07a3c200-cd37-11eb-92f7-8bf73de2c88b.png) -->
+ ![image](https://user-images.githubusercontent.com/70147547/121963082-a29c9c00-cd37-11eb-8bc5-74b3c0111432.png)
 
+
+ ## Functionalities and Code snippets:
+ ## Organization:
+    ### CSS: I use react modules that follow a BEM convention to keep code readable and re-usable. Ex:
 ```
 import styles from './WinesContainer.module.css'
     <div className={styles.searchBar}>
@@ -57,14 +73,4 @@ import styles from './WinesContainer.module.css'
                     <li className={styles.dropdown__options_li}>RED</li>
                     <li className={styles.dropdown__options_li}>White</li>
 ```
-
-
-# Authentication measures:
-1. bcryptjs
-2. cors
-3. csurf
-4. helmet
-5. cookies (XML etc.)
-6. hashed passwords
-7. Model scoping
-8. Proxy
+<!--   ### Components  -->
