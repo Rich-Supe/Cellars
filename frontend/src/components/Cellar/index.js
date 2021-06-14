@@ -33,22 +33,21 @@ const Cellar = ({id}) => {
     })
     
     return (
-        <div className={styles.cellar}>
-            <header className={styles.cellarHeader}>Your Cellar</header>
-            <Swiper id="main" 
-                tag="section" 
-                wrapperTag="ul" 
-                navigation 
-                pagination 
-                spaceBetween={0} 
-                slidesPerView={3}
-                onInit={(swiper) => console.log('Swiper initialized', swiper)}
-                onSlideChange={(swiper) => {
-                    console.log('Swiper slide: ', swiper)
-                }}
-                onReachEnd={() => console.log("Swiper end")}
-            >{slides}</Swiper>
-        </div>
+            <div className={styles.cellar}>
+                <Swiper id="main" 
+                    tag="section" 
+                    wrapperTag="ul" 
+                    navigation 
+                    pagination 
+                    spaceBetween={0} 
+                    slidesPerView={3}
+                    onInit={(swiper) => console.log('Swiper initialized', swiper)}
+                    onSlideChange={(swiper) => {
+                        console.log('Swiper slide: ', swiper)
+                    }}
+                    onReachEnd={() => console.log("Swiper end")}
+                >{slides}</Swiper>
+            </div>
     )
 }
 

@@ -1,7 +1,57 @@
-.searchBar {
-    margin-top: 2em;
+.searchHeader {
+    font-size: 2em;
+    height: 3em;
     display: flex;
     justify-content: center;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.searchBar {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+
+.dropdowns {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.dropdown__header {
+    position: relative;
+}
+
+.dropdown__options {
+    display: none;
+    /* flex-direction: column; */
+    position: absolute;
+    background-color: rgb(245, 252, 252, .9);
+    border: 1px solid grey;
+    padding: 8px;
+    border-radius: 6px;
+}   
+
+.dropdown__header:hover ul {
+    display: block;
+}   
+
+.dropdown__options_li {
+    list-style-type: none;
+    padding: 6px 2px;
+    border-radius: 6px;
+    width: 150px;
+
+}
+
+.dropdown__options_li:hover {
+    background-color: rgb(240, 223, 131);
+    cursor: pointer;
 }
 
 .WinesContainer {

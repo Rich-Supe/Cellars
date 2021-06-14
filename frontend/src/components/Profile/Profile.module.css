@@ -1,0 +1,13 @@
+.profile {
+    height: 100%;
+    width: 100%;
+}
+
+.cellarHeader {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: 400;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 1em;
+}

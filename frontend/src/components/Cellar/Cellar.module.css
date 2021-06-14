@@ -1,14 +1,7 @@
-.cellarHeader {
-    display: flex;
-    justify-content: center;
-    font-size: 2em;
-    font-weight: 400;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 1em;
-}
+
 
 .cellar {
     border: 4mm ridge rgba(158, 108, 32, 0.6);
-    background-color: bisque;
+    background-color: seashell;
     margin-top: 2em;
 }

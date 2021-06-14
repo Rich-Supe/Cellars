@@ -17,8 +17,7 @@
 TO DO:
   - Review edits
   - Searchbar
-  - Demo Btn
-  - Profile features
+  - Cellar: add delete button(useState to allow x (onclick)to remove and add cellar btn to re-route to wines page)
   - AWS3
   - Styling
   - Wine CRUD
@@ -45,9 +44,17 @@ TO DO:
 * Thunk
   
  # Functionalities and Code snippets:
+ Organization:
+    CSS: I use react modules that follow a BEM convention to keep code readable and re-usable
 
 ```
-
+import styles from './WinesContainer.module.css'
+    <div className={styles.searchBar}>
+        <ul className={styles.dropdowns}>
+            <li className={styles.dropdown__header}>
+                <ul className={styles.dropdown__options}>
+                    <li className={styles.dropdown__options_li}>RED</li>
+                    <li className={styles.dropdown__options_li}>White</li>
 ```
 
 
