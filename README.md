@@ -50,7 +50,7 @@ TO DO:
 ```
 import styles from './WinesContainer.module.css'
     <div className={styles.searchBar}>
-        <ul className={styles.dropdowns}>
+        <ul className={styles.dropdown}>
             <li className={styles.dropdown__header}>
                 <ul className={styles.dropdown__options}>
                     <li className={styles.dropdown__options_li}>RED</li>

@@ -11,3 +11,12 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-top: 1em;
 }
+
+.bkg {
+    /* background-color: bisque;
+    background-image: url(../../assets/images/vineyard2.jpg); */
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}

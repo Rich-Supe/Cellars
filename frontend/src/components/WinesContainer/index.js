@@ -16,7 +16,7 @@ const WinesContainer = ({wine}) => {
     const [ year, setYear ] = useState('')
     const [ name, setName ] = useState('')
 
-    console.log(`GRAPE:`,grape, `     color:`,color, `     country:`,country)
+    console.log(`Grape:`,grape, `     color:`,color, `     country:`,country)
     console.log(`year:`, year, `      name:`, name)
   
     useEffect(() => {

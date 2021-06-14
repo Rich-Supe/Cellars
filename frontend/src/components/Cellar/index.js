@@ -37,6 +37,7 @@ const Cellar = ({id}) => {
                 <Swiper id="main" 
                     tag="section" 
                     wrapperTag="ul" 
+                    className={styles.swiperContainer}
                     navigation 
                     pagination 
                     spaceBetween={0} 
