@@ -44,8 +44,26 @@
     font-size: 24px;
 }
 
+li {
+    list-style-type: none;
+}
+
+/* .profile {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+} */
+
+.profile__dropdown {
+    margin-top: 3rem;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+}
+
 .profileBtn {
-    width: 25%;
+    width: 10%;
+    position: absolute;
     background: none;
     border: 2px solid gold;
     border-radius: 20%;
@@ -63,9 +81,11 @@
 
 .dropdownBtn {
     background: none;
+    /* position: relative; */
     border: 2px solid gold;
     color: black;
     cursor: pointer;
+    /* padding: 8px; */
 }
 
 .dropdownBtn:hover {

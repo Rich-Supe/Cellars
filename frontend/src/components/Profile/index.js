@@ -11,10 +11,10 @@ const ProfilePage = () => {
 
     return (
             <div className={styles.profile}>
-                <div className={styles.bkg}>
+                {/* <div className={styles.bkg}> */}
                     <header className={styles.cellarHeader}>Your Cellar</header>
                     <Cellar id={id} key={id}/>
-                </div>
+                {/* </div> */}
             </div>
     )
 }
