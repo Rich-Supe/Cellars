@@ -34,15 +34,7 @@ const Cellar = ({id}) => {
     
     return (
         <div className={styles.cellar}>
-            <p>CELLAR</p>
-
-            {/* <div className={styles.wineCardDiv}>
-                {wines?.map(wine => {
-                    return <div id={wine.id} key={wine.id} className={styles.WineCard}>
-                        <WineCard wine={wine} />
-                    </div>
-                })}
-            </div> */}
+            <header className={styles.cellarHeader}>Your Cellar</header>
             <Swiper id="main" 
                 tag="section" 
                 wrapperTag="ul" 

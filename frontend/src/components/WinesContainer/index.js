@@ -18,7 +18,14 @@ const WinesContainer = ({wine}) => {
 
     return (
         <>
-            {/* <div className={styles.banner} style={{ backgroundImage: `url(${background})`}}></div> */}
+            <div className={styles.searchHeader}>
+                <p>Looking for a specific wine?</p>
+            </div>
+            <div className={styles.searchBar}>
+                <form>
+                    <input type="dropdown"></input>
+                </form>
+            </div>
             <div className={styles.WinesContainer}>
                 {wines?.map(wine=>{
                     return <div id={wine.id} key={wine.id} className={styles.WineCard}>
