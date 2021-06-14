@@ -10,7 +10,14 @@ import styles from './WinesContainer.module.css'
 const WinesContainer = ({wine}) => {
     const dispatch = useDispatch()
     const wines = useSelector((state) => Object.values(state.wines))
-    // console.log(wines)
+    const [ grape, setGrape ] = useState('')
+    const [ color, setColor ] = useState('')
+    const [ country, setCountry ] = useState('')
+    const [ year, setYear ] = useState('')
+    const [ name, setName ] = useState('')
+
+    console.log(`GRAPE:`,grape, `     color:`,color, `     country:`,country)
+    console.log(`year:`, year, `      name:`, name)
   
     useEffect(() => {
         dispatch(getWines());
@@ -22,45 +29,45 @@ const WinesContainer = ({wine}) => {
                 <p>Looking for a specific wine?</p>
             </div>
             <div className={styles.searchBar}>
-                <ul className={styles.dropdowns}>
+                <ul className={styles.dropdown}>
                     <li className={styles.dropdown__header}>
                         COLOR
-                        <i class="fas fa-caret-down"></i>
+                        <i className="fas fa-caret-down"></i>
                         <ul className={styles.dropdown__options}>
-                            <li className={styles.dropdown__options_li}>Red</li>
-                            <li className={styles.dropdown__options_li}>White</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setColor("Red")}>Red</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setColor("White")}>White</li>
                         </ul>
                     </li>
                     <li className={styles.dropdown__header}>
                         GRAPE
-                        <i class="fas fa-caret-down"></i>
+                        <i className="fas fa-caret-down"></i>
                         <ul className={styles.dropdown__options}>
-                            <li className={styles.dropdown__options_li}>Sauvignon Blanc</li>
-                            <li className={styles.dropdown__options_li}>Cabernet Sauvignon</li>
-                            <li className={styles.dropdown__options_li}>Pinot Noir</li>
-                            <li className={styles.dropdown__options_li}>Merlot</li>
-                            <li className={styles.dropdown__options_li}>Chardonnay</li>
-                            <li className={styles.dropdown__options_li}>Riesling</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setGrape('Sauvignon Blanc')}>Sauvignon Blanc</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setGrape('Cabernet Sauvignon')}>Cabernet Sauvignon</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setGrape('Pinot Noir')}>Pinot Noir</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setGrape('Merlot')}>Merlot</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setGrape('Chardonnay')}>Chardonnay</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setGrape('Riesling')}>Riesling</li>
                         </ul>
                     </li>
                     <li className={styles.dropdown__header}>
                         COUNTRY
-                        <i class="fas fa-caret-down"></i>
+                        <i className="fas fa-caret-down"></i>
                         <ul className={styles.dropdown__options}>
-                            <li className={styles.dropdown__options_li}>Usa</li>
-                            <li className={styles.dropdown__options_li}>France</li>
-                            <li className={styles.dropdown__options_li}>Italy</li>
-                            <li className={styles.dropdown__options_li}>Spain</li>
-                            <li className={styles.dropdown__options_li}>Australia</li>
-                            <li className={styles.dropdown__options_li}>Germany</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setCountry("USA")}>Usa</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setCountry("France")}>France</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setCountry("Italy")}>Italy</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setCountry("Spain")}>Spain</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setCountry("Australia")}>Australia</li>
+                            <li className={styles.dropdown__options_li} onClick={(e) => setCountry("Germany")}>Germany</li>
                         </ul>
                     </li>
                     <li className={styles.dropdown__header}>
-                        <input placeholder="YEAR" type="number">
+                        <input placeholder="search by year" type="number" id="year" onChange={(e) => setYear(e.target.value)}>
                         </input>
                     </li>
                     <li>
-                        <input placeholder="NAME">
+                        <input placeholder="Search by name" id="name" onChange={(e) => setName(e.target.value)}>
                         </input>
                     </li>
                 </ul>
