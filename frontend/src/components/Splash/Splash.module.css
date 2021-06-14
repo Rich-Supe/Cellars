@@ -1,5 +1,5 @@
 .background {
-    height: 68%;
+    height: 75%;
     width: 98%;
     display: flex;
     justify-content: center;
@@ -9,8 +9,8 @@
 }
 
 .splashImg {
-    height: 70%;
-    width: 98%;
+    height: 100%;
+    width: 100%;
     max-width: 1000px;
 }
 

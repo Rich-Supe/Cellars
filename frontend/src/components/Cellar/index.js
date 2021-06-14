@@ -33,30 +33,21 @@ const Cellar = ({id}) => {
     })
     
     return (
-        <div className={styles.cellar}>
-            <p>CELLAR</p>
-
-            {/* <div className={styles.wineCardDiv}>
-                {wines?.map(wine => {
-                    return <div id={wine.id} key={wine.id} className={styles.WineCard}>
-                        <WineCard wine={wine} />
-                    </div>
-                })}
-            </div> */}
-            <Swiper id="main" 
-                tag="section" 
-                wrapperTag="ul" 
-                navigation 
-                pagination 
-                spaceBetween={0} 
-                slidesPerView={3}
-                onInit={(swiper) => console.log('Swiper initialized', swiper)}
-                onSlideChange={(swiper) => {
-                    console.log('Swiper slide: ', swiper)
-                }}
-                onReachEnd={() => console.log("Swiper end")}
-            >{slides}</Swiper>
-        </div>
+            <div className={styles.cellar}>
+                <Swiper id="main" 
+                    tag="section" 
+                    wrapperTag="ul" 
+                    navigation 
+                    pagination 
+                    spaceBetween={0} 
+                    slidesPerView={3}
+                    onInit={(swiper) => console.log('Swiper initialized', swiper)}
+                    onSlideChange={(swiper) => {
+                        console.log('Swiper slide: ', swiper)
+                    }}
+                    onReachEnd={() => console.log("Swiper end")}
+                >{slides}</Swiper>
+            </div>
     )
 }
 

@@ -8,9 +8,10 @@ const ProfilePage = () => {
     const { id } = useParams();
 
     return (
-        <div className={styles.profile}>
-            <Cellar id={id} key={id}/>
-        </div>
+            <div className={styles.profile}>
+                <header className={styles.cellarHeader}>Your Cellar</header>
+                <Cellar id={id} key={id}/>
+            </div>
     )
 }
 

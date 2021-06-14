@@ -18,7 +18,7 @@ function App() {
 
   return (
       <>
-        <div className={styles.webPage}>
+        {/* <div className={styles.webPage}> */}
         <Navigation isLoaded={isLoaded} />
         {isLoaded && (
             <Switch>
@@ -33,9 +33,7 @@ function App() {
             </Route>
             </Switch>
         )}
-        </div>
-        {/* <div className={styles.display}>
-        </div> */}
+        {/* </div> */}
     </>
 
   );

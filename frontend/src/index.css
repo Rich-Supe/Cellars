@@ -4,11 +4,11 @@ html {
 }
 body {
     height: 100%;
-    background-color: blueviolet;
 }
 
 .mainDiv {
-    height: 90%;
+    height: 100%;
+    width: 100%
     /* background-image: url(./assets/images/wine\ cellar\ image\ 2.png);
     background-repeat: no-repeat; */
 }
