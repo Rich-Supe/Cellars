@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 // import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import WineCard from '../WineCard'
 
 import {getWines} from '../../store/wines'
@@ -8,7 +9,8 @@ import styles from './WinesContainer.module.css'
 // import background from '../../assets/images/vineyard2.jpg'
 
 const WinesContainer = ({wine}) => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const history = useHistory();
     const wines = useSelector((state) => Object.values(state.wines))
     const [ grape, setGrape ] = useState('')
     const [ color, setColor ] = useState('')
@@ -24,23 +26,21 @@ const WinesContainer = ({wine}) => {
     }, [dispatch]);
 
     return (
-        <>
+        <div className={styles.winePage}>
             <div className={styles.searchHeader}>
                 <p>Looking for a specific wine?</p>
             </div>
             <div className={styles.searchBar}>
                 <ul className={styles.dropdown}>
                     <li className={styles.dropdown__header}>
-                        COLOR
-                        <i className="fas fa-caret-down"></i>
+                        <header>COLOR<i className="fas fa-caret-down"></i></header>
                         <ul className={styles.dropdown__options}>
                             <li className={styles.dropdown__options_li} onClick={(e) => setColor("Red")}>Red</li>
                             <li className={styles.dropdown__options_li} onClick={(e) => setColor("White")}>White</li>
                         </ul>
                     </li>
                     <li className={styles.dropdown__header}>
-                        GRAPE
-                        <i className="fas fa-caret-down"></i>
+                        <header>GRAPE<i className="fas fa-caret-down"></i></header>
                         <ul className={styles.dropdown__options}>
                             <li className={styles.dropdown__options_li} onClick={(e) => setGrape('Sauvignon Blanc')}>Sauvignon Blanc</li>
                             <li className={styles.dropdown__options_li} onClick={(e) => setGrape('Cabernet Sauvignon')}>Cabernet Sauvignon</li>
@@ -51,8 +51,7 @@ const WinesContainer = ({wine}) => {
                         </ul>
                     </li>
                     <li className={styles.dropdown__header}>
-                        COUNTRY
-                        <i className="fas fa-caret-down"></i>
+                        <header>COUNTRY<i className="fas fa-caret-down"></i></header>
                         <ul className={styles.dropdown__options}>
                             <li className={styles.dropdown__options_li} onClick={(e) => setCountry("USA")}>Usa</li>
                             <li className={styles.dropdown__options_li} onClick={(e) => setCountry("France")}>France</li>
@@ -66,9 +65,12 @@ const WinesContainer = ({wine}) => {
                         <input placeholder="search by year" type="number" id="year" onChange={(e) => setYear(e.target.value)}>
                         </input>
                     </li>
-                    <li>
+                    <li className={styles.dropdown__header}>
                         <input placeholder="Search by name" id="name" onChange={(e) => setName(e.target.value)}>
                         </input>
+                    </li>
+                    <li>
+                        <button className={styles.addWineBtn} onClick={()=> history.push(`/addwine`)}>Add Wine</button>
                     </li>
                 </ul>
             </div>
@@ -80,7 +82,7 @@ const WinesContainer = ({wine}) => {
                 })}
 
             </div>
-        </>
+        </div>
     )
 
 }

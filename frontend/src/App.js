@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-// import SignupFormPage from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import styles from './components/Navigation/Navigation.module.css';
-import WinesContainer from './components/WinesContainer'
-import Profile from './components/Profile'
-import Splash from './components/Splash'
+import WinesContainer from './components/WinesContainer';
+import Profile from './components/Profile';
+import Splash from './components/Splash';
+import AddWine from './components/AddWine';
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +29,9 @@ function App() {
             </Route>
             <Route path='/users/:id'>
                 <Profile />
+            </Route>
+            <Route path='/addwine'>
+                <AddWine />
             </Route>
             </Switch>
         )}

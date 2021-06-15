@@ -2,7 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
+// import ProfileButton from './ProfileButton';
 import NavButtons from './NavButtons'
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
@@ -16,28 +16,34 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-        <div className={styles.sessionLinks}>
+        <>
             <NavButtons wines={wines}/>
-            <ProfileButton user={sessionUser} />
-        </div>
+            {/* <ProfileButton user={sessionUser} /> */}
+        </>
       
     );
   } else {
     sessionLinks = (
-      <div className={styles.sessionLinks}>
+      <div className={styles.navButtons}>
+        <div>
         <DemoLoginModal />
+        </div>
+        <div>
         <LoginFormModal />
+        </div>
+        <div>
         <SignupFormModal />
+        </div>
       </div>
     );
   }
 
   return (
     <div className={styles.navContainer}>
-        <div className={styles.navlinks} id="nav-home-link">
-        <NavLink className={styles.homeLink} exact to="/">CELLARS</NavLink>
-        {isLoaded && sessionLinks}
-        </div>
+        {/* <div className={styles.navlinks} id="nav-home-link"> */}
+            <NavLink className={styles.homeLink} exact to="/">CELLARS</NavLink>
+            {isLoaded && sessionLinks}
+        {/* </div> */}
     </div>
   );
 }

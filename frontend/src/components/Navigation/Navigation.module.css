@@ -4,28 +4,34 @@
     justify-content: center;
     align-content: center; 
 }
-
+/* 
 .navlinks {
     width: 100%;
     max-width: 1000px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; */
     /* align-items: flex-start;  */
-}
+/* } */
 
-.sessionLinks {
-    width: 50%;
+/* .sessionLinks { */
+    /* width: 50%;
     display: flex;
     justify-content: flex-end;
-    /* align-items: center;  */
-}
+    width: 100%; */
+/* } */
 
 .navButtons {
-    width: 100%;
+    width: 45%;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+
+.navButtons div {
+    min-width: 30%;
 }
 
 .homeLink {
-    width: 25%;
+    width: 10%;
     background: none;
     /* border: 2px solid gold; */
     color: black;
@@ -34,7 +40,7 @@
     cursor: pointer;
     margin: 12px 0;
     font-family: ProximaNova,Helvetica,sans-serif;;
-    font-weight: 600;
+    font-weight: 650;
     text-decoration: none;
 
 }
@@ -62,7 +68,7 @@ li {
 }
 
 .profileBtn {
-    width: 10%;
+    width: 7%;
     position: absolute;
     background: none;
     border: 2px solid gold;
@@ -70,8 +76,10 @@ li {
     color: black;
     padding: 5px;
     font-size: 18px;
+    font-weight: 550;
     cursor: pointer;
     margin: 12px 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .profileBtn:hover {
@@ -85,6 +93,8 @@ li {
     border: 2px solid gold;
     color: black;
     cursor: pointer;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
     /* padding: 8px; */
 }
 
