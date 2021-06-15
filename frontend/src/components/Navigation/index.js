@@ -2,7 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
+// import ProfileButton from './ProfileButton';
 import NavButtons from './NavButtons'
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
@@ -18,7 +18,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
         <div className={styles.sessionLinks}>
             <NavButtons wines={wines}/>
-            <ProfileButton user={sessionUser} />
+            {/* <ProfileButton user={sessionUser} /> */}
         </div>
       
     );

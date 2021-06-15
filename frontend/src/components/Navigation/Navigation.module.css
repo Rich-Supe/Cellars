@@ -17,11 +17,13 @@
     width: 50%;
     display: flex;
     justify-content: flex-end;
-    /* align-items: center;  */
+    width: 100%;
 }
 
 .navButtons {
     width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .homeLink {
@@ -34,7 +36,7 @@
     cursor: pointer;
     margin: 12px 0;
     font-family: ProximaNova,Helvetica,sans-serif;;
-    font-weight: 600;
+    font-weight: 650;
     text-decoration: none;
 
 }
@@ -70,8 +72,10 @@ li {
     color: black;
     padding: 5px;
     font-size: 18px;
+    font-weight: 550;
     cursor: pointer;
     margin: 12px 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .profileBtn:hover {
@@ -85,6 +89,8 @@ li {
     border: 2px solid gold;
     color: black;
     cursor: pointer;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
     /* padding: 8px; */
 }
 
