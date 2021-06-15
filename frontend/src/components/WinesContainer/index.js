@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 // import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import WineCard from '../WineCard'
 
 import {getWines} from '../../store/wines'
@@ -9,6 +10,7 @@ import styles from './WinesContainer.module.css'
 
 const WinesContainer = ({wine}) => {
     const dispatch = useDispatch()
+    const history = useHistory();
     const wines = useSelector((state) => Object.values(state.wines))
     const [ grape, setGrape ] = useState('')
     const [ color, setColor ] = useState('')
@@ -69,6 +71,9 @@ const WinesContainer = ({wine}) => {
                     <li>
                         <input placeholder="Search by name" id="name" onChange={(e) => setName(e.target.value)}>
                         </input>
+                    </li>
+                    <li>
+                        <button className={styles.addWineBtn} onClick={()=> history.push(`/addwine`)}>Add Wine</button>
                     </li>
                 </ul>
             </div>
