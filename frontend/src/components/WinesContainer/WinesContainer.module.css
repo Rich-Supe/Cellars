@@ -15,6 +15,10 @@
     padding: 0px;
 }
 
+.searchBar:hover {
+    border-bottom: 1px solid maroon;
+}
+
 .dropdown {
     display: flex;
     width: 80%;
@@ -24,6 +28,14 @@
 
 .dropdown__header {
     position: relative;
+}
+
+.dropdown__header header {
+    margin-top: 8px;
+}
+
+.dropdown__header header:hover {
+    color: maroon;
 }
 
 .dropdown__options {
@@ -40,6 +52,10 @@
     display: block;
 }   
 
+.dropdown__header input:hover {
+    border: 1px solid maroon;
+}
+
 .dropdown__options_li {
     list-style-type: none;
     padding: 6px 2px;
@@ -50,6 +66,19 @@
 
 .dropdown__options_li:hover {
     background-color: rgb(240, 223, 131);
+    cursor: pointer;
+}
+
+.addWineBtn {
+    height: 100%;
+    background-color: white;
+    font-size: 1.15em;
+    font-family: cursive;
+}
+
+.addWineBtn:hover {
+    border: 1px solid maroon;
+    color: maroon;
     cursor: pointer;
 }
 

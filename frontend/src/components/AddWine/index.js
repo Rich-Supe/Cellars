@@ -8,10 +8,10 @@ const AddWine = () => {
     
 
     return (
-        <>
-            <header>ADD WINES HERES</header>
+        <div className={styles.winePage}>
+            {/* <header>ADD WINES HERES</header> */}
             <AddWineForm />
-        </>
+        </div>
     )
 }
 
