@@ -33,6 +33,7 @@ const Cellar = ({id}) => {
     })
     
     return (
+        <div className={styles.cellarContainer}>
             <div className={styles.cellar}>
                 <Swiper id="main" 
                     tag="section" 
@@ -49,6 +50,7 @@ const Cellar = ({id}) => {
                     onReachEnd={() => console.log("Swiper end")}
                 >{slides}</Swiper>
             </div>
+        </div>
     )
 }
 

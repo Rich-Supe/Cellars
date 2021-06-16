@@ -3,7 +3,7 @@ import { Modal } from '../../context/Modal';
 import styles from '../WineCard/WinesCard.module.css'
 // import { useHistory } from 'react-router-dom';
 // import WineModal from '../WineModal'
-// import CellarModal from '../CellarModal'
+import CellarModal from '../CellarModal'
 
 const CellarCard = ({wine}) => {
     const [showModal, setShowModal] = useState(false);
@@ -20,7 +20,7 @@ const CellarCard = ({wine}) => {
         <div id={wine.id} className={styles.wineCard} onClick={(e)=> handleOpenClose(e)} data='anything'>
         {showModal && (
             <Modal onClose={(e) => handleOpenClose(e)}>
-                {/* <CellarModal props={{wineId:wine.id, handleClose: handleOpenClose, reviews:wine.reviews}}/> */}
+                <CellarModal props={{wineId:wine.id, handleClose: handleOpenClose, reviews:wine.reviews}}/>
             </Modal>
             )}
             <img id={wine.id} src={wine.labelUrl} className={styles.wineImg} data="anything" alt="wine label"></img>

@@ -28,7 +28,7 @@ const WinesContainer = ({wine}) => {
     return (
         <div className={styles.winePage}>
             <div className={styles.searchHeader}>
-                <p>Looking for a specific wine?</p>
+                <p>Every great Cellar starts somewhere!</p>
             </div>
             <div className={styles.searchBar}>
                 <ul className={styles.dropdown}>
