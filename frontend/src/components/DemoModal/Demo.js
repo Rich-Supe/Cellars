@@ -17,7 +17,9 @@ const handleSubmit = (e) => {
         <>
             <div className={styles.loginBox3}>
                 <h1>Continue as a demo user?</h1>
-                <button className={styles.submitBtn} onClick={handleSubmit}>Continue</button>
+                <div className={styles.submitBtnDiv}>
+                    <button className={styles.submitBtn} onClick={handleSubmit}>Yes!</button>
+                </div>
             </div>
         </>
     )

@@ -51,7 +51,9 @@ function LoginForm() {
                     required
                     />
             </div>
+            <div className={styles.submitBtnDiv}>
             <button className={styles.submitBtn} type="submit">Sign In</button>
+            </div>
         </div>
     </form>
     );
