@@ -1,0 +1,115 @@
+.wineModal {
+    position: fixed;
+    background-color:whitesmoke;
+    border: 6px solid gold;
+    border-radius: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    max-width: 100%;
+    height: 650px;
+    max-height: 100%;
+    /* opacity: 90%; */
+    z-index: 1000;
+    /* position: relative; */
+}
+
+.header {
+    height: 12%;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid maroon;
+    /* border-style: outset; */
+    border-radius: 25%;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(146, 42, 106);
+    background-color: transparent;
+    padding-bottom: 10px;
+}
+
+ul {
+    font-family: cursive;
+    font-weight: 500;
+}
+
+.wineDiv {
+    display: flex;
+    justify-content: flex-start;
+    height: 35%;
+    /* align-self: ; */
+    padding-top: 5px;
+    overflow-y: scroll;
+    border-bottom: 2px solid maroon;
+    border-radius: 15%;
+    padding-bottom: 15px;
+}
+
+.wineImgDiv {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 55%;
+}
+
+.reviews {
+    margin: 10px;
+    height: 32%;
+    overflow-x: scroll;
+}
+
+/* .headerDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
+
+.reviewHeader {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    /* position: static; */
+    font-size: 1.75em;
+    font-weight: 400;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.reviewBox {
+    height: 98%;
+    /* width: 1000%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    align-items: center; */
+    font-family:cursive;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+    /* margin-bottom: 10px; */
+}
+
+.footerP {
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family:cursive;
+    border: 2px solid maroon;
+    background: none;
+}
+
+.footerP:hover {
+    border: 2px solid gold;
+}
+
+/* Section is the slide on the carousel */
+section {
+    height: 98%;
+}
