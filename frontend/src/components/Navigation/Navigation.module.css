@@ -3,6 +3,7 @@
     display:inline-flex; 
     justify-content: center;
     align-content: center; 
+    margin-bottom: 10px;
 }
 /* 
 .navlinks {
@@ -36,9 +37,8 @@
     /* border: 2px solid gold; */
     color: black;
     padding: 5px;
-    font-size: 23px;
+    font-size: 1.7em;
     cursor: pointer;
-    margin: 12px 0;
     font-family: ProximaNova,Helvetica,sans-serif;;
     font-weight: 650;
     text-decoration: none;

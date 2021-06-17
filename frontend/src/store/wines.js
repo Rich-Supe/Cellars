@@ -49,7 +49,7 @@ export const getOneWine = (id) => async(dispatch) => {
 }
 
 export const createWine = (data) => async(dispatch) => {
-    const res = await fetch(`/api/wines`, {
+    const res = await csrfFetch(`/api/wines`, {
         method: "post",
         headers: {
             "Content-Type": "application/json",
@@ -72,7 +72,7 @@ export const createReview = (data) => async(dispatch) => {
         body: JSON.stringify(data)
     });
     const reviewData = await res.json();
-    console.log(reviewData)
+    console.log(`-----------------`, reviewData)
     dispatch(setReview(reviewData, data.wineId))
 }
 
@@ -101,8 +101,10 @@ const winesReducer = (state = initialState, action) => {
         case CREATE_REVIEW:{
             const newState = { ...state };
             newState[action.wineId] = { ...newState[action.wineId]};
-            newState[action.wineId].reviews = [...newState[action.wineId].reviews]
-            newState[action.wineId].reviews.push(action.review)
+            if(newState[action.wineId].reviews){
+                newState[action.wineId].reviews = [...newState[action.wineId].reviews]
+                newState[action.wineId].reviews.push(action.review)
+            }
             return newState
         }
         default:
