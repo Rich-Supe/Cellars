@@ -5,6 +5,7 @@ import {csrfFetch} from './csrf'
 // Create an action type constant
 const SET_WINES = 'wines/SET_WINES'
 const SET_ONE_WINE = 'wines/SET_ONE_WINE'
+const ADD_WINE = 'wines/ADD_WINE'
 const CREATE_REVIEW = 'wines/CREATE_REVIEW'
 
 // Create an action creator that returns an action (just a POJO)
@@ -15,6 +16,11 @@ const setWines = (wines) => ({
 
 const setOneWine = (wine) => ({
     type: SET_ONE_WINE,
+    wine
+})
+
+const addWine = (wine) => ({
+    type: ADD_WINE,
     wine
 })
 
@@ -40,6 +46,22 @@ export const getOneWine = (id) => async(dispatch) => {
     const wineData = await res.json();
     wineData.wine.reviews = wineData.reviews
     dispatch(setOneWine(wineData.wine))
+}
+
+export const createWine = (data) => async(dispatch) => {
+    const res = await fetch(`/api/wines`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+        const wine = await res.json();
+        dispatch(addWine(wine));
+        return wine
+    }
 }
 
 //Reviews on Wines
@@ -75,12 +97,13 @@ const winesReducer = (state = initialState, action) => {
             newState[action.wine.id] = action.wine
             return newState;
         }
-         case CREATE_REVIEW:{
-             const newState = { ...state };
-             newState[action.wineId] = { ...newState[action.wineId]};
-             newState[action.wineId].reviews = [...newState[action.wineId].reviews]
-             newState[action.wineId].reviews.push(action.review)
-             return newState
+        case ADD_WINE:
+        case CREATE_REVIEW:{
+            const newState = { ...state };
+            newState[action.wineId] = { ...newState[action.wineId]};
+            newState[action.wineId].reviews = [...newState[action.wineId].reviews]
+            newState[action.wineId].reviews.push(action.review)
+            return newState
         }
         default:
             return state;
