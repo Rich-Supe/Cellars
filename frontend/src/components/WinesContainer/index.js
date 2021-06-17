@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import WineCard from '../WineCard'
 
 import {getWines} from '../../store/wines'
+import {getSomeWines} from '../../store/wines'
 import styles from './WinesContainer.module.css'
 // import background from '../../assets/images/vineyard2.jpg'
 
@@ -23,6 +24,7 @@ const WinesContainer = ({wine}) => {
   
     useEffect(() => {
         dispatch(getWines());
+        // dispatch(getSomeWines());
     }, [dispatch]);
 
     return (

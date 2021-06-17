@@ -30,32 +30,36 @@ router.get(
 )
 
 // Grab Wines by search  (need to fix-up)
-// router.get('/search/:searchCriteria/:selectedChoice', async (req, res, next) => {
-//     const searchCriteria = req.params.searchCriteria;
-//     const selectedChoice = req.params.selectedChoice;
-//     let results;
-    
-//     switch (searchCriteria) {
-//         case 'title':
-//             results = await Comic.findAll({where: {title: selectedChoice}});
-//             break;
-//         case 'author':
-//             results = await Comic.findAll({where: {author: selectedChoice}});
-//             break;
-//         case 'genre':
-//             results = await Comic.findAll({where: {genre: selectedChoice}});
-//             break;
-//         case 'keyword':
-//             results = await Comic.findAll({where: {title: { [Op.iLike]: `%${selectedChoice}%`}}});
-//             let results2 = await Comic.findAll({where: {author: { [Op.iLike]: `%${selectedChoice}%`}}});
-//             let results3 = await Comic.findAll({where: {genre: { [Op.iLike]: `%${selectedChoice}%`}}});
-//             results2.forEach(result => results.push(result));
-//             results3.forEach(result => results.push(result));
-//             break;
-//     }
-//     console.log(`*************************************${results}`)
-//     res.render('results', {results});
-//   });
+router.get(
+    '/search/:searchCriteria/:selectedChoice',
+    asyncHandler(async (req, res) => {
+        const searchCriteria = req.params.searchCriteria;
+        const selectedChoice = req.params.searchChoice;
+        let results;
+
+        switch (searchCriteria) {
+            case 'color':
+                results = await Wine.findAll({where: {color: selectedChoice}});
+                break;
+            case 'grape':
+                results = await Wine.findAll({where: {grape: selectedChoice}});
+                break;
+            case 'country':
+                results = await Wine.findAll({where: {country: selectedChoice}});
+                break;
+            case 'year':
+                results = await Wine.findAll({where: {year: selectedChoice}});
+                break;
+            case 'name':
+                results = await Wine.findAll({where: {country: selectedChoice}});
+                break;
+            case 'default':
+                results = await Wine.findAll();
+        }
+        console.log(`*************************************${results}`)
+        return res.json(results)
+    })
+)
 
 
 //Individual Wine route, including Reviews on the wine. 

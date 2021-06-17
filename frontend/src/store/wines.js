@@ -5,6 +5,7 @@ import {csrfFetch} from './csrf'
 // Create an action type constant
 const SET_WINES = 'wines/SET_WINES'
 const SET_ONE_WINE = 'wines/SET_ONE_WINE'
+const SET_SOME_WINES = 'wines/SET_SOME_WINES'
 const ADD_WINE = 'wines/ADD_WINE'
 const CREATE_REVIEW = 'wines/CREATE_REVIEW'
 
@@ -16,6 +17,11 @@ const setWines = (wines) => ({
 
 const setOneWine = (wine) => ({
     type: SET_ONE_WINE,
+    wine
+})
+
+const setSomeWines = (wine) => ({
+    type: SET_SOME_WINES,
     wine
 })
 
@@ -46,6 +52,12 @@ export const getOneWine = (id) => async(dispatch) => {
     const wineData = await res.json();
     wineData.wine.reviews = wineData.reviews
     dispatch(setOneWine(wineData.wine))
+}
+
+export const getSomeWines = (searchCriteria = 'default', selectedChoice) => async (dispatch) => {
+    const res = await fetch(`/api/wines/${searchCriteria}/${selectedChoice}`);
+    const wines = await res.json();
+    dispatch(setSomeWines(wines))
 }
 
 export const createWine = (data) => async(dispatch) => {
@@ -95,6 +107,13 @@ const winesReducer = (state = initialState, action) => {
         case SET_ONE_WINE:{
             const newState = { ...state };
             newState[action.wine.id] = action.wine
+            return newState;
+        }
+        case SET_SOME_WINES:{
+            const newState = { ...state };
+            action.wines.forEach((wine) => {
+                newState[wine.id] = wine
+            });
             return newState;
         }
         case ADD_WINE:
