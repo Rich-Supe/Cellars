@@ -27,7 +27,7 @@ const WineModal = ({props}) => {
     const id = props.wineId
     const reviews = props.reviews
     const wines = useSelector((state) => state.wines)
-    console.log(`REVIEWS..????????`, reviews)
+    // console.log(`REVIEWS..????????`, reviews)
 
     useEffect(() => {
         dispatch(getOneWine(id));

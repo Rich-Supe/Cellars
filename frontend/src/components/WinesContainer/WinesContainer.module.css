@@ -130,12 +130,12 @@
   z-index: 1;
   opacity: 0;
   transition: all 0.3s;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-top-color: rgba(233, 72, 72, 0.5);
-  border-bottom-color: rgba(219, 57, 57, 0.5);
+  /* border-top-width: 1px; */
+  /* border-bottom-width: 1px; */
+  /* border-top-style: solid; */
+  /* border-bottom-style: dotted; */
+  /* border-top-color: rgba(253, 242, 242, 0.5); */
+  /* border-bottom-color: rgba(233, 55, 55, 0.5); */
   transform: scale(0.1, 1);
 }
 .btn:hover span {
