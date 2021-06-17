@@ -51,7 +51,7 @@ const AddWineForm = () => {
     return (
         <div className={styles.wineForm}>
             <header className={styles.wineForm__header}>Create Your Wine</header>
-            <form>
+            <form className={styles.wineForm__form}>
                 <div className={styles.wineForm__name}>
                     <label>Wine Name:</label>
                     <input
@@ -61,32 +61,24 @@ const AddWineForm = () => {
                     value={name}/>
                 </div>
                 <div className={styles.wineForm__type}>
-                    <label for='grape'>Grape:</label>
-                    {/* <input
-                    id='grape'
-                    type='text'
-                    onChange={(e)=>setGrape(e.target.value)}
-                    value={grape}/> */}
-                    <select id='grape' name='grape'>
-                        <option onClick={(e) => setGrape('Sauvignon Blanc')}>Sauvignon Blanc</option>
-                        <option onClick={(e) => setGrape('Cabernet Sauvignon')}>Cabernet Sauvignon</option>
-                        <option onClick={(e) => setGrape('Pinot Noir')}>Pinot Noir</option>
-                        <option onClick={(e) => setGrape('Merlot')}>Merlot</option>
-                        <option onClick={(e) => setGrape('Chardonnay')}>Chardonnay</option>
-                        <option onClick={(e) => setGrape('Riesling')}>Riesling</option>
-                    </select>
-                    
-
-                    <label for='color'>Color:</label>
-                    {/* <input
-                    id='color'
-                    type='text'
-                    onChange={(e)=>setColor(e.target.value)}
-                    value={color}/> */}
-                    <select id='color'>
-                        <option value="red">Red</option>
-                        <option value="white">White</option>
-                    </select>
+                    <div>
+                        <label htmlFor='grape'>Grape:</label>
+                        <select id='grape' name='grape' onChange={(e) => setGrape((e.target.value))}>
+                            <option>Sauvignon Blanc</option>
+                            <option>Cabernet Sauvignon</option>
+                            <option>Pinot Noir</option>
+                            <option>Merlot</option>
+                            <option>Chardonnay</option>
+                            <option>Riesling</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor='color'>Color:</label>
+                        <select id='color' onChange={(e) => setColor((e.target.value))}>
+                            <option>Red</option>
+                            <option>White</option>
+                        </select>
+                    </div>
                 </div>
                 <div className={styles.wineForm__location}>
                     <label>Country:</label>
@@ -134,11 +126,13 @@ const AddWineForm = () => {
                     value={labelUrl}/>
                 </div>
                 <div className={styles.wineForm__Btn}>
-                    <button type="submit" className={styles.wineForm__Btn_submit} onClick={handleSubmit}>Submit Wine</button>
-                    <button type="button" className={styles.wineForm__Btn_cancel} onClick={handleCancel}>Cancel</button>
+                    {/* <button type="submit" className={styles.wineForm__Btn_submit} onClick={handleSubmit}>Submit Wine</button>
+                    <button type="button" className={styles.wineForm__Btn_cancel} onClick={handleCancel}>Cancel</button> */}
+                    <button className={styles.button} onClick={handleSubmit}>Submit</button>
+                    <button className={styles.button2} onClick={handleCancel}>Cancel</button>
                 </div>
-            </form>
-        </div>
+                </form>
+            </div>
     )
 }
 
