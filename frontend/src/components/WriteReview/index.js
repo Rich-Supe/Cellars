@@ -26,13 +26,13 @@ const WriteReview = ({props}) => {
             <div className={styles.headerDiv}>
                         <header className={styles.reviewHeader}>Enter Your Review Here:</header>
                     </div>
-            <form className={styles.reviewForm}>
+            <form className={styles.reviewForm} onSubmit={handleSubmit}>
                 <textarea
                 className={styles.reviewCard}
                 onChange={(e) => setReviewInput(e.target.value)}
                 ></textarea>
                 <footer className={styles.footer}>
-                <button className={styles.footerP} onClick={handleSubmit}>Submit</button>
+                <button className={styles.footerP}>Submit</button>
                 </footer>
             </form>
         </>
