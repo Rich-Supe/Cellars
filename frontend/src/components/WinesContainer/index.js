@@ -12,20 +12,27 @@ import styles from './WinesContainer.module.css'
 const WinesContainer = ({wine}) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const wines = useSelector((state) => Object.values(state.wines))
-    const [ grape, setGrape ] = useState('')
-    const [ color, setColor ] = useState('')
-    const [ country, setCountry ] = useState('')
-    const [ year, setYear ] = useState('')
-    const [ name, setName ] = useState('')
+    const wines = useSelector((state) => Object.values(state.wines));
+    const [ color, setColor ] = useState('');
+    const [ grape, setGrape ] = useState('');
+    const [ country, setCountry ] = useState('');
+    const [ year, setYear ] = useState('');
+    const [ name, setName ] = useState('');
 
-    console.log(`Grape:`,grape, `     color:`,color, `     country:`,country)
-    console.log(`year:`, year, `      name:`, name)
+    const searchData = {
+        color,
+        grape,
+        country,
+        year,
+        name
+    }
+
   
     useEffect(() => {
-        dispatch(getWines());
-        // dispatch(getSomeWines());
-    }, [dispatch]);
+        // dispatch(getWines());
+        console.log(`Wine Search Data2.0:`, searchData)
+        dispatch(getSomeWines(searchData));
+    }, [dispatch, grape, color, country, year, name]);
 
     return (
         <div className={styles.winePage}>

@@ -20,9 +20,9 @@ const setOneWine = (wine) => ({
     wine
 })
 
-const setSomeWines = (wine) => ({
+const setSomeWines = (wines) => ({
     type: SET_SOME_WINES,
-    wine
+    wines
 })
 
 const addWine = (wine) => ({
@@ -54,9 +54,18 @@ export const getOneWine = (id) => async(dispatch) => {
     dispatch(setOneWine(wineData.wine))
 }
 
-export const getSomeWines = (searchCriteria = 'default', selectedChoice) => async (dispatch) => {
-    const res = await fetch(`/api/wines/${searchCriteria}/${selectedChoice}`);
+export const getSomeWines = (searchData) => async (dispatch) => {
+    // console.log(searchCriteria, selectedChoice)
+    // const res = await fetch(`/api/wines/search/${searchCriteria}/${selectedChoice}`);
+    const res = await csrfFetch(`/api/wines/search/searchData`, {
+        method: 'post',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(searchData)
+    })
     const wines = await res.json();
+    console.log(`Searched wines from backend:`, wines)
     dispatch(setSomeWines(wines))
 }
 
@@ -110,7 +119,7 @@ const winesReducer = (state = initialState, action) => {
             return newState;
         }
         case SET_SOME_WINES:{
-            const newState = { ...state };
+            const newState = {};
             action.wines.forEach((wine) => {
                 newState[wine.id] = wine
             });

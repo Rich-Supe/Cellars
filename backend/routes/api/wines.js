@@ -3,6 +3,8 @@ const asyncHandler = require('express-async-handler');
 
 const { requireAuth, restoreUser } = require('../../utils/auth');
 const { User, Wine, Cellar, Review } = require('../../db/models');
+
+const {Op} = require('sequelize');
 // const { Crate } = require('../../db/models');
 
 
@@ -30,34 +32,90 @@ router.get(
 )
 
 // Grab Wines by search  (need to fix-up)
-router.get(
-    '/search/:searchCriteria/:selectedChoice',
+router.post(
+    // '/search/:searchCriteria/:selectedChoice',
+    '/search/:searchData',
     asyncHandler(async (req, res) => {
-        const searchCriteria = req.params.searchCriteria;
-        const selectedChoice = req.params.searchChoice;
-        let results;
+        // const searchCriteria = req.params.searchCriteria;
+        // const selectedChoice = req.params.searchChoice;
+        const {color, grape, country, year, name} = req.body
+        // let results;
+        // console.log('----------------', searchData)
+        let results = [];
+        if (color) results.push({color});
+        if (grape) results.push({grape});
+        if (country) results.push({country});
+        if (year) results.push({year});
+        if (name) results.push({name});
+        const wines = await Wine.findAll({where: {[Op.and]:results}})
 
-        switch (searchCriteria) {
-            case 'color':
-                results = await Wine.findAll({where: {color: selectedChoice}});
-                break;
-            case 'grape':
-                results = await Wine.findAll({where: {grape: selectedChoice}});
-                break;
-            case 'country':
-                results = await Wine.findAll({where: {country: selectedChoice}});
-                break;
-            case 'year':
-                results = await Wine.findAll({where: {year: selectedChoice}});
-                break;
-            case 'name':
-                results = await Wine.findAll({where: {country: selectedChoice}});
-                break;
-            case 'default':
-                results = await Wine.findAll();
-        }
-        console.log(`*************************************${results}`)
-        return res.json(results)
+        return res.json(wines)
+
+
+        // if (searchData.color) {
+        //     let color = await Wine.findAll({where: {color: selectedChoice}});
+        //     results.push(...color)
+        // }
+
+        // if (searchData.grape) {
+        //     let grape = await Wine.findAll({where: {grape: selectedChoice}});
+        //     results.push(...grape)
+        // }
+
+        // if (searchData.country) {
+        //     let grape = await Wine.findAll({where: {country: selectedChoice}});
+        //     results.push(...grape)
+        // }
+
+        // if (searchData.year) {
+        //     let grape = await Wine.findAll({where: {grape: selectedChoice}});
+        //     results.push(...grape)
+        // }
+
+        // if (searchData.name) {
+        //     let grape = await Wine.findAll({where: {grape: selectedChoice}});
+        //     results.push(...grape)
+        // }
+
+        // switch (searchData) {
+        //     case searchData.color.length > 1:
+        //         results.push(await Wine.findAll({where: {color: selectedChoice}}));
+        //         break;
+        //     case searchData.grape.length > 1:
+        //         results.push(await Wine.findAll({where: {grape: selectedChoice}}));
+        //         break;
+        //     case searchData.country.length > 1:
+        //         results.push(await Wine.findAll({where: {country: selectedChoice}}));
+        //         break;
+        //     case searchData.year.length > 1:
+        //         results.push(await Wine.findAll({where: {year: selectedChoice}}));
+        //         break;
+        //     case searchData.country.length > 1:
+        //         results.push(await Wine.findAll({where: {country: selectedChoice}}));
+        //         break;
+        //     default:
+        //         results = await Wine.findAll();
+        // }
+
+        // switch (searchCriteria) {
+        //     case 'color':
+        //         results = await Wine.findAll({where: {color: selectedChoice}});
+        //         break;
+        //     case 'grape':
+        //         results = await Wine.findAll({where: {grape: selectedChoice}});
+        //         break;
+        //     case 'country':
+        //         results = await Wine.findAll({where: {country: selectedChoice}});
+        //         break;
+        //     case 'year':
+        //         results = await Wine.findAll({where: {year: selectedChoice}});
+        //         break;
+        //     case 'name':
+        //         results = await Wine.findAll({where: {country: selectedChoice}});
+        //         break;
+        //     case 'default':
+        //         results = await Wine.findAll();
+        // }
     })
 )
 
