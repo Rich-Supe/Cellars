@@ -61,16 +61,21 @@ const WinesContainer = ({wine}) => {
                             <li className={styles.dropdown__options_li} onClick={(e) => setCountry("Germany")}>Germany</li>
                         </ul>
                     </li>
-                    <li className={styles.dropdown__header}>
+                    <li className={styles.dropdown__header_year}>
                         <input placeholder="search by year" type="number" id="year" onChange={(e) => setYear(e.target.value)}>
                         </input>
                     </li>
-                    <li className={styles.dropdown__header}>
+                    <li className={styles.dropdown__header_name}>
                         <input placeholder="Search by name" id="name" onChange={(e) => setName(e.target.value)}>
                         </input>
                     </li>
                     <li>
-                        <button className={styles.addWineBtn} onClick={()=> history.push(`/addwine`)}>Add Wine</button>
+                        {/* <button className={styles.addWineBtn} onClick={()=> history.push(`/addwine`)}>Add Wine</button> */}
+                        <div className={styles.box1}>
+                            <div className={styles.btn} onClick={()=> history.push(`/addwine`)}>
+                                <span>CREATE WINE</span>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
