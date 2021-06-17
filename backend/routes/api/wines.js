@@ -77,6 +77,15 @@ router.get(
     })
 )
 
+//Create Wine Route
+router.post(
+    '/',
+    asyncHandler(async(req, res) => {
+        const wine = await Wine.create(req.body)
+        return res.json(wine)
+    })
+)
+
 // More Review routes, require auth for these!
 
 
@@ -94,7 +103,7 @@ router.post(
 )
 
 // Edit reviews
-router.patch(
+router.put(
     '/:id(\\d+)',
     requireAuth,
     asyncHandler(async(req, res) => {

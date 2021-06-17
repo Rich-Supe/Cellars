@@ -2,21 +2,24 @@
     height: 100%;
     width: 100%;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
+    background-image: url(../../assets/images/vineyard1.jpg);
+    background-size: cover;
 }
 
 .wineForm {
     width: 70%;
-    height: 70%;
+    max-width: 1100px;
+    height: 75%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background: white;
+    background: rgb(243, 228, 228, .7);
     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
-    box-shadow: 20px 20px rgba(0,0,0,.15);
+    box-shadow: 20px 20px rgba(0,0,0,.25);
     transition: all .4s ease;
     font-weight: 600;
     font-size: medium;
@@ -30,8 +33,9 @@
 
 .wineForm__header {
     font-size: 2em;
-    font-weight: 300;
+    font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
 }
 
 .wineForm input {
@@ -39,6 +43,13 @@
     border-radius: 8px;
 }
 
+.wineForm label {
+    font-size: 1.25em;
+}
+
+.wineForm select {
+    font-size: 20px;
+}
 /* label {
     font-weight: 500;
     font-size: medium;
@@ -51,6 +62,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    margin: 20px;
+    min-height: 30px;
 
 }
 
@@ -63,9 +76,9 @@
     width: 25%;
 }
 
-.wineForm__type input {
+/* .wineForm__type input {
     width: 20%
-}
+} */
 
 .wineForm__location input {
     width: 20%
@@ -79,8 +92,17 @@
     width: 35%
 }
 
+.wineForm__Btn {
+    height: 25px;
+}
 
+.wineForm__Btn_submit {
+    color: red
+}
 
+.wineForm__Btn_cancel {
+    color: red
+}
 
 
 
