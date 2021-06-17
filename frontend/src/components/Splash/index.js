@@ -6,9 +6,9 @@ import styles from './Splash.module.css'
 const Splash = () => {
     
     return (
-        <>
+        <div className={styles.page}>
             <div className={styles.background}>
-                <img src={splash} alt='Cellar' className={styles.splashImg}></img>
+                {/* <img src={splash} alt='Cellar' className={styles.splashImg}></img> */}
             </div>
             <div className={styles.footerDiv}>
                 <footer className={styles.footer}>
@@ -37,8 +37,8 @@ const Splash = () => {
                         </li> */}
                     </ul>
                 </footer>
+            </div>
         </div>
-        </>
     )
 }
 

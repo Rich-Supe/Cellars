@@ -8,7 +8,10 @@ function DemoLoginModal() {
 
   return (
     <>
-      <button className={styles.loginBtn} onClick={() => setShowModal(true)}>Demo</button>
+      {/* <button className={styles.loginBtn} onClick={() => setShowModal(true)}>Demo</button> */}
+      <div className={styles.btn} onClick={() => setShowModal(true)}>
+                                <span>Demo</span>
+                            </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <Demo />

@@ -12,9 +12,12 @@ function NavButtons({wines}) {
     return (
         <div className={styles.navButtons}>
             <div className={styles.navButtons__winesBtn}>
-                <button className={styles.profileBtn} onClick={()=> history.push('/wines')}>Wines</button>
+                {/* <button className={styles.btn} onClick={()=> history.push('/wines')}>Wines</button> */}
+            <div className={styles.btn} onClick={()=> history.push(`/wines`)}>
+                                <span>Wines</span>
+                            </div>
             </div>
-            <div className={styles.navbButtons__profileBtn}>
+            <div className={styles.navButtons__profileBtn}>
                 <ProfileButton user={sessionUser} />
             </div>
         </div>

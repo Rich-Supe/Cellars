@@ -35,9 +35,12 @@ function ProfileButton({ user }) {
 
     return (
         <>
-            <button className={styles.profileBtn} onClick={openMenu}>
+            <div className={styles.btn} onClick={openMenu}>
+                                <span>{user.username}</span>
+                            </div>
+            {/* <button className={styles.btn} onClick={openMenu}>
                 {user.username}
-            </button>
+            </button> */}
             {showMenu && (
             <ul className={styles.profile__dropdown}>
                 <li>

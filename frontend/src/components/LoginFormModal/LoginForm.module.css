@@ -1,5 +1,5 @@
 /* Navbar */
-.loginBtn {
+/* .loginBtn {
     width: 55%;
     background: none;
     border: 2px solid gold;
@@ -15,7 +15,7 @@
 .loginBtn:hover {
     color:rgb(141, 12, 37);
     border: 2px solid rgb(177, 107, 121);
-}
+} */
 
 /* Forms */
 
@@ -31,7 +31,7 @@
     /* justify-content: ; */
     /* align-items: ; */
     flex-direction: column;
-    
+    margin-top: 15px;
 }
 /* For Signup */
 .loginBox2 {
@@ -46,6 +46,7 @@
     /* justify-content: ; */
     /* align-items: ; */
     flex-direction: column;
+    margin-top: 30px;
     
 }
 /* For Demo */
@@ -60,6 +61,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
 }
 
 .loginBox h1, .loginBox2 h1 {
@@ -144,4 +146,62 @@ input {
 
 i {
     padding-right: 10px;
+}
+
+.btn {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    transition: all 0.3s;
+    position: relative;
+}
+.btn span {
+  transition: all 0.3s;
+  font-weight: 600;
+  height: 100%;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(233, 72, 72, 0.5);
+  border-bottom-color: rgba(219, 57, 57, 0.5);
+  transform: scale(0.1, 1);
+}
+.btn:hover span {
+  letter-spacing: 2px;
+}
+.btn:hover::before {
+  opacity: 1; 
+  transform: scale(1, 1); 
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,0.1);
+}
+.btn:hover::after {
+  opacity: 0; 
+  transform: scale(0.1, 1);
 }

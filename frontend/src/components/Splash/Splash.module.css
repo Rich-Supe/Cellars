@@ -1,21 +1,43 @@
+.page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: ; */
+    background-color: black;
+}
+
 .background {
-    height: 75%;
-    width: 98%;
+    height: 85%;
+    width: 85%;
+    max-width: 1200px;
     display: flex;
     justify-content: center;
     align-content: center;
     /* max-width: 900px; */
-
+    background-image: url(../../assets/images/Cellar3.jpg);
+    background-size: cover;
 }
 
 .splashImg {
     height: 100%;
     width: 100%;
     max-width: 1000px;
+    background-size: cover;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .footerList {
     width: 98%;
+    height: 10%;
     min-height: 50px;
     display: flex;
     justify-content: space-evenly;
@@ -34,6 +56,11 @@
 
 .footerDiv {
     position: relative;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    background-color: white;
+
 }
 
 a {
