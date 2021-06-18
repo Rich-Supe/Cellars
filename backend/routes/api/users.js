@@ -52,7 +52,8 @@ router.get(
     requireAuth,
     asyncHandler(async (req, res) => {
         const id = parseInt(req.params.id, 10);
-        const userCellar = await Cellar.findAll({where:{userId: id}, include: Wine})
+        const userCellar = await Cellar.findAll({where:{userId: id}, include: [{model:Wine, include: Review}]})
+        // res.json(data)
         // const wineIds = userCellar[0].dataValues.Wines.forEach(wine => {
         //     return wine.id
         // })

@@ -39,11 +39,12 @@ const WineModal = ({props}) => {
     //Reviews Carousel:
     const slides = [];
     let i = 0
+    console.log(`REVIEWS FROM REVIEWSBOX/WINEMODEL`, reviews)
     if(reviews){
         reviews.forEach((review) => {
             slides.push(
                 <SwiperSlide key={`slide-${i}`}>
-                    <ReviewsBox key={review.id} props={{review}}/>
+                    <ReviewsBox props={{review}}/>
                 </SwiperSlide>
             )
             i++

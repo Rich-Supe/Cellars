@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import CellarCard from './cellarCards'
+import WinesCard from '../WineCard';
 import {getCellar} from '../../store/users'
 import styles from './Cellar.module.css';
 
@@ -26,7 +27,7 @@ const Cellar = ({id}) => {
     wines.forEach((wine) => {
         slides.push(
             <SwiperSlide key={`slide-${i}`}>
-                <CellarCard wine={wine} />
+                <WinesCard wine={wine} />
             </SwiperSlide>
         )
         i++

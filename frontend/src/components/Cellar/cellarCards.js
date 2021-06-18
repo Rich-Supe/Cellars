@@ -13,6 +13,7 @@ const CellarCard = ({wine}) => {
         } else if (e.target.getAttribute('data') === 'anything') {
             setShowModal(!showModal);
         } 
+    console.log(`wine from cellar`, wine)
 
     }
     return (

@@ -27,7 +27,7 @@ const WinesContainer = ({wine}) => {
         name
     }
 
-    console.log(`Wine search state change via react component`, data)
+    // console.log(`Wine search state change via react component`, data)
   
     useEffect(() => {
         // dispatch(getWines());
@@ -35,8 +35,10 @@ const WinesContainer = ({wine}) => {
     }, [dispatch, grape, color, country, year]);
 
     useEffect(() => {
-        dispatch(getWineByName(name));
-    }, [dispatch, name])
+        if (name.length > 1){
+            dispatch(getWineByName(name));
+        }
+    }, [name])
 
     return (
         <div className={styles.winePage}>

@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-// import {useHistory} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {createReview} from '../../store/wines'
-
 
 import styles from './WriteReview.module.css'
 
 const WriteReview = ({props}) => {
+    const profile = useParams().id;
 
     const {wine, setShowReview} = props;
     // const history = useHistory();
@@ -17,7 +17,7 @@ const WriteReview = ({props}) => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await dispatch(createReview({review: reviewInput, wineId: wine.id, userId:user.id}))
+        await dispatch(createReview({review: reviewInput, wineId: wine.id, userId:user.id}, profile))
         setShowReview(false)
     }
 
