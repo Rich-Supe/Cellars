@@ -28,10 +28,21 @@ router.get(
         // });
         return res.json(wines)
     })
-
 )
 
-// Grab Wines by search  (need to fix-up)
+router.get(
+    '/search/:name',
+    asyncHandler(async (req, res) => {
+        //Added trim to remove whitespace
+        const name = req.params.name.trim()
+        // console.log(`--------------------------------NAME from api GET route by name:`, name)
+        const wines = await Wine.findAll({where: {name: { [Op.iLike]: `%` + name + `%` }}})
+        // console.log(`--------------------------------WINES from api GET route by name:`, wines)
+        return res.json(wines)
+    })
+)
+
+// Grab Wines by search 
 router.post(
     // '/search/:searchCriteria/:selectedChoice',
     '/search/:searchData',

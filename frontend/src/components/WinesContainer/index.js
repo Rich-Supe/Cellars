@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import WineCard from '../WineCard'
 
-import {getWines} from '../../store/wines'
-import {getSomeWines} from '../../store/wines'
+// import {getWines} from '../../store/wines'
+import {getWines, getSomeWines, getWineByName} from '../../store/wines'
 import styles from './WinesContainer.module.css'
 // import background from '../../assets/images/vineyard2.jpg'
 
@@ -26,11 +26,17 @@ const WinesContainer = ({wine}) => {
         year,
         name
     }
+
+    console.log(`Wine search state change via react component`, data)
   
     useEffect(() => {
         // dispatch(getWines());
         dispatch(getSomeWines(data));
-    }, [dispatch, grape, color, country, year, name]);
+    }, [dispatch, grape, color, country, year]);
+
+    useEffect(() => {
+        dispatch(getWineByName(name));
+    }, [dispatch, name])
 
     return (
         <div className={styles.winePage}>
