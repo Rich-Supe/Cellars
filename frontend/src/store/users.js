@@ -1,5 +1,6 @@
 
 const SET_CELLAR = 'users/SET_CELLAR'
+const CREATE_REVIEW_PROFILE = 'wines/CREATE_REVIEW_PROFILE'
 // const ADD_TO_CELLAR = 'users/UNSET_CELLAR'
 // const REMOVE_FROM_CELLAR = 'users/REMOVE_FROM_CELLAR'
 
@@ -30,6 +31,7 @@ export const getCellar = (id) => async(dispatch) => {
     // console.log("Newer______", cratesData.userCellar[0].Wines)
     // set to wines in crate
     cratesData.wines = cratesData.userCellar[0].Wines
+    console.log(`CRATES DATA FROM CRATES THUNK`, cratesData)
     dispatch(setCellar(cratesData.wines))
 }
 
@@ -48,6 +50,15 @@ const usersReducer = (state = initialState, action) => {
             action.crate.forEach((wine) => {
                 newState[wine.id] = wine
             });
+            return newState
+        }
+        case CREATE_REVIEW_PROFILE:{
+            const newState = { ...state };
+            newState[action.wineId] = { ...newState[action.wineId]};
+            if(newState[action.wineId].Reviews){
+                newState[action.wineId].Reviews = [...newState[action.wineId].Reviews]
+                newState[action.wineId].Reviews.push(action.review)
+            }
             return newState
         }
         default:

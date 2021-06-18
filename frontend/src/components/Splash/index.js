@@ -9,6 +9,11 @@ const Splash = () => {
         <div className={styles.page}>
             <div className={styles.background}>
                 {/* <img src={splash} alt='Cellar' className={styles.splashImg}></img> */}
+                {/* <div className={styles.background__signature}>
+                    <div className={styles.background__signature_div}>
+                        <p className={styles.background__signature_name}>Created By Rich Supe</p>
+                    </div>
+                </div> */}
             </div>
             <div className={styles.footerDiv}>
                 <footer className={styles.footer}>

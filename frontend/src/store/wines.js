@@ -9,6 +9,7 @@ const SET_SOME_WINES = 'wines/SET_SOME_WINES'
 const SET_WINE_BY_NAME = 'wines/SET_WINE_BY_NAME'
 const ADD_WINE = 'wines/ADD_WINE'
 const CREATE_REVIEW = 'wines/CREATE_REVIEW'
+const CREATE_REVIEW_PROFILE = 'wines/CREATE_REVIEW_PROFILE'
 
 // Create an action creator that returns an action (just a POJO)
 const setWines = (wines) => ({
@@ -42,6 +43,12 @@ const setReview = (review, wineId) => ({
     wineId
 })
 
+const setProfileReview = (review, wineId) => ({
+    type: CREATE_REVIEW_PROFILE,
+    review,
+    wineId
+})
+
 
 // Create a thunk that dispatches the action creator
 // get doesn't require creating a JSON obj
@@ -71,7 +78,7 @@ export const getSomeWines = (searchData) => async (dispatch) => {
         body: JSON.stringify(searchData)
     })
     const wines = await res.json();
-    console.log(`Searched wines from backend:`, wines)
+    // console.log(`Searched wines from backend:`, wines)
     dispatch(setSomeWines(wines))
 }
 
@@ -79,7 +86,7 @@ export const getWineByName = (name) => async (dispatch) => {
     const res = await csrfFetch(`/api/wines/search/${name}`)
     if (res.ok) {
         const wines = await res.json();
-        console.log(`WINES from get wine by name thunk`, wines)
+        // console.log(`WINES from get wine by name thunk`, wines)
         dispatch(setWineByName(wines))
     }
 }
@@ -102,14 +109,18 @@ export const createWine = (data) => async(dispatch) => {
 
 //Reviews on Wines
 
-export const createReview = (data) => async(dispatch) => {
+export const createReview = (data, profile) => async(dispatch) => {
     const res = await csrfFetch(`/api/wines/${data.wineId}`, {
         method: 'POST',
         body: JSON.stringify(data)
     });
     const reviewData = await res.json();
-    console.log(`-----------------`, reviewData)
+    if (profile) {
+        console.log(`-----------------`, reviewData)
+        dispatch(setProfileReview(reviewData, data.wineId))
+    } else {
     dispatch(setReview(reviewData, data.wineId))
+    }
 }
 
 //Edit Reviews
