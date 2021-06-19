@@ -26,7 +26,7 @@
     width: 55%;
     display: inline-flex;
     justify-content: flex-end;
-    margin-left: 20px
+    margin-left: 20px;
 }
 
 .navButtons div {
@@ -53,7 +53,7 @@
 
 .homeLink:hover{
     color:rgb(141, 12, 37);
-    font-size: 24px;
+    font-size: 28px;
 }
 
 li {
@@ -61,21 +61,32 @@ li {
 }
 
 .profile__dropdown {
-    /* display: none; */
     position: absolute;
-    margin-left: 100px;
-    margin-bottom: 120px;
+    margin: 10px 0 0 45px;
     color: black;
+    width: 100%;
+}
+
+.profile__dropdown li {
+    width: 8%;
+    background-color: rgb(255, 255, 255, .99);
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+}
+
+.profile__dropdown li:hover {
+    border: 1px solid black;
 }
 
 .dropdownBtn {
     text-decoration: none;
     background: none;
     border: none;
+    font-weight: 550;
 }
 
 .dropdownBtn:hover {
-    border: 1px solid black;
     cursor: pointer;
 }
 
