@@ -11,7 +11,7 @@ function DemoLoginModal() {
       {/* <button className={styles.loginBtn} onClick={() => setShowModal(true)}>Demo</button> */}
       <div className={styles.btn} onClick={() => setShowModal(true)}>
                                 <span>
-                                    <i class="fas fa-user-slash"></i>
+                                    <i className="fas fa-user-slash"></i>
                                     Demo
                                 </span>
                             </div>

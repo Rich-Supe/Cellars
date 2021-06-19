@@ -14,10 +14,37 @@
     font-size: 3.5em;
     font-weight: 900;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 1em;
+    /* margin-top: 1em; */
     color: rgba(228, 175, 96, 0.6);
     text-shadow: 1px 3px 1px rgb(71, 53, 2);
     
+}
+
+.profile__nav {
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile__openCellar, .profile__openJournal {
+    height: 100%;
+    min-width: 150px;
+}
+
+.profile__openJournal_btn, .profile__openCellar_btn {
+    height: 100%;
+    width: 100%;
+    min-width: 100px;
+    background: none;
+    border:none;
+    cursor: pointer;
+    font-size: 2em;
+    color: rgb(241, 241, 241);
+}
+
+.profile__openJournal_btn:hover, .profile__openCellar_btn:hover {
+    border-bottom: 1px solid white;
 }
 
 
