@@ -10,7 +10,10 @@ function DemoLoginModal() {
     <>
       {/* <button className={styles.loginBtn} onClick={() => setShowModal(true)}>Demo</button> */}
       <div className={styles.btn} onClick={() => setShowModal(true)}>
-                                <span>Demo</span>
+                                <span>
+                                    <i class="fas fa-user-slash"></i>
+                                    Demo
+                                </span>
                             </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

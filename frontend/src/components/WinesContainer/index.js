@@ -77,18 +77,22 @@ const WinesContainer = ({wine}) => {
                         </ul>
                     </li>
                     <li className={styles.dropdown__header_year}>
-                        <input placeholder="search by year" type="number" id="year" onChange={(e) => setYear(e.target.value)}>
+                        <input placeholder="Year" type="number" id="year" onChange={(e) => setYear(e.target.value)}>
                         </input>
                     </li>
                     <li className={styles.dropdown__header_name}>
-                        <input placeholder="Search by name" id="name" onChange={(e) => setName(e.target.value)}>
+                        <i class="fas fa-search"></i>
+                        <input placeholder="Name or Vineyard" id="name" onChange={(e) => setName(e.target.value)}>
                         </input>
                     </li>
                     <li>
                         {/* <button className={styles.addWineBtn} onClick={()=> history.push(`/addwine`)}>Add Wine</button> */}
                         <div className={styles.box1}>
                             <div className={styles.btn} onClick={()=> history.push(`/addwine`)}>
-                                <span>CREATE WINE</span>
+                                <span>
+                                    <i class="fas fa-plus-circle"></i>
+                                    CREATE WINE
+                                </span>
                             </div>
                         </div>
                     </li>

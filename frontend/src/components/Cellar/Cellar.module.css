@@ -8,7 +8,14 @@
 .cellar {
     border: 4mm ridge rgba(158, 108, 32, 0.6);
     background-color: rgb(241, 224, 212, .5);
-    margin-top: 2em;
+    /* margin-top: 2em; */
     width: 78%;
 
+}
+
+.cellar__header {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 200px;
+    font-size: 1.5em;
 }

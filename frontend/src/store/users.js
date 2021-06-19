@@ -31,7 +31,7 @@ export const getCellar = (id) => async(dispatch) => {
     // console.log("Newer______", cratesData.userCellar[0].Wines)
     // set to wines in crate
     cratesData.wines = cratesData.userCellar[0].Wines
-    console.log(`CRATES DATA FROM CRATES THUNK`, cratesData)
+    // console.log(`CRATES DATA FROM CRATES THUNK`, cratesData)
     dispatch(setCellar(cratesData.wines))
 }
 

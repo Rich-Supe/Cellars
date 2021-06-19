@@ -39,7 +39,7 @@ const WineModal = ({props}) => {
     //Reviews Carousel:
     const slides = [];
     let i = 0
-    console.log(`REVIEWS FROM REVIEWSBOX/WINEMODEL`, reviews)
+    // console.log(`REVIEWS FROM REVIEWSBOX/WINEMODEL`, reviews)
     if(reviews){
         reviews.forEach((review) => {
             slides.push(
@@ -108,11 +108,11 @@ const WineModal = ({props}) => {
                             pagination 
                             spaceBetween={0} 
                             slidesPerView={1}
-                            onInit={(swiper) => console.log('Swiper initialized', swiper)}
-                            onSlideChange={(swiper) => {
-                                console.log('Swiper slide: ', swiper)
-                            }}
-                            onReachEnd={() => console.log("Swiper end")}
+                            // onInit={(swiper) => console.log('Swiper initialized', swiper)}
+                            // onSlideChange={(swiper) => {
+                            //     console.log('Swiper slide: ', swiper)
+                            // }}
+                            // onReachEnd={() => console.log("Swiper end")}
                         >{slides}</Swiper>
                         </div>
                     </div>

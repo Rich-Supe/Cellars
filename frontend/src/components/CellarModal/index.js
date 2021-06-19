@@ -18,8 +18,8 @@ const CellarModal = ({props}) => {
     const id = props.wineId
     const wines = useSelector((state) => state.wines)
     const reviews = Object.values(wines)[0].reviews
-    console.log(`WINES FROM CELLAR MODAL`, wines)
-    console.log(`CURRENT REVIEWS FROM CELLAR MODAL`, reviews)
+    // console.log(`WINES FROM CELLAR MODAL`, wines)
+    // console.log(`CURRENT REVIEWS FROM CELLAR MODAL`, reviews)
 
     useEffect(() => {
         dispatch(getOneWine(id));

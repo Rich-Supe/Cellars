@@ -14,7 +14,10 @@ function NavButtons({wines}) {
             <div className={styles.navButtons__winesBtn}>
                 {/* <button className={styles.btn} onClick={()=> history.push('/wines')}>Wines</button> */}
             <div className={styles.btn} onClick={()=> history.push(`/wines`)}>
-                                <span>Wines</span>
+                                <span>
+                                <i className="fas fa-wine-bottle"></i>
+                                Wines
+                                </span>
                             </div>
             </div>
             <div className={styles.navButtons__profileBtn}>
