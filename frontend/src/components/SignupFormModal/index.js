@@ -10,7 +10,10 @@ function SignupFormModal() {
     <>
       {/* <button className={styles.loginBtn} onClick={() => setShowModal(true)}>Sign Up</button> */}
       <div className={styles.btn} onClick={() => setShowModal(true)}>
-                                <span>Sign up</span>
+                                <span>
+                                    <i class="fas fa-user-plus"></i>
+                                    Sign up
+                                </span>
                             </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

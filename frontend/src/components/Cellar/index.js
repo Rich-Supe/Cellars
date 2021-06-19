@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import CellarCard from './cellarCards'
+// import CellarCard from './cellarCards'
 import WinesCard from '../WineCard';
 import {getCellar} from '../../store/users'
 import styles from './Cellar.module.css';
@@ -20,7 +20,8 @@ const Cellar = ({id}) => {
     }, [])
     
     const wines = useSelector((state) => Object.values(state.users))
-    console.log('Should be crate of wines:::', wines)
+    // console.log('Should be crate of wines:::', wines)
+    let wineAmount = wines.length
 
     const slides = [];
     let i = 0
@@ -34,6 +35,11 @@ const Cellar = ({id}) => {
     })
     
     return (
+        <>
+        <header className={styles.cellar__header}>
+            <i className="fas fa-boxes"></i>
+            {wineAmount} wines
+            </header>
         <div className={styles.cellarContainer}>
             <div className={styles.cellar}>
                 <Swiper id="main" 
@@ -44,14 +50,15 @@ const Cellar = ({id}) => {
                     pagination 
                     spaceBetween={0} 
                     slidesPerView={3}
-                    onInit={(swiper) => console.log('Swiper initialized', swiper)}
-                    onSlideChange={(swiper) => {
-                        console.log('Swiper slide: ', swiper)
-                    }}
-                    onReachEnd={() => console.log("Swiper end")}
+                    // onInit={(swiper) => console.log('Swiper initialized', swiper)}
+                    // onSlideChange={(swiper) => {
+                    //     console.log('Swiper slide: ', swiper)
+                    // }}
+                    // onReachEnd={() => console.log("Swiper end")}
                 >{slides}</Swiper>
             </div>
         </div>
+        </>
     )
 }
 

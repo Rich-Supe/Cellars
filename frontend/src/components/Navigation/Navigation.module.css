@@ -65,6 +65,18 @@ li {
     position: absolute;
     margin-left: 100px;
     margin-bottom: 120px;
+    color: black;
+}
+
+.dropdownBtn {
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+
+.dropdownBtn:hover {
+    border: 1px solid black;
+    cursor: pointer;
 }
 
 /* .profile {

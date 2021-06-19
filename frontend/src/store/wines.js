@@ -116,7 +116,7 @@ export const createReview = (data, profile) => async(dispatch) => {
     });
     const reviewData = await res.json();
     if (profile) {
-        console.log(`-----------------`, reviewData)
+        // console.log(`-----------------`, reviewData)
         dispatch(setProfileReview(reviewData, data.wineId))
     } else {
     dispatch(setReview(reviewData, data.wineId))

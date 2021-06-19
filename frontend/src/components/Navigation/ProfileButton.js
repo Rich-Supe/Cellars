@@ -36,7 +36,10 @@ function ProfileButton({ user }) {
     return (
         <>
             <div className={styles.btn} onClick={openMenu}>
-                                <span>{user.username}</span>
+                                <span>
+                                    <i class="fas fa-user-circle"></i>
+                                    {user.username}
+                                    </span>
                             </div>
             {/* <button className={styles.btn} onClick={openMenu}>
                 {user.username}
@@ -44,10 +47,14 @@ function ProfileButton({ user }) {
             {showMenu && (
             <ul className={styles.profile__dropdown}>
                 <li>
+                    {/* <div> */}
+                        <i className="fas fa-user"></i>
+                    {/* </div> */}
                     <button className={styles.dropdownBtn} onClick={()=> history.push(`/users/${id}`)}>Your Profile</button>
                 </li>
                 <li>
-                <button className={styles.dropdownBtn} onClick={logout}>Log Out</button>
+                    <i class="fas fa-sign-out-alt"></i>
+                    <button className={styles.dropdownBtn} onClick={logout}>Log Out</button>
                 </li>
             </ul>
             )}
