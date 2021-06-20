@@ -14,14 +14,14 @@ const Journal = ({user}) => {
             <div className={styles.journal}>
                 <div className={styles.journal__newEntry}>
                     {/* <JournalForm/> */}
-                    <button>
+                    <button className={styles.journal__newEntry_btn}>
                         Create a new entry
                         <i className="fas fa-pencil-alt"></i>
                     </button>
                 </div>
                 <div className={styles.journal__editEntry}>
                     {/* <JournalForm/> */}
-                    <button>
+                    <button className={styles.journal__editEntry_btn}>
                         Edit an older entry
                         <i className="fas fa-edit"></i>
                     </button>
