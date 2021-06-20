@@ -3,11 +3,24 @@
 import styles from './ProfileLanding.module.css'
 
 const ProfileLanding = ({user}) => {
-    console.log(`profilelanding user:`, user)
+    
 
     return (
         <div className={styles.profileLanding}>
-            <header>{user.username}</header>
+            <ul>
+                <li>
+                    Account name: {user.username}
+                </li>
+                <li>
+                    email: {user.email}
+                </li>
+                <li>
+                    name: {user.name}
+                </li>
+                {/* <li>
+                    birthday: {user.birthday}
+                </li> */}
+            </ul>
         </div>
     )
 }

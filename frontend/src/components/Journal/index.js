@@ -1,21 +1,32 @@
 
 import { useParams } from 'react-router-dom'
 
+import JournalForm from '../JournalForm'
+
 import styles from './Journal.module.css'
 
 const Journal = ({user}) => {
     const id = user.id
     console.log(user)
 
-
     return (
         <>
             <div className={styles.journal}>
-                <div className={styles.book}>
-
+                <div className={styles.journal__newEntry}>
+                    {/* <JournalForm/> */}
+                    <button>
+                        Create a new entry
+                        <i className="fas fa-pencil-alt"></i>
+                    </button>
+                </div>
+                <div className={styles.journal__editEntry}>
+                    {/* <JournalForm/> */}
+                    <button>
+                        Edit an older entry
+                        <i className="fas fa-edit"></i>
+                    </button>
                 </div>
             </div>
-            <section>Your Journal!</section>
         </>
     )
 }

@@ -14,7 +14,7 @@ const ProfilePage = () => {
     const [ showCellar, setShowCellar ] = useState('false')
     const [ showJournal, setShowJournal ] = useState('false')
     let profile;
-
+    
     if (showCellar === 'true'){
         profile = (
             <>

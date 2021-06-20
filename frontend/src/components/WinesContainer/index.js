@@ -43,8 +43,6 @@ const WinesContainer = ({wine}) => {
     return (
         <div className={styles.winePage}>
             <div className={styles.searchHeader}>
-                <p>Every great Cellar starts somewhere!</p>
-            </div>
             <div className={styles.searchBar}>
                 <ul className={styles.dropdown}>
                     <li className={styles.dropdown__header}>
@@ -97,6 +95,7 @@ const WinesContainer = ({wine}) => {
                         </div>
                     </li>
                 </ul>
+            </div>
             </div>
             <div className={styles.WinesContainer}>
                 {wines?.map(wine=>{
