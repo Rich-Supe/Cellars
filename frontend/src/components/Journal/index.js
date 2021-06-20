@@ -10,6 +10,11 @@ const Journal = ({user}) => {
 
     return (
         <>
+            <div className={styles.journal}>
+                <div className={styles.book}>
+
+                </div>
+            </div>
             <section>Your Journal!</section>
         </>
     )

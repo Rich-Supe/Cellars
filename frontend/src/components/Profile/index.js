@@ -1,6 +1,7 @@
 
 import Cellar from '../Cellar'
 import Journal from '../Journal'
+import ProfileLanding from '../ProfileLanding';
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
@@ -14,7 +15,7 @@ const ProfilePage = () => {
     const [ showJournal, setShowJournal ] = useState('false')
     let profile;
 
-    if (showCellar == 'true'){
+    if (showCellar === 'true'){
         profile = (
             <>
                 <header className={styles.cellarHeader}>Your Cellar</header>
@@ -23,7 +24,7 @@ const ProfilePage = () => {
         )
     }
 
-    if (showJournal == 'true'){
+    else if (showJournal === 'true'){
         profile = (
             <>
                 <header className={styles.journalHeader}>Your Journal</header>
@@ -32,17 +33,18 @@ const ProfilePage = () => {
         )
     }
 
-    // if (showCellar && showJournal == 'false'){
-    //     profile = (
-    //         <>
-    //             <header className={styles.journalHeader}>Your Journal</header>
-    //         </>
-    //     )
-    // }
+    else {
+        profile = (
+            <>
+                <header className={styles.journalHeader}>Your Profile</header>
+                <ProfileLanding user={sessionUser}/>
+            </>
+        )
+    }
 
-    useEffect(() => {
+    // useEffect(() => {
+    // }, [showCellar, showJournal])
 
-    }, [showCellar, showJournal])
 
     return (
             <div className={styles.profile}>
