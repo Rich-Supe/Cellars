@@ -37,8 +37,8 @@ const Cellar = ({id}) => {
     return (
         <>
         <header className={styles.cellar__header}>
-            <i className="fas fa-boxes"></i>
-            {wineAmount} wines
+            {/* <i className="fas fa-boxes"></i> */}
+            Currently holding {wineAmount} wines
             </header>
         <div className={styles.cellarContainer}>
             <div className={styles.cellar}>
