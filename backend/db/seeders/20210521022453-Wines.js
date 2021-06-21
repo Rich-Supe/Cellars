@@ -20,6 +20,10 @@ module.exports = {
         {name:'AERENA by Blackbird Vineyards Chardonnay 2019', grape:'Chardonnay', color:'White', year: 2019, country:'USA', region:'North Coast', rating: 90, price: 13.99, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/tztgbkqnbldgfc2hcwnt.jpg'},
         {name:'Three Sticks Durell Vineyard Chardonnay 2017', grape:'Chardonnay', color:'White', year: 2017, country:'USA', region:'Sonoma County', rating: 93, price: 59.99, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/dlumwjl4lorjqiduze4v.jpg'},
         {name:'PlumpJack Reserve Chardonnay 2018', grape:'Chardonnay', color:'White', year: 2018, country:'USA', region:'Napa Valley', rating: 89, price: 58.99, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/x63wi31fe8umxxqsx7cf.jpg'},
+        {name:'La Crema Sonoma Coast Pinot Noir 2018', grape:'Pinot Noir', color:'Red', year: 2018, country:'USA', region:'California', rating: 90, price: 24.99, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/etp3smee8o1vbmg7zb3p.jpg'},
+        {name:'Domaine Gros Frere et Soeur Echezeaux Grand Cru 2018', grape:'Pinot Noir', color:'Red', year: 2018, country:'France', region:'Burgundy', rating: 92, price: 199.99, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/obaozcrnysxk3vdnipf2.jpg'},
+        {name:'Domaine Tollot-Beaut Corton Bressandes Grand Cru 2018', grape:'Pinot Noir', color:'Red', year: 2018, country:'France', region:'Burgundy', rating: 95, price: 159.99, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/nv9ybeaatuzdibqe4fiw.jpg'},
+        {name:'Philippe Pacalet Nuits-Saint-Georges Rouge 2016', grape:'Pinot Noir', color:'Red', year: 2016, country:'France', region:'Burgundy', rating: 92, price: 124.99, labelUrl:'https://www.wine.com/product/images/w_160,h_160,c_fit,q_auto:good,fl_progressive/wgjn1kebzfijc8gcep0m.jpg'},
 
       ], {});
 
