@@ -8,6 +8,7 @@ import Profile from './components/Profile';
 import Splash from './components/Splash';
 import AddWine from './components/AddWine';
 import Journal from "./components/Journal";
+import JournalForm from "./components/JournalForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,8 +35,11 @@ function App() {
             <Route path='/addwine'>
                 <AddWine />
             </Route>
-            <Route path='/journal'>
+            <Route path='/journal' exact>
                 <Journal />
+            </Route>
+            <Route path='/journal/new'>
+                <JournalForm />
             </Route>
             </Switch>
         )}
