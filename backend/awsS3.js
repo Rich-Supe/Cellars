@@ -46,7 +46,7 @@ const singlePrivateFileUpload = async (file) => {
   // name of the file in your S3 bucket will be the date in ms plus the extension name
   const Key = new Date().getTime().toString() + path.extname(originalname);
   const uploadParams = {
-    Bucket: NAME_OF_BUCKET,
+    Bucket: cellars,
     Key,
     Body: buffer,
   };
@@ -68,7 +68,7 @@ const retrievePrivateFile = (key) => {
   let fileUrl;
   if (key) {
     fileUrl = s3.getSignedUrl("getObject", {
-      Bucket: NAME_OF_BUCKET,
+      Bucket: cellars,
       Key: key,
     });
   }
