@@ -2,13 +2,14 @@
 import Cellar from '../Cellar'
 import Journal from '../Journal'
 import ProfileLanding from '../ProfileLanding';
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import styles from './Profile.module.css';
 
 const ProfilePage = () => {
+    const history = useHistory();
     const {id} = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const [ showCellar, setShowCellar ] = useState('false')
@@ -24,14 +25,14 @@ const ProfilePage = () => {
         )
     }
 
-    else if (showJournal === 'true'){
-        profile = (
-            <>
-                <header className={styles.journalHeader}>Your Journal</header>
-                <Journal user={sessionUser} />
-            </>
-        )
-    }
+    // else if (showJournal === 'true'){
+    //     profile = (
+    //         <>
+    //             <header className={styles.journalHeader}>Your Journal</header>
+    //             <Journal user={sessionUser} />
+    //         </>
+    //     )
+    // }
 
     else {
         profile = (
@@ -56,7 +57,7 @@ const ProfilePage = () => {
                     </div>
 
                     <div className={styles.profile__openJournal}>
-                        <button className={styles.profile__openJournal_btn} onClick={(e) => setShowJournal("true")}>
+                        <button className={styles.profile__openJournal_btn} onClick={(e) => history.push(`/journal`)}>
                         <i className="fas fa-book-open"></i>
                         </button>
                     </div>

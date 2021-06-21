@@ -6,8 +6,8 @@
 }
 
 .cellar {
-    border: 4mm ridge rgba(15, 29, 5, 0.835);
-    background-color: rgba(166, 165, 179, 0.404);
+    border: 4mm ridge rgba(44, 41, 41, 0.835);
+    background-color: rgba(205, 205, 212, 0.5);
     /* margin-top: 2em; */
     width: 78%;
 

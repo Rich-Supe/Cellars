@@ -14,8 +14,6 @@ const WinesCard = ({wine}) => {
         } 
         
     }
-    // console.log(`WINE FROM WINECARD`, wine)
-    // console.log(`REVIEWS FROM WINE MODEL`, wine.Reviews)
     const reviews = wine.reviews?wine.reviews:wine.Reviews
     
     return (

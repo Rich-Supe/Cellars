@@ -5,8 +5,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-image: url(../../assets/images/winebackground.jpg); */
+    background-image: url(../../assets/images/winebackground2.jpg);
     /* background-image: url(../../assets/images/winebackground3.jpg); */
-    background-image: url(../../assets/images/winebackground4.jpg);
+    /* background-image: url(../../assets/images/winebackground4.jpg); */
     /* background-image: url(../../assets/images/winebackground5.jpg); */
     background-size: cover;
 }

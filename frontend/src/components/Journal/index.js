@@ -5,12 +5,12 @@ import JournalForm from '../JournalForm'
 
 import styles from './Journal.module.css'
 
-const Journal = ({user}) => {
-    const id = user.id
-    console.log(user)
+const Journal = () => {
+    const id = useParams();
 
     return (
         <>
+            <header>YOUR JOURNAL</header>
             <div className={styles.journal}>
                 <div className={styles.journal__newEntry}>
                     {/* <JournalForm/> */}

@@ -7,6 +7,7 @@ import WinesContainer from './components/WinesContainer';
 import Profile from './components/Profile';
 import Splash from './components/Splash';
 import AddWine from './components/AddWine';
+import Journal from "./components/Journal";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path='/addwine'>
                 <AddWine />
+            </Route>
+            <Route path='/journal'>
+                <Journal />
             </Route>
             </Switch>
         )}
