@@ -1,28 +1,75 @@
 
 import Cellar from '../Cellar'
-import { useParams } from 'react-router-dom'
-import { useState } from 'react';
+import Journal from '../Journal'
+import ProfileLanding from '../ProfileLanding';
+import { useParams, useHistory } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import styles from './Profile.module.css';
 
 const ProfilePage = () => {
-    const { id } = useParams();
-    const { showCellar, setShowCellar} = useState('')
-    const { showJournal, setShowJournal} = useState('')
+    const history = useHistory();
+    const {id} = useParams();
+    const sessionUser = useSelector(state => state.session.user);
+    const [ showCellar, setShowCellar ] = useState('false')
+    const [ showJournal, setShowJournal ] = useState('false')
+    let profile;
+    
+    if (showCellar === 'true'){
+        profile = (
+            <>
+                <header className={styles.cellarHeader}>Your Cellar</header>
+                <Cellar id={id} key={id}/>
+            </>
+        )
+    }
 
-    // if (showCellar){
-
+    // else if (showJournal === 'true'){
+    //     profile = (
+    //         <>
+    //             <header className={styles.journalHeader}>Your Journal</header>
+    //             <Journal user={sessionUser} />
+    //         </>
+    //     )
     // }
+
+    else {
+        profile = (
+            <>
+                <header className={styles.journalHeader}>Your Profile</header>
+                <ProfileLanding user={sessionUser}/>
+            </>
+        )
+    }
+
+    // useEffect(() => {
+    // }, [showCellar, showJournal])
+
+
     return (
             <div className={styles.profile}>
-        
-                <div>
+                <div className={styles.profile__nav}>
+                    <div className={styles.profile__openCellar}>
+                        <button className={styles.profile__openCellar_btn} onClick={(e) => setShowCellar("true")}>
+                        <i className="fas fa-box-open"></i>
+                        </button>
+                    </div>
+
+                    <div className={styles.profile__openJournal}>
+                        <button className={styles.profile__openJournal_btn} onClick={(e) => history.push(`/journal`)}>
+                        <i className="fas fa-book-open"></i>
+                        </button>
+                    </div>
+                </div>
+                {profile}
+                {/* <div>
                     <header className={styles.cellarHeader}>Your Cellar</header>
                     <Cellar id={id} key={id}/>
-                </div>
+                </div> */}
                 {/* <div>
                 <i className="fas fa-book-open"></i>
-                <i class="fas fa-box-open"></i>
+                <i className="fas fa-box-open"></i>
                 </div> */}
             </div>
     )

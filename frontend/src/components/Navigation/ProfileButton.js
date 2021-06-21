@@ -37,7 +37,7 @@ function ProfileButton({ user }) {
         <>
             <div className={styles.btn} onClick={openMenu}>
                                 <span>
-                                    <i class="fas fa-user-circle"></i>
+                                    <i className="fas fa-user-circle"></i>
                                     {user.username}
                                     </span>
                             </div>
@@ -53,7 +53,7 @@ function ProfileButton({ user }) {
                     <button className={styles.dropdownBtn} onClick={()=> history.push(`/users/${id}`)}>Your Profile</button>
                 </li>
                 <li>
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i className="fas fa-sign-out-alt"></i>
                     <button className={styles.dropdownBtn} onClick={logout}>Log Out</button>
                 </li>
             </ul>

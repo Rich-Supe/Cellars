@@ -1,10 +1,23 @@
-.searchHeader {
-    font-size: 2em;
-    height: 3em;
+.winePage {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    font-weight: 450;
-    font-family: cursive
+    /* background: rgb(253,255,192);
+    background: linear-gradient(323deg, rgba(253,255,192,1) 4%, rgba(233,242,183,1) 41%, rgba(193,217,165,1) 66%, rgba(122,172,133,0.9912114504004726) 100%); */
+    /* background: rgb(153,153,153);
+    background: radial-gradient(circle, rgba(153,153,153,0.9912114504004726) 38%, rgba(218,218,202,1) 72%, rgba(144,144,139,1) 100%); */
+    background: rgb(167,132,132);
+    background: radial-gradient(circle, rgba(167,132,132,1) 21%, rgba(99,5,5,1) 64%, rgba(68,45,50,1) 100%);
+}
+
+.searchHeader {
+    height: 28em;
+    font-weight: 900;
+    width: 90%;
+    align-self: center;
+    background-image: url(../../assets/images/winebanner4.jpg);
+    background-size: cover;
+    border-radius: 20px;
 }
 
 .searchBar {
@@ -13,6 +26,8 @@
     flex-direction: row;
     margin: 0px;
     padding: 0px;
+    background-color: rgb(235, 235, 212, .5);
+    height: 16%;
 }
 
 .searchBar:hover {
@@ -28,7 +43,7 @@
 
 .dropdown__header {
     position: relative;
-    font-weight: 600;
+    font-weight: 900;
 }
 
 .dropdown__header header {
@@ -81,20 +96,6 @@
     cursor: pointer;
 }
 
-/* .addWineBtn {
-    height: 100%;
-    background-color: white;
-    font-size: 1.15em;
-    font-family: cursive;
-}
-
-.addWineBtn:hover {
-    border: 1px solid maroon;
-    color: maroon;
-    cursor: pointer;
-} */
-
-
 
 .WinesContainer {
     display: flex;
@@ -103,11 +104,10 @@
     padding-top: 10px;
 }
 
-/* .box-1 { background-color: #ee2e2e; } */
 
 .btn {
     /* background-color: #e4bebe; */
-    line-height: 50px;
+    line-height: 39px;
     height: 50px;
     text-align: center;
     width: 250px;
@@ -119,10 +119,11 @@
 .btn span {
   transition: all 0.3s;
   font-weight: 600;
+  /* margin-bottom: 15px; */
 }
 .btn::before {
   content: '';
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -130,12 +131,6 @@
   z-index: 1;
   opacity: 0;
   transition: all 0.3s;
-  /* border-top-width: 1px; */
-  /* border-bottom-width: 1px; */
-  /* border-top-style: solid; */
-  /* border-bottom-style: dotted; */
-  /* border-top-color: rgba(253, 242, 242, 0.5); */
-  /* border-bottom-color: rgba(233, 55, 55, 0.5); */
   transform: scale(0.1, 1);
 }
 .btn:hover span {
@@ -147,7 +142,6 @@
 }
 .btn::after {
   content: '';
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;

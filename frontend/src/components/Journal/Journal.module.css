@@ -1,0 +1,39 @@
+
+.journal {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.journal__editEntry_btn, .journal__newEntry_btn {
+    height: 3em;
+    font-size: 1.5em;
+    margin-bottom: 500px;
+}
+
+.modal {
+    position: fixed;
+    background-color:whitesmoke;
+    border: 6px solid gold;
+    border-radius: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    max-width: 100%;
+    height: 650px;
+    max-height: 100%;
+    opacity: 95%;
+    z-index: 3;
+}
+
+#modal-content {
+    height: 100%;
+    width: 100%;
+    background-color: brown;
+}
+
+

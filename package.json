@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/Rich-Supe/Cellars/issues"
   },
-  "homepage": "https://github.com/Rich-Supe/Cellars#readme"
+  "homepage": "https://github.com/Rich-Supe/Cellars#readme",
+  "dependencies": {
+    "react-quill": "^1.3.5"
+  }
 }

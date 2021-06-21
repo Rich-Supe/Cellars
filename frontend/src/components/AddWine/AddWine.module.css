@@ -5,7 +5,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(../../assets/images/vineyard1.jpg);
+    /* background-image: url(../../assets/images/winebackground.jpg); */
+    background-image: url(../../assets/images/winebackground2.jpg);
+    /* background-image: url(../../assets/images/winebackground3.jpg); */
+    /* background-image: url(../../assets/images/winebackground4.jpg); */
+    /* background-image: url(../../assets/images/winebackground5.jpg); */
     background-size: cover;
 }
 
@@ -36,7 +40,6 @@
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
     margin: 20px;
-    border-bottom: 2px solid gold;
 }
 
 .wineForm__form {

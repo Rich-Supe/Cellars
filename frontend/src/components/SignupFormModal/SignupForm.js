@@ -41,7 +41,7 @@ function SignupForm() {
         <div className={styles.loginBox2}>
         <h1 className={styles.loginHeader}>Signup</h1>
         <div className={styles.textBox2}>
-            {/* <i class="far fa-envelope"></i> */}
+            {/* <i className="far fa-envelope"></i> */}
             <input
             type="text"
             placeholder="Email"

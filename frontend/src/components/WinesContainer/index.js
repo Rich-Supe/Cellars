@@ -43,8 +43,6 @@ const WinesContainer = ({wine}) => {
     return (
         <div className={styles.winePage}>
             <div className={styles.searchHeader}>
-                <p>Every great Cellar starts somewhere!</p>
-            </div>
             <div className={styles.searchBar}>
                 <ul className={styles.dropdown}>
                     <li className={styles.dropdown__header}>
@@ -81,7 +79,7 @@ const WinesContainer = ({wine}) => {
                         </input>
                     </li>
                     <li className={styles.dropdown__header_name}>
-                        <i class="fas fa-search"></i>
+                        <i className="fas fa-search"></i>
                         <input placeholder="Name or Vineyard" id="name" onChange={(e) => setName(e.target.value)}>
                         </input>
                     </li>
@@ -90,13 +88,14 @@ const WinesContainer = ({wine}) => {
                         <div className={styles.box1}>
                             <div className={styles.btn} onClick={()=> history.push(`/addwine`)}>
                                 <span>
-                                    <i class="fas fa-plus-circle"></i>
+                                    <i className="fas fa-plus-circle"></i>
                                     CREATE WINE
                                 </span>
                             </div>
                         </div>
                     </li>
                 </ul>
+            </div>
             </div>
             <div className={styles.WinesContainer}>
                 {wines?.map(wine=>{

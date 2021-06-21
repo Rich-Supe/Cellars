@@ -1,0 +1,13 @@
+
+.profileLanding {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px solid black;
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+}
