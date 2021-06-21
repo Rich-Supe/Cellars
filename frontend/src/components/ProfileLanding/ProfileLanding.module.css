@@ -3,11 +3,17 @@
     height: 100%;
     width: 100%;
     display: flex;
-    flex: column;
-    justify-content: center;
-    align-items: flex-start;
-    border: 1px solid black;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     color: white;
-    font-size: 2em;
-    font-weight: 600;
+}
+
+.profileLanding__header {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.profileLanding__list {
+    font-size: 1.5em;
 }

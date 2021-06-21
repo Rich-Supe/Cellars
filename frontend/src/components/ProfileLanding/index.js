@@ -7,15 +7,16 @@ const ProfileLanding = ({user}) => {
 
     return (
         <div className={styles.profileLanding}>
-            <ul>
+            <header className={styles.profileLanding__header}>{user.username}'s Profile</header>
+            <ul className={styles.profileLanding__list}>
                 <li>
-                    Account name: {user.username}
+                    Account: {user.username}
                 </li>
                 <li>
-                    email: {user.email}
+                    Email: {user.email}
                 </li>
                 <li>
-                    name: {user.name}
+                    Name: {user.name}
                 </li>
                 {/* <li>
                     birthday: {user.birthday}
