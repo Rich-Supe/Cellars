@@ -27,22 +27,12 @@ TO DO:
 
 | Back-end    | Front-end |
 | ---      | ---       |
-| Javascript ES6 | JavascriptES6  |
+| Javascript ES6 | HTML/CSS 3  |
 | PostgreSQL     | React |
 | Node.Js |   Redux(Flux)    |
-| Express | HTML/CSS 3 |
+| Express | QuillJs |
 | Sequelize | SwiperJs |
 | AWS S3 |  Heroku(deployment)  |
-
-<!-- ## React:
-* Modals
-* CSS Modules
-* SwiperJs
-
-
-## Redux:
-* Logger
-* Thunk -->
   
   
 ## Authentication measures:
@@ -61,7 +51,7 @@ Using a Flux architecture in combination with React/Redux allows for unidirectio
  ![image](https://user-images.githubusercontent.com/70147547/121963082-a29c9c00-cd37-11eb-8bc5-74b3c0111432.png)
 
 ## Functionalities and Code snippets
-### CSS: I use react modules that follow a BEM convention to keep code readable and re-usable. Ex:
+### CSS: I use react css modules that follow a BEM convention to keep code readable and re-usable. Ex:
 ```javascript
 import styles from './WinesContainer.module.css'
     <div className={styles.searchBar}>
@@ -73,7 +63,7 @@ import styles from './WinesContainer.module.css'
 ```
                   
 ### Back-end Queries:
-#### Live search bar to filter wines by words typed
+#### Live search bar to filter wines as keywords are typed
 ```javascript
 router.get(
     '/search/:name',
