@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Wine.belongsToMany(models.Cellar, columnMapping);
     Wine.hasMany(models.Review, { foreignKey: "wineId" });
+    Wine.hasMany(models.Entry, { foreignKey: 'wineId'})
   };
   return Wine;
 };

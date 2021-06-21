@@ -6,6 +6,9 @@ const { User, Wine, Cellar, Review } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
+const { singleMulterUpload, singlePublicFileUpload } = require('../../awsS3');
+// const { singlePrivateFileUpload } = require('../../awsS3');
+
 const router = express.Router();
 
 const validateSignup = [
@@ -31,10 +34,12 @@ const validateSignup = [
 // Sign up
 router.post(
     '/',
+    singleMulterUpload("image"),
     validateSignup,
     asyncHandler(async (req, res) => {
       const { email, password, username, name, birthday } = req.body;
-      const user = await User.signup({ email, username, password, name, birthday });
+      const profileImageUrl = await singlePublicFileUpload(req.file);
+      const user = await User.signup({ email, username, password, name, birthday, profileImageUrl });
   
       await setTokenCookie(res, user);
   

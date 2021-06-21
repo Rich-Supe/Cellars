@@ -13,6 +13,9 @@ function SignupForm() {
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
+  const [image, setImage] = useState(null);
+  // for multuple file upload
+  //   const [images, setImages] = useState([]);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -23,7 +26,7 @@ function SignupForm() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, name, birthday, password }))
+      return dispatch(sessionActions.signup({ email, username, name, birthday, password, image }))
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
@@ -31,6 +34,17 @@ function SignupForm() {
     }
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
+
+  const updateFile = (e) => {
+    const file = e.target.files[0];
+    if (file) setImage(file);
+  };
+
+  // for multiple file upload
+  //   const updateFiles = (e) => {
+  //     const files = e.target.files;
+  //     setImages(files);
+  //   };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -73,6 +87,16 @@ function SignupForm() {
             required
             />
         </div>
+        <label>
+          <input type="file" onChange={updateFile} />
+        </label>
+        {/* <label>
+            Multiple Upload
+            <input
+              type="file"
+              multiple
+              onChange={updateFiles} />
+          </label> */}
         <div className={styles.textBox2}>
             <input
             type="password"

@@ -32,6 +32,9 @@ module.exports = {
         type: Sequelize.DATE,
         // type: Sequelize.DATE,
       },
+      profileImgUrl: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -41,17 +41,31 @@ export const restoreUser = () => async dispatch => {
 
 //Signup Thunk
 export const signup = (user) => async (dispatch) => {
-    const { username, email, password, name, birthday } = user;
-    const response = await csrfFetch("/api/users", {
-      method: "POST",
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-        name,
-        birthday
-      }),
+    const { username, email, password, name, birthday, image, images } = user;
+    const formData = new FormData();
+    formData.append("username", username);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("name", name);
+    formData.append("birthday", birthday);
+  // for multiple files
+    if (images && images.length !== 0) {
+        for (var i = 0; i < images.length; i++) {
+        formData.append("images", images[i]);
+        }
+    }
+
+    // for single file
+    if (image) formData.append("image", image);
+
+    const response = await csrfFetch(`/api/users/`, {
+        method: "POST",
+        headers: {
+        "Content-Type": "multipart/form-data",
+        },
+        body: formData,
     });
+
     const data = await response.json();
     dispatch(setUser(data.user));
     return response;
@@ -71,10 +85,12 @@ const initialState = { user: null };
 const sessionReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
+    // case SET_USER:
+    //   newState = Object.assign({}, state);
+    //   newState.user = action.payload;
+    //   return newState;
     case SET_USER:
-      newState = Object.assign({}, state);
-      newState.user = action.payload;
-      return newState;
+          return { ...state, user: action.payload };
     case REMOVE_USER:
       newState = Object.assign({}, state);
       newState.user = null;

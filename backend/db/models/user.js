@@ -44,6 +44,9 @@ module.exports = (sequelize, DataTypes) => {
     //     len: [10, 10]
     //   },
     },
+    profileImgUrl: {
+        type: DataTypes.STRING
+    },
     hashedPassword: {
       type: DataTypes.STRING.BINARY,
       allowNull: false,
@@ -70,7 +73,8 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function(models) {
 
     User.hasOne(models.Cellar, { foreignKey: 'userId'});
-    User.hasMany(models.Review, { foreignKey: "userId"})
+    User.hasMany(models.Review, { foreignKey: "userId"});
+    User.hasMany(models.Entry, { foreignKey: "userId"})
   };
 
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
