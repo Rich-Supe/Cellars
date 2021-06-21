@@ -60,8 +60,9 @@
     width: 100%;
     height: 15%;
     display: flex;
-    background-color: white;
-
+    /* background: rgb(240,156,156); */
+    /* background: linear-gradient(323deg, rgba(240,156,156,1) 16%, rgba(255,255,255,1) 100%); */
+    background-color: rgb(36, 36, 36);
 }
 
 a {
@@ -70,6 +71,13 @@ a {
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+    /* background-color: white; */
+}
+
+a i {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
 }
 
 /* p {
@@ -85,13 +93,17 @@ a {
     flex-direction: row;
 }
 
-.fab.fa-linkedin {
-    font-size: 2.5rem;
-}
+/* .fab.fa-linkedin {
+    font-size: 2.9rem;
+    height: 100%;
+    width: 100%;
+} */
 
 .aLink:visited {
     text-decoration: none;
     color: rgb(52, 172, 252) !important;
+    height: 100%;
+    width: 100%;
 }
 
 .liGit {

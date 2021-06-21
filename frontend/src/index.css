@@ -1,14 +1,13 @@
 /* TODO Add site wide styles */
 html {
     height: 100%;
+    width: 100%;
 }
 body {
     height: 100%;
     width: 100%;
-    /* background: rgb(180,204,94);
-    background: radial-gradient(circle, rgba(180,204,94,1) 26%, rgba(101,148,111,1) 68%); */
-    /* background: rgb(253,255,192);
-    background: linear-gradient(323deg, rgba(253,255,192,1) 4%, rgba(233,242,183,1) 41%, rgba(193,217,165,1) 66%, rgba(122,172,133,0.9912114504004726) 100%); */
+    background: rgb(240,156,156);
+    background: linear-gradient(323deg, rgba(240,156,156,1) 16%, rgba(255,255,255,1) 100%);
 }
 
 .mainDiv {

@@ -35,7 +35,7 @@
 }
 /* For Signup */
 .loginBox2 {
-    width: 350px;
+    width: 280px;
     height: 520px;
     position: absolute;
     top: 40%;
@@ -145,7 +145,7 @@ input {
 }
 
 i {
-    padding-right: 10px;
+    margin-right: 10px;
 }
 
 .btn {
