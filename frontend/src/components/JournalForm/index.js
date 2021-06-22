@@ -15,7 +15,7 @@ const JournalForm = ({id}) => {
     const [wineName, setWineName] = useState('');
     const [wineId, setWineId] = useState('')
     const wines = useSelector((state) => Object.values(state.wines))
-    console.log(wineName)
+    console.log('WineName: ', wineName)
     console.log('wineId: ', wineId)
 
     const handleSubmit = (e) => {
@@ -26,8 +26,10 @@ const JournalForm = ({id}) => {
     }
 
     const wineStateChange = (e) => {
+        console.log(`E target`, e.target)
         setWineName(e.target.value)
-        setWineId(e.target.key)
+        setWineId(e.target.id)
+
     }
 
     useEffect(() => {
@@ -40,12 +42,13 @@ const JournalForm = ({id}) => {
                 <header className={styles.journalForm__header}>Write new entry here</header>
                 <div className={styles.journalForm__winesBar}>
                 <input list="names" onChange={wineStateChange}/>
-                <datalist id="names">
+                {/* <datalist id="names" onChange={(e) => setWineId(e.target.id)}> */}
+                <datalist id="names" >
                 {wines?.map(wine=>{
-                    return <option value={wine.id, wine.name} key={wine.id} onClick={(e) => setWineId(e.target.key)}/>
+                    return <option value={wine.name} name={wine.id} id={wines.id} key={wine.id} onClick={(e) => setWineId(e.target.id)}/>
+                    // return <option value={wine.name} id={wines.id} key={wine.id}/>
                 })}
                 </datalist>
-
                 </div>
                 <div className={styles.journalForm__form}>
                         <ReactQuill theme="snow" value={value} onChange={setValue}/>
