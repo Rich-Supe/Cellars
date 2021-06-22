@@ -1,8 +1,8 @@
 
 const SET_CELLAR = 'users/SET_CELLAR'
 const CREATE_REVIEW_PROFILE = 'wines/CREATE_REVIEW_PROFILE'
-// const ADD_TO_CELLAR = 'users/UNSET_CELLAR'
-// const REMOVE_FROM_CELLAR = 'users/REMOVE_FROM_CELLAR'
+const ADD_TO_CELLAR = 'users/UNSET_CELLAR'
+const REMOVE_FROM_CELLAR = 'users/REMOVE_FROM_CELLAR'
 
 // ACTION CREATORS
 
@@ -11,15 +11,15 @@ const setCellar = (crate) => ({
     crate
 })
 
-// const addToCellar = (crate) => ({
-//     type: ADD_TO_CELLAR,
-//     crate
-// })
+const addToCellar = (crate) => ({
+    type: ADD_TO_CELLAR,
+    crate
+})
 
-// const removeFromCellar = (crate) => ({
-//     type: REMOVE_FROM_CELLAR,
-//     crate
-// })
+const removeFromCellar = (crate) => ({
+    type: REMOVE_FROM_CELLAR,
+    crate
+})
 
 
 //THUNKS
