@@ -157,6 +157,7 @@ i {
     color: rgb(0, 0, 0);
     transition: all 0.3s;
     position: relative;
+    font-size: 1.1em;
 }
 .btn span {
     transition: all 0.3s;

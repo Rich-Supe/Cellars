@@ -6,15 +6,17 @@ import { getWines } from '../../store/wines'
 
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import WineModal from "../WineModal";
+// import WineModal from "../WineModal";
 
 const JournalForm = ({id}) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const [value, setValue] = useState('');
     const [wineName, setWineName] = useState('');
+    const [wineId, setWineId] = useState('')
     const wines = useSelector((state) => Object.values(state.wines))
     console.log(wineName)
+    console.log('wineId: ', wineId)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -23,19 +25,28 @@ const JournalForm = ({id}) => {
         history.push('/journal')
     }
 
+    const wineStateChange = (e) => {
+        setWineName(e.target.value)
+        setWineId(e.target.key)
+    }
+
     useEffect(() => {
         dispatch(getWines())
-    }, [dispatch])
+    }, [])
+
     return (
         <div className={styles.createPage}>
             <form className={styles.journalForm} onSubmit={handleSubmit}>
                 <header className={styles.journalForm__header}>Write new entry here</header>
-                <input list="names" onChange={(e) => setWineName(e.target.value)}/>
+                <div className={styles.journalForm__winesBar}>
+                <input list="names" onChange={wineStateChange}/>
                 <datalist id="names">
                 {wines?.map(wine=>{
-                    return <option value={wine.id, wine.name} key={wine.id}/>
+                    return <option value={wine.id, wine.name} key={wine.id} onClick={(e) => setWineId(e.target.key)}/>
                 })}
                 </datalist>
+
+                </div>
                 <div className={styles.journalForm__form}>
                         <ReactQuill theme="snow" value={value} onChange={setValue}/>
                 </div>
