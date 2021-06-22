@@ -1,18 +1,46 @@
+.createPage {
+    height: 100%;
+    width: 100%;
+    background-image: url(../../assets/images/winebackground4.jpg);
+    background-size: cover;
+    margin-top: 0;
+}
+
 .journalForm {
-    height: 90%;
+    height: 85%;
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-content: center;
     margin-left: 200px;
-    margin-top: 200px;
+    /* margin-top: 100px; */
+    background-color: rgb(243, 237, 237, .8);
+    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+    box-shadow: 20px 20px rgba(0,0,0,.35);
+    transition: all .4s ease;
+}
+
+.journalForm:hover {
+    border-radius: 0% 0% 30% 30% / 0% 0% 5% 5% ;
+    box-shadow: 10px 10px rgba(0,0,0,.25);
 }
 
 .journalForm__header {
+    margin-top: 50px;
     height: 2em;
     font-size: 36px;
     font-weight: 600;
     display: inline-flex;
     justify-content: center;
+}
+
+.journalForm__winesBar {
+    display: inline-flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.journalForm__winesBar input{
+    width: 50%;
 }

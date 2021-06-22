@@ -90,13 +90,13 @@ router.delete(
     requireAuth,
     asyncHandler(async (req, res) => {
         //if getting wine id by adding the id to the button
-        const {wineButtonId} = req.body;
+        const {wineId} = req.body;
         const usersId = parseInt(req.params.id, 10)
         await Crate.destroy({
             where: {
                 cellarId: usersId,
                 //if getting wine id by adding the id to the button
-                wineId: wineButtonId
+                wineId: wineId
         }
         })
         res.json({"key" : "wine removed"})

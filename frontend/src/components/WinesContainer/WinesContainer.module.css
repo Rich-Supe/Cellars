@@ -13,9 +13,9 @@
 .searchHeader {
     height: 28em;
     font-weight: 900;
-    width: 90%;
+    width: 100%;
     align-self: center;
-    background-image: url(../../assets/images/winebanner4.jpg);
+    background-image: url(../../assets/images/winebanner5.jpg);
     background-size: cover;
     border-radius: 20px;
 }

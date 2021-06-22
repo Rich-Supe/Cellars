@@ -15,25 +15,24 @@ const Splash = () => {
                     </div>
                 </div> */}
             </div>
-            <div className={styles.footerDiv}>
-                <footer className={styles.footer}>
-                    <ul className={styles.footerList}>
+            <footer className={styles.footer}>
+                <div className={styles.footer__content}>
+                    {/* <header>Rich Supe</header>
+                    <p>Welcome to Cellars! Contact me here:</p> */}
+                    <ul className={styles.footer__socials}>
                         <li className={styles.liLink}>
                             <a className={styles.aLink} href="https://linkedin.com/in/richard-supe">
                                 <i className="fab fa-linkedin"/>
-                                {/* <p>Linked-in</p> */}
                             </a>
                         </li>
                         <li className={styles.liGit}>
                             <a className={styles.aGit} href="https://github.com/Rich-Supe">
                             <i className="fab fa-github-square"></i>
-                            {/* Github */}
                             </a>
                         </li>
                         <li className={styles.liTwit}>
                             <a className={styles.aTwit} href="https://twitter.com/supe_richard">
                             <i className="fab fa-twitter-square"></i>
-                            {/* Twitter */}
                             </a>
                         </li>
                         {/* <li className={styles.liPort}>
@@ -41,8 +40,11 @@ const Splash = () => {
                             Portfolio
                         </li> */}
                     </ul>
-                </footer>
-            </div>
+                </div>
+                <div className={styles.footer__bottom}>
+                    <p>Website created and maintained by <span>Rich Supe</span></p>
+                </div>
+            </footer>
         </div>
     )
 }
