@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import winesReducer from './wines';
 import usersReducer from './users'
+import entriesReducer from './entries'
 
 let enhancer;
 
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
     session: sessionReducer,
     wines: winesReducer,
     users: usersReducer,
+    entries: entriesReducer,
 });
 
 

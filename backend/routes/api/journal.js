@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 
 // const { requireAuth, restoreUser } = require('../../utils/auth');
-const { User, Wine, Cellar, Review, Entry } = require('../../db/models');
+const { Wine, Entry } = require('../../db/models');
 const {Op} = require('sequelize');
 
 
@@ -31,8 +31,8 @@ router.post(
         // })
         const entry = Entry.findAll({
             where: {
-                userId: userId,
-                wineId: wineId
+                userId,
+                wineId
             }
         })
 
@@ -62,23 +62,16 @@ router.put(
 )
 
 // delete entry:
-// router.delete(
-//     './:id(\\d+',
-//     asyncHandler(async(req, res) => {
-//         const userId = req.params;
-//         const wineName = 
-//     })
-// )
 
 router.post(
-    './:id(\\d+',
+    './:id(\\d+)',
     asyncHandler(async(req, res) => {
         const userId = req.params;
-        const wineName = req.body;
+        const wineId = req.body;
         await Entry.destroy({
             where: {
                 userId, 
-                wineName
+                wineId
             }
         })
     })
@@ -86,7 +79,7 @@ router.post(
 
 //Delete all entries;
 router.delete(
-    './:id(\\d+',
+    './:id(\\d+)',
     asyncHandler(async(req, res) => {
         const userId = req.params;
         //Or TRUNCATE?
