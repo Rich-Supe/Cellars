@@ -4,10 +4,12 @@ const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const winesRouter = require('./wines.js');
+const journalRouter = require('./journal.js')
 
 router.use('/session', sessionRouter);
 router.use('/wines', winesRouter), 
 router.use('/users', usersRouter);
+router.use('/journal', journalRouter)
 
 
 
