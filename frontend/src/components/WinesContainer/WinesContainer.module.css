@@ -21,14 +21,32 @@
 }
 
 .searchBar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     margin: 0px;
     padding: 0px;
     background-color: rgb(235, 235, 212, .5);
-    height: 16%;
+    height: 10%;
     font-size: 20px;
+}
+
+.sticky {
+    top: 0%;
+    height: 10%;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: rgba(2, 2, 2, 0.4);
+}
+
+.sticky span {
+    color: white
+}
+
+.sticky ul li ul li {
+    color: black;
 }
 
 .searchBar:hover {
@@ -44,7 +62,7 @@
 
 .dropdown__header {
     position: relative;
-    font-weight: 900;
+    font-weight: 900;;
 }
 
 .dropdown__header header {
@@ -70,10 +88,11 @@
     display: none;
     /* flex-direction: column; */
     position: absolute;
-    background-color: rgb(245, 252, 252, .9);
+    background-color: rgb(245, 252, 252, .7);
     border: 1px solid grey;
     padding: 8px;
     border-radius: 6px;
+    /* margin-top: 24px; */
 }   
 
 .dropdown__header:hover ul {

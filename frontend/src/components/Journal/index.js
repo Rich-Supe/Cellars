@@ -13,21 +13,20 @@ const Journal = () => {
 
     return (
         <>
-            <header>YOUR JOURNAL</header>
+            {/* <header>YOUR JOURNAL</header> */}
             <div className={styles.journal}>
-                <div className={styles.journal__newEntry}>
-                    {/* <JournalForm/> */}
-                    <button className={styles.journal__newEntry_btn} onClick={() => history.push('/journal/new')}>
-                        Create a new entry
-                        <i className="fas fa-pencil-alt"></i>
-                    </button>
-                </div>
-                <div className={styles.journal__editEntry}>
-                    {/* <JournalForm/> */}
-                    <button className={styles.journal__editEntry_btn}>
-                        Edit an older entry
-                        <i className="fas fa-edit"></i>
-                    </button>
+                <div className={styles.journal__halfPage}></div>
+                <div className={styles.journal__page}>
+                    <div className={styles.journal__newEntry}>
+                        <div className={styles.text_box1} onClick={() => history.push('/journal/new')}>
+                            <a href="#" className={`${styles.btn} ${styles.btn_white} ${styles.btn_animate}`}>New Entry</a>
+                        </div>
+                    </div>
+                    <div className={styles.journal__editEntry}>
+                        <div className={styles.text_box2}>
+                            <a href="#" className={`${styles.btn} ${styles.btn_white} ${styles.btn_animate}`}>Edit Entry</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
