@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 // import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import WineCard from '../WineCard'
 
 // import {getWines} from '../../store/wines'
@@ -10,6 +10,7 @@ import styles from './WinesContainer.module.css'
 // import background from '../../assets/images/vineyard2.jpg'
 
 const WinesContainer = ({wine}) => {
+    const something = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
     const wines = useSelector((state) => Object.values(state.wines))
@@ -18,6 +19,8 @@ const WinesContainer = ({wine}) => {
     const [ country, setCountry ] = useState('')
     const [ year, setYear ] = useState('')
     const [ name, setName ] = useState('')
+
+    console.log(`SOMETHING`, something)
 
     const data = {
         grape,
@@ -40,10 +43,25 @@ const WinesContainer = ({wine}) => {
         }
     }, [name])
 
+
+
+    const stickySearch = (
+        <script type="text/javascript">
+                {
+                window.addEventListener("scroll", () => {
+                    let section = document.querySelector("section");
+                    if (section) {
+                        section.classList.toggle(`${styles.sticky}`, window.scrollY > 0)
+                    }
+                })
+                }
+            </script>
+    )
+
     return (
         <div className={styles.winePage}>
             <div className={styles.searchHeader}>
-            <div className={styles.searchBar}>
+            <section className={styles.searchBar}>
                 <ul className={styles.dropdown}>
                     <li className={styles.dropdown__header}>
                         <header>COLOR<i className="fas fa-caret-down"></i></header>
@@ -84,7 +102,6 @@ const WinesContainer = ({wine}) => {
                         </input>
                     </li>
                     <li>
-                        {/* <button className={styles.addWineBtn} onClick={()=> history.push(`/addwine`)}>Add Wine</button> */}
                         <div className={styles.box1}>
                             <div className={styles.btn} onClick={()=> history.push(`/addwine`)}>
                                 <span>
@@ -95,7 +112,16 @@ const WinesContainer = ({wine}) => {
                         </div>
                     </li>
                 </ul>
-            </div>
+            </section>
+            {stickySearch}
+            {/* <script type="text/javascript">
+                {
+                window.addEventListener("scroll", () => {
+                    let section = document.querySelector("section");
+                    section.classList.toggle(`${styles.sticky}`, window.scrollY > 0)
+                })
+                }
+            </script> */}
             </div>
             <div className={styles.WinesContainer}>
                 {wines?.map(wine=>{

@@ -4,36 +4,96 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items:center;
+    background-image: url(../../assets/images/journal2.jpeg);
+    background-size: cover;
 }
 
-.journal__editEntry_btn, .journal__newEntry_btn {
-    height: 3em;
-    font-size: 1.5em;
+.journal__halfPage {
+    width: 50%;
+}
+
+.journal__page {
+    width: 50%;
+    right: inherit;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text_box1 {
     margin-bottom: 500px;
+    font-weight: 900;
+    font-size: 20px;
 }
 
-.modal {
-    position: fixed;
-    background-color:whitesmoke;
-    border: 6px solid gold;
-    border-radius: 10%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    max-width: 100%;
-    height: 650px;
-    max-height: 100%;
-    opacity: 95%;
-    z-index: 3;
+.text_box2 {
+    margin-right: 200px;
+    font-weight: 900;
+    font-size: 20px;
 }
 
-#modal-content {
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn_white {
+    background-color: #fff;
+    color: rgb(75, 74, 74);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
     height: 100%;
     width: 100%;
-    background-color: brown;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
 }
 
+.btn_white::after {
+    background-color: #fff;
+}
 
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn_animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

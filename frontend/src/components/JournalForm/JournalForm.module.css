@@ -19,6 +19,7 @@
     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
     box-shadow: 20px 20px rgba(0,0,0,.35);
     transition: all .4s ease;
+    /* margin-top: 2em; */
 }
 
 .journalForm:hover {
@@ -43,4 +44,88 @@
 
 .journalForm__winesBar input{
     width: 50%;
+}
+
+.journalForm__form {
+    height: 50%;
+}
+
+.wineForm__Btn {
+    display: flex;
+    justify-content: space-around !important;
+}
+
+.button{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    max-width: 250px;
+}
+.button:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.button:before,.button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+}
+.button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.button:hover:before,.button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+
+.button2{
+    background:#db3551;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+.button2:hover{
+    background:#fff;
+    color:#db3551;
+}
+.button2:before,.button2:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #db3551;
+    transition:400ms ease all;
+}
+.button2:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.button2:hover:before,.button2:hover:after{
+    width:100%;
+    transition:800ms ease all;
 }

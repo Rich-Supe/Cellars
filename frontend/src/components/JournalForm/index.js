@@ -26,10 +26,15 @@ const JournalForm = ({id}) => {
     }
 
     const wineStateChange = (e) => {
-        console.log(`E target`, e.target)
+        // console.log(`E target`, e.target.list)
+        // console.log(`Other target`, e.target.list.options)
         setWineName(e.target.value)
         setWineId(e.target.id)
+    }
 
+    const handleCancel = (e) => {
+        e.preventDefault();
+        history.push('/journal')
     }
 
     useEffect(() => {
@@ -39,13 +44,15 @@ const JournalForm = ({id}) => {
     return (
         <div className={styles.createPage}>
             <form className={styles.journalForm} onSubmit={handleSubmit}>
-                <header className={styles.journalForm__header}>Write new entry here</header>
+                <header className={styles.journalForm__header}>Pick a wine and create an entry!</header>
                 <div className={styles.journalForm__winesBar}>
-                <input list="names" onChange={wineStateChange}/>
+                <input list="names" placeholder="Wine Name" onChange={wineStateChange} className={styles.journalForm__input}/>
                 {/* <datalist id="names" onChange={(e) => setWineId(e.target.id)}> */}
-                <datalist id="names" >
+                <datalist id="names" className={styles.journalForm__datalist} >
                 {wines?.map(wine=>{
-                    return <option value={wine.name} name={wine.id} id={wines.id} key={wine.id} onClick={(e) => setWineId(e.target.id)}/>
+                    return <option data-value={wine.id} name={wine.id} id={wines.id} key={wine.id}  className={styles.journalForm__datalist_options}>
+                        {wine.name}
+                    </option>
                     // return <option value={wine.name} id={wines.id} key={wine.id}/>
                 })}
                 </datalist>
@@ -53,8 +60,10 @@ const JournalForm = ({id}) => {
                 <div className={styles.journalForm__form}>
                         <ReactQuill theme="snow" value={value} onChange={setValue}/>
                 </div>
-
-                <button type="submit" >Submit</button>
+                <div className={styles.wineForm__Btn}>
+                    <button className={styles.button} type="submit">Submit</button>
+                    <button className={styles.button2} onClick={handleCancel}>Cancel</button>
+                </div>
             </form>
         </div>
     )
