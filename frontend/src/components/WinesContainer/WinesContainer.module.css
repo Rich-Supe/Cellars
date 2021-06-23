@@ -28,6 +28,7 @@
     padding: 0px;
     background-color: rgb(235, 235, 212, .5);
     height: 16%;
+    font-size: 20px;
 }
 
 .searchBar:hover {

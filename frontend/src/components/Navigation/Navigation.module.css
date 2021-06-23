@@ -44,8 +44,8 @@
     padding: 5px;
     font-size: 1.7em;
     cursor: pointer;
-    font-family: ProximaNova,Helvetica,sans-serif;;
-    font-weight: 650;
+    font-family: 'Permanent Marker', cursive;
+    /* font-weight: 650; */
     text-decoration: none;
     margin-right: 45px;
 
@@ -151,10 +151,10 @@ li {
 }
 .btn span {
   transition: all 0.3s;
-  font-weight: 600;
+  font-weight: 500;
   height: 100%;
-  font-size: larger;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6em;
+  font-family: 'Chewy', cursive;
 }
 .btn::before {
   content: '';

@@ -1,32 +1,67 @@
 .wineCard {
     width: 18rem;
-    height: 22rem;
+    height: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
     overflow: hidden;
     /* border: 1px solid gold */
 }
 
 .wineCard:hover {
     cursor: pointer;
-    border-bottom: 1px solid maroon;
+    border-bottom: 1px solid rgb(255, 254, 254);
+    border-radius: 20px;
+    background-color: rgb(247, 178, 178, .1);
 }
 
 .wineImg {
-    height: 75%;
+    height: 65%;
     width: 55%;
+    max-height: 60%;
     flex-grow: 4;
     border-radius: 10%;
 }
 
 .name {
     color:black;
+    /* min-height: 40%; */
     width: 55%;
-    font-size: 18px;
+    height: 25%;
+    font-size: 22px;
     padding-top: 5px;
-    font-family:cursive;
+    /* font-family: 'Pangolin', cursive; */
     font-weight: 850;
 }
+
+.name p {
+    padding: none;
+    margin: 0px 0px;
+    font-family: 'Chewy', cursive;
+}
+
+.addToCellar, .removeFromCellar {
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 80%;
+    font-size: 35px;
+}
+
+.addToCellar i, .removeFromCellar i {
+    padding-right: 10px;
+    margin-right: 15px;
+}
+
+.addToCellar i:hover {
+    color: rgb(133, 255, 133);
+}
+
+.removeFromCellar i:hover{
+    color: red;
+}
+
+
