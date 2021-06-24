@@ -123,9 +123,9 @@
     width: 100%;
 }
 
-.deleteBtn p:hover {
+/* .deleteBtn p:hover {
     display: none;
-}
+} */
 
 .deleteBtn{
     color: black;
@@ -138,7 +138,7 @@
 .deleteBtn:hover{
     color: red;
     cursor: pointer;
-    font-size: 40px;
+    /* font-size: 40px; */
 }
 
 .wineForm__Btn {
