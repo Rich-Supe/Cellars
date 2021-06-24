@@ -1,16 +1,15 @@
 import React, {useEffect, useState} from 'react';
 // import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import WineCard from '../WineCard'
 
 // import {getWines} from '../../store/wines'
-import {getWines, getSomeWines, getWineByName} from '../../store/wines'
+import { getSomeWines, getWineByName} from '../../store/wines'
 import styles from './WinesContainer.module.css'
 // import background from '../../assets/images/vineyard2.jpg'
 
 const WinesContainer = ({wine}) => {
-    const something = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
     const wines = useSelector((state) => Object.values(state.wines))
@@ -19,8 +18,6 @@ const WinesContainer = ({wine}) => {
     const [ country, setCountry ] = useState('')
     const [ year, setYear ] = useState('')
     const [ name, setName ] = useState('')
-
-    console.log(`SOMETHING`, something)
 
     const data = {
         grape,
@@ -43,15 +40,13 @@ const WinesContainer = ({wine}) => {
         }
     }, [name])
 
-
-
-    const stickySearch = (
+        const stickySearch = (
         <script type="text/javascript">
                 {
                 window.addEventListener("scroll", () => {
-                    let section = document.querySelector("section");
-                    if (section) {
-                        section.classList.toggle(`${styles.sticky}`, window.scrollY > 0)
+                    let aside = document.querySelector("aside");
+                    if (aside) {
+                        aside.classList.toggle(`${styles.sticky}`, window.scrollY > 0)
                     }
                 })
                 }
@@ -61,7 +56,7 @@ const WinesContainer = ({wine}) => {
     return (
         <div className={styles.winePage}>
             <div className={styles.searchHeader}>
-            <section className={styles.searchBar}>
+            <aside className={styles.searchBar}>
                 <ul className={styles.dropdown}>
                     <li className={styles.dropdown__header}>
                         <header>COLOR<i className="fas fa-caret-down"></i></header>
@@ -112,7 +107,7 @@ const WinesContainer = ({wine}) => {
                         </div>
                     </li>
                 </ul>
-            </section>
+            </aside>
             {stickySearch}
             {/* <script type="text/javascript">
                 {

@@ -7,9 +7,12 @@ html {
 }
 body {
     height: 100%;
-    width: 100%;
-    background: rgb(240,156,156);
-    background: linear-gradient(323deg, rgba(240,156,156,1) 16%, rgba(255,255,255,1) 100%);
+    width: 99%;
+    background-color: rgb(43, 21, 21);
+    /* background: rgb(240,156,156);
+    background: linear-gradient(323deg, rgba(240,156,156,1) 16%, rgba(255,255,255,1) 100%); */
+    /* background: rgb(255,253,253);
+    background: radial-gradient(circle, rgba(255,253,253,1) 0%, rgba(255,235,235,0.4741246840533089) 26%, rgba(255,219,219,0.9951330874146533) 49%, rgba(255,237,237,1) 74%, rgba(255,255,255,0.6197829473586309) 100%); */
 }
 
 .mainDiv {

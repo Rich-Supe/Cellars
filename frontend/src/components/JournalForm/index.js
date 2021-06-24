@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import styles from './JournalForm.module.css'
 import { getWines } from '../../store/wines'
+import { createEntry } from '../../store/entries'
 
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -13,29 +14,42 @@ const JournalForm = ({id}) => {
     const history = useHistory();
     const [value, setValue] = useState('');
     const [wineName, setWineName] = useState('');
-    const [wineId, setWineId] = useState('')
+    const [rating, setRating] = useState('0')
     const wines = useSelector((state) => Object.values(state.wines))
-    console.log('WineName: ', wineName)
-    console.log('wineId: ', wineId)
 
-    const handleSubmit = (e) => {
+    const data = {
+        rating,
+        entry: value,
+        userId: 1,
+        wineName,
+    }
+
+    console.log(data)
+
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('Submitted!')
-        // dispatch()
-        history.push('/journal')
+        const entry = await dispatch(createEntry(data))
+        if (entry){
+            history.push('/journal')
+        }
     }
 
     const wineStateChange = (e) => {
-        // console.log(`E target`, e.target.list)
-        // console.log(`Other target`, e.target.list.options)
         setWineName(e.target.value)
-        setWineId(e.target.id)
     }
 
     const handleCancel = (e) => {
         e.preventDefault();
         history.push('/journal')
     }
+
+    let options = [];
+    for (let i = 0; i < 11; i++) {
+            options.push(<option value={i} id={i} key={i}>{i}</option>)
+    }
+
+    console.log(rating)
 
     useEffect(() => {
         dispatch(getWines())
@@ -47,18 +61,21 @@ const JournalForm = ({id}) => {
                 <header className={styles.journalForm__header}>Pick a wine and create an entry!</header>
                 <div className={styles.journalForm__winesBar}>
                 <input list="names" placeholder="Wine Name" onChange={wineStateChange} className={styles.journalForm__input}/>
-                {/* <datalist id="names" onChange={(e) => setWineId(e.target.id)}> */}
                 <datalist id="names" className={styles.journalForm__datalist} >
                 {wines?.map(wine=>{
-                    return <option data-value={wine.id} name={wine.id} id={wines.id} key={wine.id}  className={styles.journalForm__datalist_options}>
-                        {wine.name}
-                    </option>
-                    // return <option value={wine.name} id={wines.id} key={wine.id}/>
+                    return <option value={wine.name} id={wines.id} key={wine.id}  className={styles.journalForm__datalist_options}/>
                 })}
                 </datalist>
                 </div>
                 <div className={styles.journalForm__form}>
                         <ReactQuill theme="snow" value={value} onChange={setValue}/>
+                        <div className={styles.ratingDiv}>
+                        <label list="rating" placeholder="Wine Rating" className={styles.custom_selector}>
+                            How would you rate this wine?</label>
+                            <select id="rating" className={styles.journalForm__datalist} onChange={(e) => {setRating(e.target.value)}}>
+                            {options.map((option) => {return option})}
+                            </select>
+                        </div>
                 </div>
                 <div className={styles.wineForm__Btn}>
                     <button className={styles.button} type="submit">Submit</button>

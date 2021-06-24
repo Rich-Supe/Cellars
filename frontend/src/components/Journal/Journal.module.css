@@ -12,6 +12,7 @@
 
 .journal__halfPage {
     width: 50%;
+    height: 100%;
 }
 
 .journal__page {
@@ -96,4 +97,13 @@
         opacity: 1;
         transform: translateY(0px);
     }
+}
+
+.editJournalModal {
+    height: 50%;
+    width: 50%;
+    color: black;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
 }
