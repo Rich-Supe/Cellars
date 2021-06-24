@@ -50,6 +50,12 @@
     height: 50%;
 }
 
+.ratingDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .wineForm__Btn {
     display: flex;
     justify-content: space-around !important;

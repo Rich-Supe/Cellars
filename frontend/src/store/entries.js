@@ -35,6 +35,7 @@ const removeEntry = () => ({
 export const getEntries = (id) => async(dispatch) => {
     const res = await csrfFetch(`/api/journal/${id}`);
     const entries = await res.json();
+    console.log(`ENTRIES FROM thunk`, entries)
     dispatch(setEntries(entries))
 }
 
@@ -120,7 +121,7 @@ const entriesReducer = (state = initialState, action) => {
         }
         case REMOVE_ENTRY:{
         }
-        
+
         default:
             return state;
     }

@@ -12,6 +12,8 @@ const router = express.Router();
 router.post(
     '/',
     asyncHandler(async(req, res) => {
+        console.log(`----------------------------__-_-_-_---req.body:`, req.body)
+        // const wineName = 
         const entry = await Entry.create(req.body)
         return res.json(entry)
     })
@@ -29,13 +31,12 @@ router.post(
         // const entry = Entry.findAll({
         //     attributes: resu
         // })
-        const entry = Entry.findAll({
+        const entry = await Entry.findAll({
             where: {
                 userId,
                 wineId
             }
         })
-
         return res.json(entry)
     })
 )
@@ -43,9 +44,8 @@ router.post(
 router.get(
     '/:id(\\d+)',
     asyncHandler(async(req, res) => {
-        const userId = req.params;
-        const entries = Entry.findAll({where: {userId}})
-        
+        const userId = parseInt(req.params.id, 10);
+        const entries = await Entry.findAll({where: {userId}, include: {model: Wine}})
         return res.json(entries)
     })
 )
@@ -55,8 +55,9 @@ router.put(
     '/edit/:id(\\d+)',
     asyncHandler(async(req, res) => {
         const patch = req.body
-        const entryId = req.body.id
-        const entry = Entry.findByPk(entryId)
+        // const entryId = req.body.id
+        const entryId = req.params
+        const entry = await Entry.findByPk(entryId)
         entry.update(patch)
     })
 )

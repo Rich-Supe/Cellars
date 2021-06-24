@@ -9,6 +9,7 @@ import Splash from './components/Splash';
 import AddWine from './components/AddWine';
 import Journal from "./components/Journal";
 import JournalForm from "./components/JournalForm";
+import EditJournalModal from "./components/Journal/EditJournalModal";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route path='/journal/new'>
                 <JournalForm />
+            </Route>
+            <Route path='/journal/edit'>
+                <EditJournalModal />
             </Route>
             </Switch>
         )}
