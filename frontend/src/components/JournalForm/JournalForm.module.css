@@ -56,8 +56,8 @@
 
 .journalForm__winesBar input{
     width: 50%;
-    max-width: 350px;
-    min-width: 275px;
+    max-width: 400px;
+    min-width: 300px;
     border: 2px solid #2b9af5;
     background: #e8f6ff;
     font-family: 'Chewy', cursive;
