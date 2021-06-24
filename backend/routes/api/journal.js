@@ -5,14 +5,13 @@ const asyncHandler = require('express-async-handler');
 const { Wine, Entry } = require('../../db/models');
 const {Op} = require('sequelize');
 
-
 const router = express.Router();
 
 // create Entry:
 router.post(
     '/',
     asyncHandler(async(req, res) => {
-        console.log(`----------------------------__-_-_-_---req.body:`, req.body)
+        // console.log(`----------------------------__-_-_-_---req.body:`, req.body)
         // const wineName = 
         const entry = await Entry.create(req.body)
         return res.json(entry)

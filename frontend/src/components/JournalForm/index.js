@@ -45,7 +45,7 @@ const JournalForm = ({id}) => {
     }
 
     let options = [];
-    for (let i = 0; i < 101; i++) {
+    for (let i = 0; i < 11; i++) {
             options.push(<option value={i} id={i} key={i}>{i}</option>)
     }
 
@@ -70,7 +70,7 @@ const JournalForm = ({id}) => {
                 <div className={styles.journalForm__form}>
                         <ReactQuill theme="snow" value={value} onChange={setValue}/>
                         <div className={styles.ratingDiv}>
-                        <label list="rating" placeholder="Wine Rating" className={styles.journalForm__rating}>
+                        <label list="rating" placeholder="Wine Rating" className={styles.custom_selector}>
                             How would you rate this wine?</label>
                             <select id="rating" className={styles.journalForm__datalist} onChange={(e) => {setRating(e.target.value)}}>
                             {options.map((option) => {return option})}

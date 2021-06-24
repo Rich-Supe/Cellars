@@ -4,21 +4,31 @@
     background-image: url(../../assets/images/winebackground4.jpg);
     background-size: cover;
     margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space{
+    height: 100px;
+    width: 100%;
+    z-index: 100;
 }
 
 .journalForm {
-    height: 85%;
-    width: 70%;
+    height: 70%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-content: center;
-    margin-left: 200px;
+    /* margin-left: 200px; */
     /* margin-top: 100px; */
     background-color: rgb(243, 237, 237, .8);
     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
     box-shadow: 20px 20px rgba(0,0,0,.35);
     transition: all .4s ease;
+    margin-bottom: 140px;
     /* margin-top: 2em; */
 }
 
@@ -34,26 +44,101 @@
     font-weight: 600;
     display: inline-flex;
     justify-content: center;
+    font-family: 'Chewy', cursive;
 }
 
 .journalForm__winesBar {
     display: inline-flex;
     justify-content: center;
     margin-bottom: 10px;
+    font-family: 'Chewy', cursive;
 }
 
 .journalForm__winesBar input{
     width: 50%;
+    max-width: 350px;
+    min-width: 275px;
+    border: 2px solid #2b9af5;
+    background: #e8f6ff;
+    font-family: 'Chewy', cursive;
+    display: inline;
+    justify-content: center;
 }
 
 .journalForm__form {
     height: 50%;
+    font-family: 'Chewy', cursive;
 }
 
 .ratingDiv {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
+    margin-top: 30px;
+    box-sizing: border-box;
+    height: 40%;
+}
+
+.custom_selector {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'Chewy', cursive;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+    /* max-height: 150px; */
+}
+
+.journalForm__datalist {
+    width: 200px;
+    max-height: 150px;
+    font-family: 'Chewy';
+    background: #e8f6ff;
+    border-radius: 3px;
+    border: 2px solid #2b9af5;
+    outline: none;
+    font-size: 20px;
+    /* padding: 0 10px; */
+    padding-left: 120px;
+    width: 25%;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    /* appearance: none; */
+}
+
+.deleteBtn{
+    color: black;
+    margin-left: 18px;
+    font-size: 35px;
+    min-width: 180px;
+    display: inline-flex;
+}
+
+.deleteBtn p {
+    /* display: none; */
+    font-size: 20px;
+    margin: 7px 0 0 0;
+    width: 100%;
+}
+
+.deleteBtn p:hover {
+    display: none;
+}
+
+.deleteBtn{
+    color: black;
+    margin-left: 18px;
+    font-size: 35px;
+    min-width: 180px;
+    display: inline-flex;
+}
+
+.deleteBtn:hover{
+    color: red;
+    cursor: pointer;
+    font-size: 40px;
 }
 
 .wineForm__Btn {
