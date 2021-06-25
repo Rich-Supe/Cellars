@@ -14,7 +14,7 @@
 }
 
 .header {
-    height: 12%;
+    height: 10%;
     font-size: 2em;
     display: flex;
     justify-content: center;
@@ -29,7 +29,7 @@
     padding-bottom: 10px;
 }
 
-ul {
+.wineModal ul {
     font-family: 'Chewy', cursive;
     font-weight: 500;
 }
@@ -85,18 +85,20 @@ ul {
 .footer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-content: flex-start;
-    /* margin-bottom: 10px; */
+    height: 7%;
+    width: 90%;
 }
 
 .footerP {
-    margin-right: 10px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
     font-family: 'Chewy', cursive;
     border: 2px solid maroon;
     background: none;
+    margin-right: none !important;
+    margin-left: 45px;
 }
 
 .footerP:hover {
@@ -106,6 +108,34 @@ ul {
 /* Section is the slide on the carousel */
 section {
     height: 98%;
+}
+
+.addToCellar {
+    color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    font-size: 35px;
+    border: 2px solid maroon;
+    background: none;
+    /* justify-self: flex-end; */
+}
+
+.addToCellar:hover{
+    border: 2px solid gold;
+}
+
+.addToCellar i {
+    padding-left: 10px;
+    margin-right: 0px !important;
+}
+
+.addToCellar i:hover {
+    color: rgb(133, 255, 133);
+}
+
+.addToCellar p {
+    font-size: 18px;
+    align-self: center;
+    font-family: 'Chewy', cursive;
 }
 
 

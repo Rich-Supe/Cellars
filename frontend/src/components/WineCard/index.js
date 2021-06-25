@@ -38,11 +38,8 @@ const WinesCard = ({wine}) => {
         )
     } else {
         cellarBtn = (
-            <div className={styles.addToCellar}>
-                {/* <button className={styles.addToCellar__btn} onClick={handleAdd}>Add wine to Cellar</button> */}
-                {/* <i class="fas fa-cart-plus"></i> */}
-                <i className="fas fa-parachute-box" onClick={handleAdd}></i>
-            </div>
+            <>
+            </>
         )
     }
 

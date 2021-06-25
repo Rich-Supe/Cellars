@@ -35,7 +35,6 @@ const removeEntry = () => ({
 export const getEntries = (id) => async(dispatch) => {
     const res = await csrfFetch(`/api/journal/${id}`);
     const entries = await res.json();
-    console.log(`ENTRIES FROM thunk`, entries)
     dispatch(setEntries(entries))
 }
 
@@ -69,8 +68,8 @@ export const createEntry = (data) => async(dispatch) => {
 }
 
 //edit entry
-export const editEntry = (data, entryId) => async(dispatch) => {
-    const res = await csrfFetch(`/api/journal/${entryId}`, {
+export const editEntry = (data, userId) => async(dispatch) => {
+    const res = await csrfFetch(`/api/journal/edit/${userId}`, {
         method: 'put',
         headers: {
             "Content-Type": "application/json",
@@ -84,13 +83,15 @@ export const editEntry = (data, entryId) => async(dispatch) => {
 } 
 
 //delete entry
-export const deleteEntry = (userId, wineId) => async(dispatch) => {
-    const res = await csrfFetch(`/api/journal/${userId}`, {
+export const deleteEntry = (userId, wineName) => async(dispatch) => {
+    console.log('USERID in delete thunk', userId)
+    console.log(wineName)
+    const res = await csrfFetch(`/api/journal/delete/${userId}`, {
         method: 'post',
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(wineId)
+        body: JSON.stringify({wineName})
       });
       if(res.ok){
           dispatch(removeEntry(res));

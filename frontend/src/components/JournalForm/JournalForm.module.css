@@ -1,7 +1,7 @@
 .createPage {
     height: 100%;
     width: 100%;
-    background-image: url(../../assets/images/winebackground4.jpg);
+    background-image: url(../../assets/images/journal2.jpeg);
     background-size: cover;
     margin-top: 0;
     display: flex;
@@ -9,11 +9,11 @@
     align-items: center;
 }
 
-.space{
+/* .space{
     height: 100px;
     width: 100%;
     z-index: 100;
-}
+} */
 
 .journalForm {
     height: 70%;
@@ -24,16 +24,31 @@
     align-content: center;
     /* margin-left: 200px; */
     /* margin-top: 100px; */
-    background-color: rgb(243, 237, 237, .8);
-    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+    background-color: rgba(218, 214, 214, 0.689);
+    /* border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
     box-shadow: 20px 20px rgba(0,0,0,.35);
-    transition: all .4s ease;
+    transition: all .4s ease; */
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    position: relative;
     margin-bottom: 140px;
     /* margin-top: 2em; */
 }
 
+/* .journalForm::before {
+    content: '';
+    border: 3px solid #353535;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+} */
+
 .journalForm:hover {
-    border-radius: 0% 0% 30% 30% / 0% 0% 5% 5% ;
+    /* border-radius: 0% 0% 30% 30% / 0% 0% 5% 5% ; */
     box-shadow: 10px 10px rgba(0,0,0,.25);
 }
 
@@ -44,21 +59,21 @@
     font-weight: 600;
     display: inline-flex;
     justify-content: center;
-    font-family: 'Chewy', cursive;
+    font-family: 'Just Another Hand', cursive;
 }
 
 .journalForm__winesBar {
     display: inline-flex;
     justify-content: center;
     margin-bottom: 10px;
-    font-family: 'Chewy', cursive;
+    font-family: 'Just Another Hand', cursive;
 }
 
 .journalForm__winesBar input{
     width: 50%;
-    max-width: 350px;
-    min-width: 275px;
-    border: 2px solid #2b9af5;
+    max-width: 400px;
+    min-width: 300px;
+    border: 2px solid #020507;
     background: #e8f6ff;
     font-family: 'Chewy', cursive;
     display: inline;
@@ -67,7 +82,7 @@
 
 .journalForm__form {
     height: 50%;
-    font-family: 'Chewy', cursive;
+    font-family: 'Just Another Hand', cursive;
 }
 
 .ratingDiv {
@@ -84,7 +99,8 @@
     position: relative;
     display: inline-block;
     font-size: 30px;
-    font-family: 'Chewy', cursive;
+    font-family: 'Just Another Hand', cursive;
+    font-weight: 600;
     margin-bottom: 10px;
     color: rgb(0, 0, 0);
     /* max-height: 150px; */
@@ -96,7 +112,7 @@
     font-family: 'Chewy';
     background: #e8f6ff;
     border-radius: 3px;
-    border: 2px solid #2b9af5;
+    border: 2px solid #000000;
     outline: none;
     font-size: 20px;
     /* padding: 0 10px; */
@@ -123,9 +139,9 @@
     width: 100%;
 }
 
-.deleteBtn p:hover {
+/* .deleteBtn p:hover {
     display: none;
-}
+} */
 
 .deleteBtn{
     color: black;
@@ -138,7 +154,7 @@
 .deleteBtn:hover{
     color: red;
     cursor: pointer;
-    font-size: 40px;
+    /* font-size: 40px; */
 }
 
 .wineForm__Btn {
@@ -147,12 +163,12 @@
 }
 
 .button{
-    background:#1AAB8A;
+    background:#1aab89a9;
     color:#fff;
     border:none;
     position:relative;
     height:60px;
-    font-size:1.6em;
+    font-size:1.4em;
     padding:0 2em;
     cursor:pointer;
     transition:800ms ease all;
@@ -160,8 +176,8 @@
     max-width: 250px;
 }
 .button:hover{
-    background:#fff;
-    color:#1AAB8A;
+    background:rgba(255, 255, 255, 0.74);
+    color:#1aab89b9;
 }
 .button:before,.button:after{
     content:'';
@@ -170,7 +186,7 @@
     right:0;
     height:2px;
     width:0;
-    background: #1AAB8A;
+    background: #1aab89c5;
     transition:400ms ease all;
 }
 .button:after{
@@ -185,12 +201,12 @@
 }
 
 .button2{
-    background:#db3551;
-    color:#fff;
+    background:#db355191;
+    color:rgba(255, 255, 255, 0.699);
     border:none;
     position:relative;
     height:60px;
-    font-size:1.6em;
+    font-size:1.4em;
     padding:0 2em;
     cursor:pointer;
     transition:800ms ease all;
@@ -207,7 +223,7 @@
     right:0;
     height:2px;
     width:0;
-    background: #db3551;
+    background: #db35519d;
     transition:400ms ease all;
 }
 .button2:after{

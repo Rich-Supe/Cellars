@@ -5,7 +5,7 @@ import styles from './JournalForm.module.css'
 import { getWines } from '../../store/wines'
 import { createEntry } from '../../store/entries'
 
-import ReactQuill from 'react-quill';
+import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 // import WineModal from "../WineModal";
 
@@ -24,7 +24,8 @@ const JournalForm = ({id}) => {
         wineName,
     }
 
-    console.log(data)
+    // let delta = Quill.getContents();
+    // console.log(delta)
 
 
     const handleSubmit = async (e) => {

@@ -24,7 +24,7 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <div className={styles.navButtons}>
+      <div className={styles.loggedOutNav}>
         <div>
         <DemoLoginModal />
         </div>

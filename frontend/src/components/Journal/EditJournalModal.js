@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import { getEntries, deleteEntry } from '../../store/entries'
 import { editEntry } from '../../store/entries';
 
-// import styles from "./JournalForm.module.css"
 import styles from '../JournalForm/JournalForm.module.css'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -20,21 +19,14 @@ const EditJournalModal = () => {
     const [wineName, setWineName] = useState('');
     const [rating, setRating] = useState('0')
 
-    console.log('entries:',entries)
     const wines = Object.values(entries).map((obj) => obj.Wine)
-    console.log(`WINES:`, wines)
-    const entryId = Object.values(entries).map((obj) => obj.id)
-    console.log(`entryID`, entryId)
 
-    
     const data = {
         rating,
         entry: value,
         userId: 1,
         wineName,
     }
-
-    // console.log(data)
 
     const wineStateChange = (e) => {
         setWineName(e.target.value)
@@ -46,7 +38,7 @@ const EditJournalModal = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const entry = await dispatch(editEntry(data))
+        const entry = await dispatch(editEntry(data, userId))
         if (entry){
             history.push('/journal')
         }
@@ -63,8 +55,8 @@ const EditJournalModal = () => {
     }
 
     const deleteHandler = () => {
-        console.log('deleted!')
         dispatch(deleteEntry(userId, wineName))
+        history.push('/journal')
     }
 
     return (
@@ -74,7 +66,7 @@ const EditJournalModal = () => {
                 <div className={styles.journalForm__winesBar}>
                 <input list="names" placeholder="Wine Name" onChange={wineStateChange} className={styles.journalForm__input}/>
                 <div className={styles.deleteBtn}>
-                <MdDeleteForever className={styles.deleteIcon}/>
+                <MdDeleteForever className={styles.deleteIcon} onClick={deleteHandler}/>
                 <p id="deleteBtn">Delete entry instead?</p>
                 </div>
                 <datalist id="names" className={styles.journalForm__datalist} >

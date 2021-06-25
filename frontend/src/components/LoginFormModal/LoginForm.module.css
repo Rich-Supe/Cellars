@@ -149,20 +149,37 @@ i {
 }
 
 .btn {
+    width: 100%;
+    min-width: 150px;
+    font-size: 1.4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Chewy', cursive;
+    margin: 0 10px;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+/* .btn {
     line-height: 50px;
     height: 50px;
     text-align: center;
-    width: 250px;
+    min-width: 200px;
     cursor: pointer;
     color: rgb(0, 0, 0);
     transition: all 0.3s;
     position: relative;
-    font-size: 1.1em;
+    font-size: 11px;
+    margin-right: 0px !important;
 }
 .btn span {
     transition: all 0.3s;
     font-weight: 600;
     height: 100%;
+    width: 100%;
     font-size: 1.3em;
     font-family: 'Chewy', cursive;
 }
@@ -196,7 +213,7 @@ i {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  min-width: 180px;
   height: 100%;
   z-index: 1;
   transition: all 0.3s;
@@ -205,4 +222,4 @@ i {
 .btn:hover::after {
   opacity: 0; 
   transform: scale(0.1, 1);
-}
+} */

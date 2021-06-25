@@ -11,10 +11,8 @@ function LoginFormModal() {
     <>
       {/* <button className={styles.loginBtn} onClick={() => setShowModal(true)}>Log In</button> */}
       <div className={styles.btn} onClick={() => setShowModal(true)}>
-                                <span>
                                     <i className="fas fa-sign-in-alt"></i>
                                     Log In
-                                </span>
                             </div>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
