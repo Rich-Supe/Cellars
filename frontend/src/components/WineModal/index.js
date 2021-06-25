@@ -31,6 +31,11 @@ const WineModal = ({props}) => {
     useEffect(() => {
         dispatch(getOneWine(id));
     }, [dispatch]);
+
+    const handleAdd = (e) => {
+        e.target.classList.replace("fa-parachute-box", "fa-people-carry")
+        console.log('added')
+    }
     
     const wine = wines[id];
     if (!wine) return null;
@@ -121,7 +126,11 @@ const WineModal = ({props}) => {
                 type="button" 
                 onClick={()=> 
                 {setShowReview(!showReview)}}
-                >Tell others how you feel! Click here to write your own review.</button>
+                >Write your own review!</button>
+            <button className={styles.addToCellar}>
+                <p>Add to Cellar</p>
+                <i className="fas fa-parachute-box" onClick={handleAdd}></i>
+            </button>
             {/* </form> */}
         </footer>
         </div>
