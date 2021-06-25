@@ -84,8 +84,12 @@
 }
 
 .footer__socials a i {
-    font-size: 1.1 rem;
+    font-size: 1.5 rem;
     transition: color .4s ease;
+}
+
+.footer__socials i:hover {
+    border-bottom: 3px solid white;
 }
 
 .footer_socials a:hover i{
