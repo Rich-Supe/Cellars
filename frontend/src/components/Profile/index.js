@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 
 import styles from './Profile.module.css';
 import { GiSecretBook, GiWoodenCrate } from 'react-icons/gi';
+import { FiArrowRight } from 'react-icons/fi'
 
 const ProfilePage = () => {
     const history = useHistory();
@@ -40,12 +41,14 @@ const ProfilePage = () => {
                 <div className={styles.profile__nav}>
                     <div className={styles.profile__openCellar}>
                         <button className={styles.profile__openCellar_btn} onClick={(e) => setShowCellar("true")}>
+                        <FiArrowRight className={styles.arrow}/>
                         <GiWoodenCrate />
                         </button>
                     </div>
 
                     <div className={styles.profile__openJournal}>
                         <button className={styles.profile__openJournal_btn} onClick={(e) => history.push(`/journal`)}>
+                        <FiArrowRight className={styles.arrow}/>
                         <GiSecretBook />
                         </button>
                     </div>

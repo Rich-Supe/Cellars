@@ -2,7 +2,7 @@ import { csrfFetch } from "./csrf"
 
 const SET_CELLAR = 'users/SET_CELLAR'
 const CREATE_REVIEW_PROFILE = 'wines/CREATE_REVIEW_PROFILE'
-const ADD_TO_CELLAR = 'users/UNSET_CELLAR'
+const ADD_TO_CELLAR = 'users/ADD_TO_CELLAR'
 const REMOVE_FROM_CELLAR = 'users/REMOVE_FROM_CELLAR'
 
 // ACTION CREATORS
@@ -48,7 +48,6 @@ export const createCellar = (wineId, userId) => async(dispatch) => {
     });
     if (res.ok) {
         const cellar = await res.json();
-        console.log(`CREATE CELLAR THUNK`, cellar)
         dispatch(addToCellar(cellar))
         return cellar
     }
@@ -86,11 +85,13 @@ const usersReducer = (state = initialState, action) => {
             return newState
         }
         case ADD_TO_CELLAR: {
+            console.log(`REDUCER ADD ===`, action.crate)
             const newState = { ...state }
             return newState
         }
         case REMOVE_FROM_CELLAR: {
             const newState = { ...state };
+            console.log(`REDUCER DELETE ===`, action.crate)
             // action.crate.forEach((wine) => {
             //     newState[wine.id] = wine
             // });

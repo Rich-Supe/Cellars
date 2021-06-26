@@ -5,21 +5,49 @@ import styles from './JournalForm.module.css'
 import { getWines } from '../../store/wines'
 import { createEntry } from '../../store/entries'
 
-import 'quill/dist/quill.snow.css';
+import { useQuill } from 'react-quilljs';
+import 'quill/dist/quill.bubble.css';
+// import 'quill/dist/quill.snow.css';
 
 
 const JournalForm = ({id}) => {
+    const sessionUser = useSelector(state => state.session.user);
+    const userId = sessionUser.id
     const dispatch = useDispatch();
     const history = useHistory();
-    const [value, setValue] = useState('');
     const [wineName, setWineName] = useState('');
     const [rating, setRating] = useState('0')
     const wines = useSelector((state) => Object.values(state.wines))
 
+    ////////////////////////////////////////////////////////////////////
+    const [value, setValue] = useState('');
+    const [textValue, setTextValue] = useState('')
+    const theme = 'bubble';
+    // const theme = 'snow';
+    const { quill } = useQuill();
+    const { quillRef } = useQuill({theme})
+
+    // console.log(`QUILLL::::`, quill);    // undefined > Quill Object
+    // console.log(quillRef); // { current: undefined } > { current: Quill Editor Reference }
+    console.log(`VALUE======== `, value)
+
+    useEffect(() => {
+        if (quill) {
+            quill.on('text-change', () => {
+                const delta = quill.getContents()
+                setValue(delta)
+                setTextValue(delta)
+                console.log(`Delta ====== `, delta)
+                });
+        }
+    }, [quill])
+
+    /////////////////////////////////////////////////////////////////////
+
     const data = {
         rating,
         entry: value,
-        userId: 1,
+        userId,
         wineName,
     }
 
@@ -55,7 +83,7 @@ const JournalForm = ({id}) => {
     return (
         <div className={styles.createPage}>
             <form className={styles.journalForm} onSubmit={handleSubmit}>
-                <header className={styles.journalForm__header}>Pick a wine and create an entry!</header>
+                <header className={styles.journalForm__header}>Pick a Wine and Create an Entry!</header>
                 <div className={styles.journalForm__winesBar}>
                 <input list="names" placeholder="Wine Name" onChange={wineStateChange} className={styles.journalForm__input}/>
                 <datalist id="names" className={styles.journalForm__datalist} >
@@ -65,6 +93,12 @@ const JournalForm = ({id}) => {
                 </datalist>
                 </div>
                 <div className={styles.journalForm__form}>
+                    <div className={styles.quill}>
+                        <div style={{ width: 900, height: 250, border: '3px solid black' }}>
+                            <div ref={quillRef}
+                                placeholder="Enter content here" />
+                        </div>
+                    </div>
                         {/* <ReactQuill theme="snow" value={value} onChange={setValue}/> */}
                         <div className={styles.ratingDiv}>
                         <label list="rating" placeholder="Wine Rating" className={styles.custom_selector}>
