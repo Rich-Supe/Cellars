@@ -84,8 +84,6 @@ export const editEntry = (data, userId) => async(dispatch) => {
 
 //delete entry
 export const deleteEntry = (userId, wineName) => async(dispatch) => {
-    console.log('USERID in delete thunk', userId)
-    console.log(wineName)
     const res = await csrfFetch(`/api/journal/delete/${userId}`, {
         method: 'post',
         headers: {

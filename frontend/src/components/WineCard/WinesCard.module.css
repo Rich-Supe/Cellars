@@ -43,7 +43,7 @@
     font-family: 'Teko', sans-serif;
 }
 
-.addToCellar, .removeFromCellar {
+/* .addToCellar, .removeFromCellar {
     color: rgba(250, 247, 159, 0.8);
     height: 10%;
     display: flex;
@@ -68,6 +68,6 @@
 
 .removeFromCellar i:hover{
     color: red;
-}
+} */
 
 

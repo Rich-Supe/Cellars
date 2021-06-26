@@ -5,9 +5,8 @@ import styles from './JournalForm.module.css'
 import { getWines } from '../../store/wines'
 import { createEntry } from '../../store/entries'
 
-import ReactQuill, { Quill } from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-// import WineModal from "../WineModal";
+import 'quill/dist/quill.snow.css';
+
 
 const JournalForm = ({id}) => {
     const dispatch = useDispatch();
@@ -23,9 +22,6 @@ const JournalForm = ({id}) => {
         userId: 1,
         wineName,
     }
-
-    // let delta = Quill.getContents();
-    // console.log(delta)
 
 
     const handleSubmit = async (e) => {
@@ -69,7 +65,7 @@ const JournalForm = ({id}) => {
                 </datalist>
                 </div>
                 <div className={styles.journalForm__form}>
-                        <ReactQuill theme="snow" value={value} onChange={setValue}/>
+                        {/* <ReactQuill theme="snow" value={value} onChange={setValue}/> */}
                         <div className={styles.ratingDiv}>
                         <label list="rating" placeholder="Wine Rating" className={styles.custom_selector}>
                             How would you rate this wine?</label>
@@ -79,7 +75,7 @@ const JournalForm = ({id}) => {
                         </div>
                 </div>
                 <div className={styles.wineForm__Btn}>
-                    <button className={styles.button} type="submit">Submit</button>
+                    <button className={styles.button} type="submit">Add Entry</button>
                     <button className={styles.button2} onClick={handleCancel}>Cancel</button>
                 </div>
             </form>

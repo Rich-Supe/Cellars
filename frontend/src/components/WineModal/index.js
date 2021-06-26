@@ -1,8 +1,10 @@
 
 import { useSelector, useDispatch } from 'react-redux';
+import {useParams} from 'react-router-dom';
 import { useEffect, useState } from 'react'
 // import { Modal } from '../../context/Modal';
 import {getOneWine} from '../../store/wines'
+import { createCellar, deleteCellar } from '../../store/users';
 import ReviewsBox from '../ReviewsBox'
 // import WriteReview from '../WriteReview'
 import WriteReview from '../WriteReview';
@@ -19,25 +21,53 @@ import 'swiper/swiper-bundle.css'
 SwiperCore.use([Navigation, Pagination])
 
 const WineModal = ({props}) => {
-    // const [currentCard, setCurrentCard] = useState();
-    // const [showModal, setShowModal] = useState(false);
     const [showReview, setShowReview] = useState(false)
-
+    const [reload, setReload] = useState('')
+    const profile = useParams()
+    const user = useSelector(state => state.session.user);
     const dispatch = useDispatch()
-    const id = props.wineId
+    const wineId = props.wineId
+    const userId = user.id
     const reviews = props.reviews
     const wines = useSelector((state) => state.wines)
+    let cellarBtn;
+
 
     useEffect(() => {
-        dispatch(getOneWine(id));
+        dispatch(getOneWine(wineId));
     }, [dispatch]);
 
     const handleAdd = (e) => {
         e.target.classList.replace("fa-parachute-box", "fa-people-carry")
         console.log('added')
+        dispatch(createCellar(wineId, userId))
+    }
+
+    const handleRemove = (e) => {
+        console.log('removed')
+        console.log(userId, wineId)
+        dispatch(deleteCellar(userId, wineId))
+        setReload('true')
+        console.log(reload)
+    }
+
+    if (profile.id) {
+        cellarBtn = (
+            <div className={styles.removeFromCellar} onClick={handleRemove}>
+                <p>Remove from Cellar</p>
+                <i className="fas fa-trash-alt"></i>
+            </div>
+        )
+    } else {
+        cellarBtn = (
+            <button className={styles.addToCellar}>
+                <p>Add to Cellar</p>
+                <i className="fas fa-parachute-box" onClick={handleAdd}></i>
+            </button>
+        )
     }
     
-    const wine = wines[id];
+    const wine = wines[wineId];
     if (!wine) return null;
 
     //Reviews Carousel:
@@ -121,17 +151,16 @@ const WineModal = ({props}) => {
                         </div>
                     </div>
         <footer className={styles.footer}>
-            {/* <form onSubmit={formSubmit}> */}
             <button className={styles.footerP}
                 type="button" 
                 onClick={()=> 
                 {setShowReview(!showReview)}}
                 >Write your own review!</button>
-            <button className={styles.addToCellar}>
+                {cellarBtn}
+            {/* <button className={styles.addToCellar}>
                 <p>Add to Cellar</p>
                 <i className="fas fa-parachute-box" onClick={handleAdd}></i>
-            </button>
-            {/* </form> */}
+            </button> */}
         </footer>
         </div>
         )}

@@ -1,3 +1,4 @@
+import { csrfFetch } from "./csrf"
 
 const SET_CELLAR = 'users/SET_CELLAR'
 const CREATE_REVIEW_PROFILE = 'wines/CREATE_REVIEW_PROFILE'
@@ -37,7 +38,39 @@ export const getCellar = (id) => async(dispatch) => {
 
 // Add to crate
 
+export const createCellar = (wineId, userId) => async(dispatch) => {
+    const res = await csrfFetch(`/api/users/${userId}`, {
+        method: 'post',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({wineId})
+    });
+    if (res.ok) {
+        const cellar = await res.json();
+        console.log(`CREATE CELLAR THUNK`, cellar)
+        dispatch(addToCellar(cellar))
+        return cellar
+    }
+}
+
 //Remove from crate
+
+export const deleteCellar = (userId, wineId) => async(dispatch) => {
+    console.log('---------', userId, wineId)
+    const res = await csrfFetch(`/api/users/delete/${userId}`, {
+        method: 'post',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({wineId})
+      });
+      if(res.ok){
+          console.log('---------', userId, wineId)
+          dispatch(removeFromCellar(res));
+          return res;
+      }
+}
 
 
 // REDUCERS
@@ -50,6 +83,18 @@ const usersReducer = (state = initialState, action) => {
             action.crate.forEach((wine) => {
                 newState[wine.id] = wine
             });
+            return newState
+        }
+        case ADD_TO_CELLAR: {
+            const newState = { ...state }
+            return newState
+        }
+        case REMOVE_FROM_CELLAR: {
+            const newState = { ...state };
+            // action.crate.forEach((wine) => {
+            //     newState[wine.id] = wine
+            // });
+            delete newState[action.crate.id]
             return newState
         }
         case CREATE_REVIEW_PROFILE:{

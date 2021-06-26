@@ -138,6 +138,35 @@ section {
     font-family: 'Chewy', cursive;
 }
 
+.removeFromCellar {
+    color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    font-size: 26px;
+    border: 2px solid maroon;
+    background: none;
+    /* justify-self: flex-end; */
+}
+
+.removeFromCellar:hover{
+    border: 2px solid gold;
+}
+
+.removeFromCellar i {
+    padding-left: 8px;
+    margin-right: 0px !important;
+    margin-top: 7px;
+}
+
+.removeFromCellar i:hover {
+    color: rgb(248, 46, 46);
+}
+
+.removeFromCellar p {
+    font-size: 18px;
+    align-self: center;
+    font-family: 'Chewy', cursive;
+}
+
 
 
 
