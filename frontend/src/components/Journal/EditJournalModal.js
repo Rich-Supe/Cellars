@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { getEntries, deleteEntry } from '../../store/entries'
 import { editEntry } from '../../store/entries';
+// import Quill from '../JournalForm/Quill'
+import { useQuill } from 'react-quilljs';
+import 'quill/dist/quill.bubble.css';
+// import 'quill/dist/quill.snow.css'; // Add css for snow theme
 
 import styles from '../JournalForm/JournalForm.module.css'
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+// import ReactQuill from 'react-quill';
 import { MdDeleteForever } from 'react-icons/md'
 
 const EditJournalModal = () => {
@@ -15,9 +18,33 @@ const EditJournalModal = () => {
     const userId = sessionUser.id
     const entries = useSelector((state) => state.entries)
     const history = useHistory();
-    const [value, setValue] = useState('');
     const [wineName, setWineName] = useState('');
     const [rating, setRating] = useState('0')
+    
+    ////////////////////////////////////////////////////////////////////
+    const [value, setValue] = useState('');
+    const [textValue, setTextValue] = useState('')
+    const theme = 'bubble';
+    // const theme = 'snow';
+    const { quill } = useQuill();
+    const { quillRef } = useQuill({theme})
+
+    // console.log(`QUILLL::::`, quill);    // undefined > Quill Object
+    // console.log(quillRef); // { current: undefined } > { current: Quill Editor Reference }
+    console.log(`VALUE======== `, value)
+
+    useEffect(() => {
+        if (quill) {
+            quill.on('text-change', () => {
+                const delta = quill.getContents()
+                setValue(delta)
+                setTextValue(delta)
+                console.log(`Delta ====== `, delta)
+                });
+        }
+    }, [quill])
+
+    /////////////////////////////////////////////////////////////////////
 
     const wines = Object.values(entries).map((obj) => obj.Wine)
 
@@ -38,6 +65,7 @@ const EditJournalModal = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setValue('');
         const entry = await dispatch(editEntry(data, userId))
         if (entry){
             history.push('/journal')
@@ -76,57 +104,23 @@ const EditJournalModal = () => {
                 </datalist>
                 </div>
                 <div className={styles.journalForm__form}>
-                        <ReactQuill theme="snow" value={value} onChange={setValue}/>
+                    <div className={styles.quill}>
+                        <div style={{ width: 900, height: 250, border: '3px solid black' }}>
+                            <div ref={quillRef}
+                                placeholder="Enter content here" />
+                        </div>
+                    </div>
+                        {/* <ReactQuill theme="snow" value={value} onChange={setValue}/> */}
                         <div className={styles.ratingDiv}>
                         <label list="rating" placeholder="Wine Rating" className={styles.custom_selector}>
                             How would you rate this wine?</label>
-                            {/* {(function () {let selector = document.querySelector('.custom_selector');
-                                selector.addEventListener('change', e => {
-                                console.log('changed', e.target.value)
-                                })
-
-                                selector.addEventListener('mousedown', e => {
-                                if(window.innerWidth >= 420) {// override look for non mobile
-                                    e.preventDefault();
-                                    
-                                    const select = selector.children[0];
-                                    const dropDown = document.createElement('ul');
-                                    dropDown.className = "selector-options";
-                                    
-                                    [...select.children].forEach(option => {
-                                    const dropDownOption = document.createElement('li');
-                                    dropDownOption.textContent = option.textContent;
-                                    
-                                    dropDownOption.addEventListener('mousedown', (e) => {
-                                        e.stopPropagation();
-                                        select.value = option.value;
-                                        selector.value = option.value;
-                                        select.dispatchEvent(new Event('change'));
-                                        selector.dispatchEvent(new Event('change'));
-                                        dropDown.remove();
-                                    });
-
-                                    dropDown.appendChild(dropDownOption);   
-                                    });
-
-                                    selector.appendChild(dropDown);
-                                    
-                                    // handle click out
-                                    document.addEventListener('click', (e) => {
-                                    if(!selector.contains(e.target)) {
-                                        dropDown.remove();
-                                    }
-                                    });
-                                }
-                                });
-                            })()} */}
                             <select id="rating" className={styles.journalForm__datalist} onChange={(e) => {setRating(e.target.value)}}>
                             {options.map((option) => {return option})}
                             </select>
                         </div>
                 </div>
                 <div className={styles.wineForm__Btn}>
-                    <button className={styles.button} type="submit">Submit</button>
+                    <button className={styles.button} type="submit">Edit</button>
                     <button className={styles.button2} onClick={handleCancel}>Cancel</button>
                 </div>
             </form>

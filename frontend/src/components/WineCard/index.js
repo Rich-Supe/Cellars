@@ -8,8 +8,10 @@ import WineModal from '../WineModal'
 const WinesCard = ({wine}) => {
     const [showModal, setShowModal] = useState(false);
     const reviews = wine.reviews?wine.reviews:wine.Reviews
-    const profile = useParams()
+    // const profile = useParams()
     let cellarBtn;
+
+    console.log(wine.id)
 
     const handleOpenClose = (e) => {
         if (e.target.getAttribute('id') === 'modal-background') {
@@ -19,29 +21,18 @@ const WinesCard = ({wine}) => {
         } 
     }
 
-    const handleRemove = (e) => {
-        // e.target.innerHTML="Removed!"
-        console.log('removed')
-    }
-
-    const handleAdd = (e) => {
-        e.target.classList.replace("fa-parachute-box", "fa-people-carry")
-        console.log('added')
-    }
-    
-    if (profile.id) {
-        cellarBtn = (
-            <div className={styles.removeFromCellar} onClick={handleRemove}>
-                {/* <button className={styles.removeFromCellar__btn} onClick={handleRemove}>Remove</button> */}
-                <i class="fas fa-trash-alt"></i>
-            </div>
-        )
-    } else {
-        cellarBtn = (
-            <>
-            </>
-        )
-    }
+    // if (profile.id) {
+    //     cellarBtn = (
+    //         <div className={styles.removeFromCellar} onClick={handleRemove}>
+    //             <i class="fas fa-trash-alt"></i>
+    //         </div>
+    //     )
+    // } else {
+    //     cellarBtn = (
+    //         <>
+    //         </>
+    //     )
+    // }
 
     
     return (

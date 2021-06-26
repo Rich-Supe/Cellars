@@ -16,8 +16,8 @@
 } */
 
 .journalForm {
-    height: 70%;
-    width: 65%;
+    height: 85%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -30,7 +30,7 @@
     transition: all .4s ease; */
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     position: relative;
-    margin-bottom: 140px;
+    margin-bottom: 100px;
     /* margin-top: 2em; */
 }
 
@@ -55,18 +55,18 @@
 .journalForm__header {
     margin-top: 50px;
     height: 2em;
-    font-size: 36px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 900;
     display: inline-flex;
     justify-content: center;
-    font-family: 'Just Another Hand', cursive;
+    font-family: 'Cabin Sketch', cursive;
 }
 
 .journalForm__winesBar {
     display: inline-flex;
     justify-content: center;
     margin-bottom: 10px;
-    font-family: 'Just Another Hand', cursive;
+    font-family: 'Cabin Sketch', cursive;
 }
 
 .journalForm__winesBar input{
@@ -81,25 +81,37 @@
 }
 
 .journalForm__form {
-    height: 50%;
-    font-family: 'Just Another Hand', cursive;
+    height: 60%;
+    font-family: 'Cabin Sketch', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: cente; */
+}
+
+.quill {
+    height: 250px;
+    width: 900px
 }
 
 .ratingDiv {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    /* margin-top: 20px; */
     box-sizing: border-box;
-    height: 40%;
+    height: 30%;
+    width: 80%;
 }
 
 .custom_selector {
     position: relative;
+    width: 40%;
     display: inline-block;
-    font-size: 30px;
-    font-family: 'Just Another Hand', cursive;
+    font-size: 22px;
+    font-family: 'Cabin Sketch', cursive;
     font-weight: 600;
     margin-bottom: 10px;
     color: rgb(0, 0, 0);
@@ -107,7 +119,7 @@
 }
 
 .journalForm__datalist {
-    width: 200px;
+    width: 100px;
     max-height: 150px;
     font-family: 'Chewy';
     background: #e8f6ff;
@@ -116,12 +128,12 @@
     outline: none;
     font-size: 20px;
     /* padding: 0 10px; */
-    padding-left: 120px;
+    /* padding-left: 120px; */
     width: 25%;
     cursor: pointer;
     margin-top: 5px;
-    margin-bottom: 20px;
-    /* appearance: none; */
+    margin-bottom: 10px;
+    appearance: none;
 }
 
 .deleteBtn{
@@ -134,9 +146,10 @@
 
 .deleteBtn p {
     /* display: none; */
-    font-size: 20px;
+    font-size: 22px;
     margin: 7px 0 0 0;
     width: 100%;
+    font-family: 'Cabin Sketch', cursive;
 }
 
 /* .deleteBtn p:hover {
@@ -160,6 +173,7 @@
 .wineForm__Btn {
     display: flex;
     justify-content: space-around !important;
+    margin-top: 10px;
 }
 
 .button{
@@ -173,7 +187,9 @@
     cursor:pointer;
     transition:800ms ease all;
     outline:none;
-    max-width: 250px;
+    /* max-width: 200px;
+    min-width: 200px; */
+    width: 200px;
 }
 .button:hover{
     background:rgba(255, 255, 255, 0.74);
@@ -211,6 +227,7 @@
     cursor:pointer;
     transition:800ms ease all;
     outline:none;
+    width: 200px;
 }
 .button2:hover{
     background:#fff;
