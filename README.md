@@ -4,6 +4,8 @@
   
 <!-- ![image of wines](https://www.bayridgewine.com/wp-content/uploads/2018/03/red-wine-banner.jpg) -->
 ![image of wines2](https://www.wine.com/content/media/jc70ljquxrra/42YIx2rKhVkwsJ3SXNV0i6/55e9293ff5d99cedee294dac09f8ef18/Wine-glasses-in-a-row.-Buffet-table-celebration-of-wine-tasting.-Nightlife_-celebration-and-entertainment-concept-108609278.jpeg?w=1920&q=50)
+  
+## https://cellars-app.herokuapp.com/
 
 #### Cellars is made with a PERN stack and follows RESTful Api conventions with many of the features including CRUD functionality.
   
@@ -16,12 +18,8 @@
   
 TO DO:
   - Review edits
-  - Searchbar
-  - Cellar: add delete button(useState to allow x (onclick)to remove and add cellar btn to re-route to wines page)
-  - AWS3
-  - Styling
-  - Wine CRUD
-  - Add more seeders
+  - QuillJs
+  - AWS3, login, wines, entries.
   
 ## Technologies Used
 
