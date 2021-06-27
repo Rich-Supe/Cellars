@@ -20,7 +20,7 @@ const handleSubmit = (e) => {
     return (
         <>
             <div className={styles.loginBox3}>
-                <h1>Continue as a demo user?</h1>
+                <h1 className={styles.demoHeader}>Continue as a Demo User?</h1>
                 <div className={styles.submitBtnDiv}>
                     <button className={styles.submitBtn} onClick={handleSubmit}>Yes!</button>
                 </div>

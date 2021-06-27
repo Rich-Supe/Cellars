@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import styles from '../LoginFormModal/LoginForm.module.css';
-import './SignupForm.css';
 
 
 function SignupForm() {
@@ -47,7 +46,7 @@ function SignupForm() {
   //   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.signupForm}>
             <ul>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
@@ -87,9 +86,9 @@ function SignupForm() {
             required
             />
         </div>
-        <label>
-          <input type="file" onChange={updateFile} />
-        </label>
+        <div className={styles.textBox2}>
+          <input type="file" onChange={updateFile}  className={styles.uploadImg}/>
+        </div>
         {/* <label>
             Multiple Upload
             <input

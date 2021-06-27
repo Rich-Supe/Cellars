@@ -32,7 +32,7 @@ const EditJournalModal = () => {
     // console.log(`QUILLL::::`, quill);    // undefined > Quill Object
     // console.log(quillRef); // { current: undefined } > { current: Quill Editor Reference }
     console.log(`VALUE======== `, value)
-
+    console.log(`textValue`, textValue)
     useEffect(() => {
         if (quill) {
             quill.on('text-change', () => {
@@ -51,7 +51,7 @@ const EditJournalModal = () => {
     const data = {
         rating,
         entry: value,
-        userId: 1,
+        userId,
         wineName,
     }
 
@@ -65,7 +65,6 @@ const EditJournalModal = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setValue('');
         const entry = await dispatch(editEntry(data, userId))
         if (entry){
             history.push('/journal')
