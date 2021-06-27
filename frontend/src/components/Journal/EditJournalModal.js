@@ -31,15 +31,15 @@ const EditJournalModal = () => {
 
     // console.log(`QUILLL::::`, quill);    // undefined > Quill Object
     // console.log(quillRef); // { current: undefined } > { current: Quill Editor Reference }
-    console.log(`VALUE======== `, value)
-    console.log(`textValue`, textValue)
+    // console.log(`VALUE======== `, value)
+    // console.log(`textValue`, textValue)
     useEffect(() => {
         if (quill) {
             quill.on('text-change', () => {
                 const delta = quill.getContents()
                 setValue(delta)
                 setTextValue(delta)
-                console.log(`Delta ====== `, delta)
+                // console.log(`Delta ====== `, delta)
                 });
         }
     }, [quill])

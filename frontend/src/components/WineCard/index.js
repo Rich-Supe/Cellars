@@ -11,7 +11,7 @@ const WinesCard = ({wine}) => {
     // const profile = useParams()
     let cellarBtn;
 
-    console.log(wine.id)
+    // console.log(wine.id)
 
     const handleOpenClose = (e) => {
         if (e.target.getAttribute('id') === 'modal-background') {

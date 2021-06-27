@@ -39,16 +39,16 @@ const WineModal = ({props}) => {
 
     const handleAdd = (e) => {
         e.target.classList.replace("fa-parachute-box", "fa-people-carry")
-        console.log('added')
+        // console.log('added')
         dispatch(createCellar(wineId, userId))
     }
 
     const handleRemove = (e) => {
-        console.log('removed')
-        console.log(userId, wineId)
+        // console.log('removed')
+        // console.log(userId, wineId)
         dispatch(deleteCellar(userId, wineId))
         setReload('true')
-        console.log(reload)
+        // console.log(reload)
     }
 
     if (profile.id) {

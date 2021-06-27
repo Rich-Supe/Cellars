@@ -6,7 +6,7 @@ const ReviewsBox = ({props}) => {
     const userId = sessionUser.id
     const review = props.review
     const reviewUserId = props.review.userId
-    console.log(userId, reviewUserId)
+    // console.log(userId, reviewUserId)
     let conditionalEdit;
 
     if (userId === reviewUserId) {

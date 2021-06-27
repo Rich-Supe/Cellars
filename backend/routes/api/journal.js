@@ -21,12 +21,12 @@ router.post(
     router.put(
         '/edit/:id(\\d+)',
         asyncHandler(async(req, res) => {
-            console.log('=====================================================')
+            // console.log('=====================================================')
             const wine = await Wine.findOne({where: {name: req.body.wineName}});
-            console.log(`VINO+++++++++++++++++++++++++++++++++++++ EDIT`, wine)
+            // console.log(`VINO+++++++++++++++++++++++++++++++++++++ EDIT`, wine)
             const patch = req.body
             const userId = parseInt(req.params.id, 10);
-            console.log(`------------------USERID:`, userId)
+            // console.log(`------------------USERID:`, userId)
             // const entryId = req.body.id
             // const entryId = req.params
             const entry = await Entry.findOne({where: {userId, wineId: wine.id}})

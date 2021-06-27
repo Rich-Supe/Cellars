@@ -29,15 +29,15 @@ const JournalForm = ({id}) => {
 
     // console.log(`QUILLL::::`, quill);    // undefined > Quill Object
     // console.log(quillRef); // { current: undefined } > { current: Quill Editor Reference }
-    console.log(`VALUE======== `, value)
-    console.log(`textValue`, textValue)
+    // console.log(`VALUE======== `, value)
+    // console.log(`textValue`, textValue)
     useEffect(() => {
         if (quill) {
             quill.on('text-change', () => {
                 const delta = quill.getContents()
                 setValue(delta)
                 setTextValue(delta)
-                console.log(`Delta ====== `, delta)
+                // console.log(`Delta ====== `, delta)
                 });
         }
     }, [quill])
@@ -73,8 +73,6 @@ const JournalForm = ({id}) => {
     for (let i = 0; i < 11; i++) {
             options.push(<option value={i} id={i} key={i}>{i}</option>)
     }
-
-    console.log(rating)
 
     useEffect(() => {
         dispatch(getWines())

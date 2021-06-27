@@ -56,7 +56,7 @@ export const createCellar = (wineId, userId) => async(dispatch) => {
 //Remove from crate
 
 export const deleteCellar = (userId, wineId) => async(dispatch) => {
-    console.log('---------', userId, wineId)
+    // console.log('---------', userId, wineId)
     const res = await csrfFetch(`/api/users/delete/${userId}`, {
         method: 'post',
         headers: {
@@ -65,7 +65,7 @@ export const deleteCellar = (userId, wineId) => async(dispatch) => {
         body: JSON.stringify({wineId})
       });
       if(res.ok){
-          console.log('---------', userId, wineId)
+        //   console.log('---------', userId, wineId)
           dispatch(removeFromCellar(res));
           return res;
       }
@@ -85,13 +85,13 @@ const usersReducer = (state = initialState, action) => {
             return newState
         }
         case ADD_TO_CELLAR: {
-            console.log(`REDUCER ADD ===`, action.crate)
+            // console.log(`REDUCER ADD ===`, action.crate)
             const newState = { ...state }
             return newState
         }
         case REMOVE_FROM_CELLAR: {
             const newState = { ...state };
-            console.log(`REDUCER DELETE ===`, action.crate)
+            // console.log(`REDUCER DELETE ===`, action.crate)
             // action.crate.forEach((wine) => {
             //     newState[wine.id] = wine
             // });

@@ -19,9 +19,9 @@ const AddWineForm = () => {
     const [ price, setPrice ] = useState('')
     const [ labelUrl, setLabelUrl ] = useState('')
 
-    console.log(`Grape:`,grape, `     color:`,color, `     country:`,country)
-    console.log(`year:`, year, `      name:`, name)
-    console.log(region, rating, price, labelUrl)
+    // console.log(`Grape:`,grape, `     color:`,color, `     country:`,country)
+    // console.log(`year:`, year, `      name:`, name)
+    // console.log(region, rating, price, labelUrl)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
