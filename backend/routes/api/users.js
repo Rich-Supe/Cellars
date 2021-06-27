@@ -78,19 +78,21 @@ router.post(
     })
 )
 
+//delete
+
 router.post(
     '/delete/:id(\\d+)',
     requireAuth,
     asyncHandler(async (req, res) => {
-        console.log('----------------------------------------------------')
+        // console.log('----------------------------------------------------')
         const {wineId} = req.body;
         const userId = req.params.id
-        console.log("===============------=============-------====", wineId, userId)
+        // console.log("===============------=============-------====", wineId, userId)
         const crate = await Crate.findOne({where: {
             cellarId: userId,
             wineId
     }})
-        console.log('----------------', crate)
+        // console.log('----------------', crate)
         await Crate.destroy({
             where: {
                 cellarId: userId,

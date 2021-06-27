@@ -28,6 +28,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 15px;
 }
 
 .profile__openCellar, .profile__openJournal {
@@ -49,6 +50,11 @@
 
 .profile__openJournal_btn:hover, .profile__openCellar_btn:hover {
     border-bottom: 1px solid white;
+}
+
+.arrow {
+    font-size: .7em;
+    margin-bottom: 8px;
 }
 
 

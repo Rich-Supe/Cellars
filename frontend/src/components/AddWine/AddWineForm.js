@@ -125,12 +125,12 @@ const AddWineForm = () => {
                     onChange={(e)=>setLabelUrl(e.target.value)}
                     value={labelUrl}/>
                 </div>
-                <div className={styles.wineForm__Btn}>
+                <footer className={styles.wineForm__Btn}>
                     {/* <button type="submit" className={styles.wineForm__Btn_submit} onClick={handleSubmit}>Submit Wine</button>
                     <button type="button" className={styles.wineForm__Btn_cancel} onClick={handleCancel}>Cancel</button> */}
                     <button className={styles.button} onClick={handleSubmit}>Submit</button>
                     <button className={styles.button2} onClick={handleCancel}>Cancel</button>
-                </div>
+                </footer>
                 </form>
             </div>
     )

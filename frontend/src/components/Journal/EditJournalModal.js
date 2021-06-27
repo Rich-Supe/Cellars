@@ -90,7 +90,7 @@ const EditJournalModal = () => {
     return (
            <div className={styles.createPage}>
             <form className={styles.journalForm} onSubmit={handleSubmit}>
-                <header className={styles.journalForm__header}>Pick a wine to Edit!</header>
+                <header className={styles.journalForm__header}>Pick a Wine to Edit!</header>
                 <div className={styles.journalForm__winesBar}>
                 <input list="names" placeholder="Wine Name" onChange={wineStateChange} className={styles.journalForm__input}/>
                 <div className={styles.deleteBtn}>

@@ -37,7 +37,7 @@
     background: rgb(0, 0, 0, .7);
     height: auto;
     width: 100%;
-    font-family: 'Chewy', cursive;
+    font-family: "Teko", sans-serif;
     color: white;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .footer__content header {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 600;
     text-transform: capitalize;
     margin-top: none;
@@ -62,7 +62,7 @@
     max-width: 500px;
     /* margin: 10px auto;
     line-height: 28px; */
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .footer__socials {
@@ -104,7 +104,7 @@
 }
 
 .footer__bottom p {
-    font-size: 23px;
+    font-size: 20px;
     word-spacing: 2px;
     text-transform: capitalize;
     margin: 0;
