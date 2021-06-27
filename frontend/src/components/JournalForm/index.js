@@ -30,7 +30,7 @@ const JournalForm = ({id}) => {
     // console.log(`QUILLL::::`, quill);    // undefined > Quill Object
     // console.log(quillRef); // { current: undefined } > { current: Quill Editor Reference }
     console.log(`VALUE======== `, value)
-
+    console.log(`textValue`, textValue)
     useEffect(() => {
         if (quill) {
             quill.on('text-change', () => {

@@ -32,10 +32,11 @@
     /* align-items: ; */
     flex-direction: column;
     margin-top: 15px;
+    /* font-family: "Permanent Marker", cursive;  */
 }
 /* For Signup */
 .loginBox2 {
-    width: 280px;
+    width: 22% !important;
     height: 520px;
     position: absolute;
     top: 40%;
@@ -49,6 +50,36 @@
     margin-top: 30px;
     
 }
+
+.signupForm {
+    width: 350px;
+}
+
+.signupForm div {
+    width: 100%;
+}
+
+.signupForm input {
+    width: 100%;
+}
+
+.textBox2 {
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    margin: 1px 0;
+    padding: 1px 0;
+    border-bottom: 1px solid gold;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+}
+
+#file-upload-button {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
 /* For Demo */
 .loginBox3 {
     width: 450px;
@@ -62,6 +93,10 @@
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+}
+
+.demoHeader {
+    border-bottom: 1px solid gold;
 }
 
 .loginBox h1, .loginBox2 h1 {
@@ -86,23 +121,13 @@
     border-bottom: 1px solid gold;
 }
 
-.textBox2 {
-    width: 100%;
-    overflow: hidden;
-    font-size: 20px;
-    margin: 1px 0;
-    padding: 1px 0;
-    border-bottom: 1px solid gold;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: flex-start; */
-}
 
 .textBox Input{
     border:none;
     outline:none;
     background:none;
     color:whitesmoke;
+    width: 85%;
 }
 
 .textBox2 Input{
@@ -132,7 +157,7 @@ input {
     border-bottom: 2px solid gold; */
     text-decoration: none;
     border: 2px solid gold;
-    border-radius: 20%;
+    border-radius: 10%;
     color: white;
     padding: 5px;
     font-size: 18px;
@@ -141,7 +166,9 @@ input {
 }
 
 .submitBtn:hover {
-    border: 2px solid rgb(177, 107, 121);
+    /* border: 2px solid rgb(177, 107, 121); */
+    /* color: gold; */
+    background-color: rgba(125, 255, 125, 0.105);
 }
 
 i {
