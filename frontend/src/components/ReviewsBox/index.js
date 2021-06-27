@@ -21,7 +21,7 @@ const ReviewsBox = ({props}) => {
         <>
         <div className={styles.reviewCard}>
             <p>{review.review}</p>
-            <div className={styles.reviewCard__editBtn}>{conditionalEdit}</div>
+            {/* <div className={styles.reviewCard__editBtn}>{conditionalEdit}</div> */}
             </div>
         </>
     )
