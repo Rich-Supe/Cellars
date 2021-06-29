@@ -18,7 +18,7 @@
   
 TO DO:
   - Review edits
-  - QuillJs
+  - QuillJs deltas
   - AWS3, login, wines, entries.
   
 ## Technologies Used
