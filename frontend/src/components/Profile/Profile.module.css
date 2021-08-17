@@ -29,17 +29,22 @@
     flex-direction: row;
     justify-content: space-around;
     margin-top: 15px;
+    width: 100%;
 }
 
 .profile__openCellar, .profile__openJournal {
     height: 100%;
-    min-width: 150px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
 }
 
 .profile__openJournal_btn, .profile__openCellar_btn {
     height: 100%;
-    width: 100%;
-    min-width: 100px;
+    width: 30%;
+    /* min-width: 100px; */
     margin-top: 10px;
     background: none;
     border:none;
@@ -48,8 +53,18 @@
     color: rgb(241, 241, 241);
 }
 
+.openHeader {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 2em;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    margin: 0px;
+}
+
 .profile__openJournal_btn:hover, .profile__openCellar_btn:hover {
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
+    font-size: 3.1em;
 }
 
 .arrow {
