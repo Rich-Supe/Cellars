@@ -6,9 +6,9 @@
     background: linear-gradient(323deg, rgba(253,255,192,1) 4%, rgba(233,242,183,1) 41%, rgba(193,217,165,1) 66%, rgba(122,172,133,0.9912114504004726) 100%); */
     /* background: rgb(153,153,153);
     background: radial-gradient(circle, rgba(153,153,153,0.9912114504004726) 38%, rgba(218,218,202,1) 72%, rgba(144,144,139,1) 100%); */
-    background: rgb(167,132,132);
-    background: radial-gradient(circle, rgba(167,132,132,1) 21%, rgba(99,5,5,1) 64%, rgba(68,45,50,1) 100%);
-    /* background-color: white; */
+    /* background: rgb(167,132,132);
+    background: radial-gradient(circle, rgba(167,132,132,1) 21%, rgba(99,5,5,1) 64%, rgba(68,45,50,1) 100%); */
+    background-color: white;
 }
 
 .searchHeader {

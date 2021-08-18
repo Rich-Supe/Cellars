@@ -1,9 +1,9 @@
 
 import Cellar from '../Cellar'
-import Journal from '../Journal'
+// import Journal from '../Journal'
 import ProfileLanding from '../ProfileLanding';
 import { useParams, useHistory } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import styles from './Profile.module.css';
@@ -29,7 +29,7 @@ const ProfilePage = () => {
     else {
         profile = (
             <>
-                <header className={styles.journalHeader}>Your Profile</header>
+                {/* <header className={styles.journalHeader}>Your Profile</header> */}
                 <ProfileLanding user={sessionUser}/>
             </>
         )
@@ -40,6 +40,7 @@ const ProfilePage = () => {
             <div className={styles.profile}>
                 <div className={styles.profile__nav}>
                     <div className={styles.profile__openCellar}>
+                    <p className={styles.openHeader}>Open Cellar</p>
                         <button className={styles.profile__openCellar_btn} onClick={(e) => setShowCellar("true")}>
                         <FiArrowRight className={styles.arrow}/>
                         <GiWoodenCrate />
@@ -47,6 +48,7 @@ const ProfilePage = () => {
                     </div>
 
                     <div className={styles.profile__openJournal}>
+                        <p className={styles.openHeader}>Open Journal</p>
                         <button className={styles.profile__openJournal_btn} onClick={(e) => history.push(`/journal`)}>
                         <FiArrowRight className={styles.arrow}/>
                         <GiSecretBook />

@@ -13,16 +13,32 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.801);
-    border: 2mm ridge rgba(233, 220, 220, 0.835);
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 231, 231, 0.801);
+    box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.2);
+    /* border: 2mm ridge rgba(0, 0, 0, 0.835); */
+}
+
+.profile__nav {
+    width: 100%;
+    display: flex;
+}
+
+.profile__openCellar {
+    width: 50%;
+    display: flex;
+}
+
+.profile__openJournal { 
+    width: 50%;
+    display: flex;
 }
 
 .profileLanding__header {
     font-size: 3em;
-    font-weight: 700;
-    font-family: "Teko", sans-serif;
-    border-bottom: 2px solid white;
+    /* font-weight: 700; */
+    /* font-family: "Teko", sans-serif; */
+    /* border-bottom: 2px solid rgb(0, 0, 0); */
     margin: 10px 0 20px 0
 }
 
@@ -42,7 +58,8 @@
 }
 
 .liL {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Teko', sans-serif;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 
 .liN {

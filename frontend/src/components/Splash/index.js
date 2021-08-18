@@ -2,6 +2,7 @@
 
 import splash from '../../assets/images/Cellar3.jpg'
 import styles from './Splash.module.css'
+import { FaAngellist } from 'react-icons/fa'
 
 const Splash = () => {
     
@@ -39,6 +40,11 @@ const Splash = () => {
                             <i className="fas fa-grin-beam-sweat"></i>
                             Portfolio
                         </li> */}
+                        <li>
+                            <a className={styles.liAngel} href="https://angel.co/u/rich-supe">
+                                <FaAngellist className={styles.angelIcon}/>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div className={styles.footer__bottom}>
