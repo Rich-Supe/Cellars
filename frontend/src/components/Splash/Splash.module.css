@@ -146,3 +146,21 @@
     color: rgb(250, 253, 255);
 }
 
+.angelIcon {
+    color: rgb(0, 0, 0);
+    font-size: 1.67rem;
+    border: 1px solid white;
+    background-color: white;
+    margin-top: 5px;
+    /* padding-bottom: 3px; */
+    border-radius: 4px;
+}
+
+.angelIcon:hover {
+    border-bottom: 3px solid white;
+}
+
+.liAngel:visited {
+    text-decoration: none;
+    color: rgb(255, 251, 251);
+}
