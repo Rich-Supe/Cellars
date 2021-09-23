@@ -15,12 +15,6 @@
   * Frontend Routes - https://github.com/Rich-Supe/Cellars/wiki/Frontend-Routes
   * Database Schema - https://dbdiagram.io/d/60a59bd7b29a09603d15aa81
   
-  
-TO DO:
-  - Review edits
-  - QuillJs deltas
-  - AWS3, login, wines, entries.
-  
 ## Technologies Used
 
 | Back-end    | Front-end |
