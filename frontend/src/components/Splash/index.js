@@ -3,6 +3,7 @@
 import splash from '../../assets/images/Cellar3.jpg'
 import styles from './Splash.module.css'
 import { FaAngellist } from 'react-icons/fa'
+import { GiFullFolder } from 'react-icons/gi'
 
 const Splash = () => {
     
@@ -22,27 +23,28 @@ const Splash = () => {
                     <p>Welcome to Cellars! Contact me here:</p> */}
                     <ul className={styles.footer__socials}>
                         <li className={styles.liLink}>
-                            <a className={styles.aLink} href="https://linkedin.com/in/richard-supe">
+                            <a className={styles.aLink} target="_blank" href="https://linkedin.com/in/richard-supe">
                                 <i className="fab fa-linkedin"/>
                             </a>
                         </li>
                         <li className={styles.liGit}>
-                            <a className={styles.aGit} href="https://github.com/Rich-Supe">
+                            <a className={styles.aGit} target="_blank" href="https://github.com/Rich-Supe">
                             <i className="fab fa-github-square"></i>
                             </a>
                         </li>
                         <li className={styles.liTwit}>
-                            <a className={styles.aTwit} href="https://twitter.com/supe_richard">
+                            <a className={styles.aTwit} target="_blank" href="https://twitter.com/supe_richard">
                             <i className="fab fa-twitter-square"></i>
                             </a>
                         </li>
-                        {/* <li className={styles.liPort}>
-                            <i className="fas fa-grin-beam-sweat"></i>
-                            Portfolio
-                        </li> */}
                         <li>
-                            <a className={styles.liAngel} href="https://angel.co/u/rich-supe">
+                            <a className={styles.liAngel} target="_blank" href="https://angel.co/u/rich-supe">
                                 <FaAngellist className={styles.angelIcon}/>
+                            </a>
+                        </li>
+                        <li className={styles.liLink}>
+                            <a className={styles.aLink} target="_blank" href="https://richsupe.com/">
+                                <GiFullFolder className={styles.portIcon}/>
                             </a>
                         </li>
                     </ul>

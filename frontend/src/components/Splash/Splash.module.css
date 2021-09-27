@@ -90,6 +90,7 @@
 
 .footer__socials i:hover {
     border-bottom: 3px solid white;
+    padding-bottom: 3px;
 }
 
 .footer_socials a:hover i{
@@ -114,6 +115,10 @@
     text-transform: uppercase;
     font-weight: 600;
     /* font-family: 'Monoton', cursive; */
+}
+
+.liLink, .aLink, .liGit, .aGit, .liTwit, .aTwit, .liAngel, .angelIcon, .aLink, .portIcon {
+    color: white;
 }
 
 
@@ -158,9 +163,14 @@
 
 .angelIcon:hover {
     border-bottom: 3px solid white;
+    padding-bottom: 3px;
 }
 
 .liAngel:visited {
     text-decoration: none;
     color: rgb(255, 251, 251);
+}
+
+.aLink:hover {
+    border-bottom: 3px solid white;
 }
